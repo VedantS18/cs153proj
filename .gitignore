@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+*.out
+*.err
+*.npy
+*.pt
+*.pkl
+data/
+outputs/
+activations/
+checkpoints/
+hf_cache/
