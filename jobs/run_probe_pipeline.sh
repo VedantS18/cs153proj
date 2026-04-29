@@ -15,12 +15,14 @@ cd "$SLURM_SUBMIT_DIR"
 source .env
 export HF_TOKEN
 
+module purge
+module load python/3.13.11
+
 SCRATCH="/scratch/users/$USER"
 export HF_HOME="${SCRATCH}/hf_cache"
 mkdir -p "$HF_HOME"
 mkdir -p "${SCRATCH}/cs153/activations"
 
-# activate virtualenv (created by setup.sh)
 source cs153-env/bin/activate
 
 echo "==== GPU ===="

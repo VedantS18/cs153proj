@@ -5,9 +5,15 @@
 set -e
 cd "$(dirname "$0")/.."
 
-python3 -m venv cs153-env
-source cs153-env/bin/activate
+module purge
+module load python/3.13.11
 
+if [ ! -d "cs153-env" ]; then
+    echo "Creating virtual environment..."
+    python -m venv cs153-env
+fi
+
+source cs153-env/bin/activate
 pip install --upgrade pip
 pip install torch --index-url https://download.pytorch.org/whl/cu118
 pip install transformers accelerate
