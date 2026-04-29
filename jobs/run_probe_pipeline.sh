@@ -12,9 +12,13 @@
 set -e
 cd "$SLURM_SUBMIT_DIR"
 
+source .env
+export HF_TOKEN
+
 SCRATCH="/scratch/users/$USER"
 export HF_HOME="${SCRATCH}/hf_cache"
 mkdir -p "$HF_HOME"
+mkdir -p "${SCRATCH}/cs153/activations"
 
 # activate virtualenv (created by setup.sh)
 source cs153-env/bin/activate
