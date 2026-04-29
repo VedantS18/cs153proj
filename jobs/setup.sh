@@ -5,6 +5,7 @@
 set -e
 cd "$(dirname "$0")/.."
 
+source /etc/profile.d/z00_lmod.sh
 module purge
 module load python/3.13.11
 
