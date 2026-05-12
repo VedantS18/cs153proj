@@ -160,16 +160,20 @@ def probe_scores_on_examples(probe_weights, concept, act_dir, n=6):
     print(f"  Score < 0 → probe predicts NEGATIVE (concept absent)")
     print(f"  After erasure the score should be ~0 for everything\n")
 
+    coef_s = np.array(probe_weights[concept]["coef_scaled"], dtype=np.float32)
+
     for i in indices:
         x = X[i]
         label = "POS" if y[i] == 1 else "NEG"
 
-        # Before erasure
-        score_before = float((x - mean) / scale @ coef)
+        x_scaled = (x - mean) / scale
 
-        # After erasure
-        x_erased = x - (x @ coef) * coef
-        score_after = float((x_erased - mean) / scale @ coef)
+        # Before erasure
+        score_before = float(x_scaled @ coef_s)
+
+        # After erasure — project in scaled space
+        x_scaled_erased = x_scaled - (x_scaled @ coef_s) * coef_s
+        score_after = float(x_scaled_erased @ coef_s)
 
         text_short = texts[i][:65] + "..." if len(texts[i]) > 65 else texts[i]
         print(f"  [{label}] \"{text_short}\"")

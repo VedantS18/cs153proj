@@ -85,14 +85,17 @@ def probe_accuracy(probe_weights, concept, act_dir, erased=False):
     X = npz["X"][:, layer_idx, :].astype(np.float32)  # (N, hidden_dim)
     y = npz["y"].astype(np.int32)
 
-    if erased:
-        # Nullspace projection: remove the concept direction
-        # x_erased = x - (x · v) * v  → x_erased · v = 0 exactly
-        proj = (X @ coef)[:, None] * coef
-        X = X - proj
-
     X_scaled = (X - mean) / scale
-    logits = X_scaled @ coef
+    coef_s = np.array(w["coef_scaled"], dtype=np.float32)
+
+    if erased:
+        # Project in scaled space — x_erased_scaled · coef_scaled = 0 exactly
+        proj = (X_scaled @ coef_s)[:, None] * coef_s
+        X_scaled = X_scaled - proj
+        logits = X_scaled @ coef_s
+    else:
+        logits = X_scaled @ coef_s
+
     preds = (logits > 0).astype(int)
     return float((preds == y).mean())
 

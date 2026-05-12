@@ -84,12 +84,14 @@ def main():
 
         # Fit final probe on all data at peak layer — save weights for nullspace projection
         clf, scaler = fit_probe(X[:, peak_layer, :], y, args.max_iter)
-        # coef is (1, hidden_dim) for binary classification; normalize to unit vector
-        coef = clf.coef_[0]
-        coef_normalized = coef / (np.linalg.norm(coef) + 1e-8)
+        # coef lives in scaled space; convert to original activation space for the hook
+        coef_scaled = clf.coef_[0]                          # direction in scaled space
+        coef_orig = coef_scaled / (scaler.scale_ + 1e-8)   # direction in original space
+        coef_orig_normalized = coef_orig / (np.linalg.norm(coef_orig) + 1e-8)
         probe_weights[concept] = {
             "peak_layer": int(peak_layer),
-            "coef": coef_normalized.tolist(),       # unit concept direction vector
+            "coef": coef_orig_normalized.tolist(),   # unit direction in ORIGINAL activation space
+            "coef_scaled": (coef_scaled / (np.linalg.norm(coef_scaled) + 1e-8)).tolist(),
             "scaler_mean": scaler.mean_.tolist(),
             "scaler_scale": scaler.scale_.tolist(),
         }
