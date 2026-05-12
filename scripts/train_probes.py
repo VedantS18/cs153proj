@@ -44,6 +44,15 @@ def probe_layer(X_layer, y, n_folds, max_iter):
     return float(np.mean(accs))
 
 
+def fit_probe(X_layer, y, max_iter):
+    """Fit a single probe on all data, return (clf, scaler)."""
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X_layer)
+    clf = LogisticRegression(max_iter=max_iter, C=1.0, solver="lbfgs")
+    clf.fit(X_scaled, y)
+    return clf, scaler
+
+
 def main():
     args = parse_args()
     os.makedirs(args.out_dir, exist_ok=True)
@@ -52,6 +61,8 @@ def main():
     print(f"Found {len(npz_files)} concept activation files")
 
     results = {}
+    probe_weights = {}  # { concept: { "layer": int, "coef": [...], "mean": [...], "scale": [...] } }
+
     for fname in npz_files:
         concept = fname.replace(".npz", "")
         data = np.load(os.path.join(args.act_dir, fname))
@@ -71,10 +82,27 @@ def main():
         print(f"    peak layer: {peak_layer} ({layer_accs[peak_layer]:.3f})")
         results[concept] = layer_accs
 
+        # Fit final probe on all data at peak layer — save weights for nullspace projection
+        clf, scaler = fit_probe(X[:, peak_layer, :], y, args.max_iter)
+        # coef is (1, hidden_dim) for binary classification; normalize to unit vector
+        coef = clf.coef_[0]
+        coef_normalized = coef / (np.linalg.norm(coef) + 1e-8)
+        probe_weights[concept] = {
+            "peak_layer": int(peak_layer),
+            "coef": coef_normalized.tolist(),       # unit concept direction vector
+            "scaler_mean": scaler.mean_.tolist(),
+            "scaler_scale": scaler.scale_.tolist(),
+        }
+
     out_path = os.path.join(args.out_dir, "probe_accuracies.json")
     with open(out_path, "w") as f:
         json.dump(results, f, indent=2)
     print(f"\nSaved {out_path}")
+
+    weights_path = os.path.join(args.out_dir, "probe_weights.json")
+    with open(weights_path, "w") as f:
+        json.dump(probe_weights, f)
+    print(f"Saved {weights_path}")
 
 
 if __name__ == "__main__":
