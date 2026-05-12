@@ -15,6 +15,7 @@ cd "$SLURM_SUBMIT_DIR"
 source .env
 export HF_TOKEN
 
+source /etc/profile.d/z00_lmod.sh
 module purge
 module load python/3.13.11
 
