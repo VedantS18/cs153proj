@@ -67,47 +67,32 @@ def parse_args():
     return p.parse_args()
 
 
-@torch.no_grad()
-def get_activations_single(model, tokenizer, texts, layer_idx, max_length, device):
-    """Extract last-token activations at a specific layer for a list of texts."""
-    all_hidden = []
-    for text in texts:
-        enc = tokenizer(text, return_tensors="pt", truncation=True,
-                        max_length=max_length).to(device)
-        out = model(**enc, output_hidden_states=True)
-        last_pos = enc["attention_mask"].sum() - 1
-        h = out.hidden_states[layer_idx][0, last_pos, :].cpu().float().numpy()
-        all_hidden.append(h)
-    return np.array(all_hidden)
-
-
-def probe_accuracy_after_erasure(model, tokenizer, probe_weights, concept,
-                                  act_dir, max_length, device):
+def probe_accuracy(probe_weights, concept, act_dir, erased=False):
     """
-    Re-extract activations WITH erasure hook active, then test the original probe.
+    Measure probe accuracy on stored activations, optionally with nullspace projection applied.
+
+    output_hidden_states captures activations before forward hooks fire, so we
+    apply the projection directly to the stored numpy arrays instead of re-running
+    through the model. This is mathematically equivalent to what the hook does.
     """
     w = probe_weights[concept]
     layer_idx = w["peak_layer"]
-    coef = w["coef"].numpy()
+    coef = w["coef"].numpy()       # unit concept direction vector
     mean = w["scaler_mean"].numpy()
     scale = w["scaler_scale"].numpy()
 
-    # Load original texts
     npz = np.load(os.path.join(act_dir, f"{concept}.npz"), allow_pickle=False)
-    # We need the original texts — load from data/concepts
-    texts, labels = [], []
-    with open(f"data/concepts/{concept}.jsonl") as f:
-        for line in f:
-            item = json.loads(line)
-            texts.append(item["text"])
-            labels.append(item["label"])
+    X = npz["X"][:, layer_idx, :].astype(np.float32)  # (N, hidden_dim)
+    y = npz["y"].astype(np.int32)
 
-    X = get_activations_single(model, tokenizer, texts, layer_idx, max_length, device)
-    y = np.array(labels)
+    if erased:
+        # Nullspace projection: remove the concept direction
+        # x_erased = x - (x · v) * v  → x_erased · v = 0 exactly
+        proj = (X @ coef)[:, None] * coef
+        X = X - proj
 
-    # Apply original probe (fit on standardized features)
     X_scaled = (X - mean) / scale
-    logits = X_scaled @ coef  # dot with concept direction
+    logits = X_scaled @ coef
     preds = (logits > 0).astype(int)
     return float((preds == y).mean())
 
@@ -150,43 +135,27 @@ def main():
     concepts = args.concepts or list(probe_weights.keys())
     print(f"Evaluating {len(concepts)} concepts")
 
+    # Baseline MMLU — compute once before any erasure
+    print("\nComputing baseline MMLU...")
+    mmlu_before = mmlu_accuracy(model, tokenizer, device)
+    print(f"Baseline MMLU: {mmlu_before:.3f}")
+
     results = {}
     for concept in concepts:
         print(f"\n--- {concept} ---")
 
-        # Baseline MMLU (before erasure) — only compute once
-        if not results:
-            print("  Computing baseline MMLU...")
-            mmlu_before = mmlu_accuracy(model, tokenizer, device)
-            print(f"  Baseline MMLU: {mmlu_before:.3f}")
-        else:
-            mmlu_before = list(results.values())[0]["mmlu_acc_before"]
-
-        # Baseline probe accuracy (re-extract without hook)
-        print("  Probe accuracy (before erasure)...")
-        probe_before = probe_accuracy_after_erasure(
-            model, tokenizer, probe_weights, concept,
-            args.act_dir, args.max_length, device
-        )
+        # Probe accuracy on stored activations — no model needed
+        probe_before = probe_accuracy(probe_weights, concept, args.act_dir, erased=False)
+        probe_after  = probe_accuracy(probe_weights, concept, args.act_dir, erased=True)
         print(f"  Probe acc before: {probe_before:.3f}")
-
-        # Apply erasure hook
-        hooks = apply_erasure(model, probe_weights, concepts=[concept])
-
-        # Probe accuracy after erasure
-        print("  Probe accuracy (after erasure)...")
-        probe_after = probe_accuracy_after_erasure(
-            model, tokenizer, probe_weights, concept,
-            args.act_dir, args.max_length, device
-        )
         print(f"  Probe acc after:  {probe_after:.3f}")
 
-        # MMLU after erasure
-        print("  MMLU after erasure...")
+        # MMLU with erasure hook active on the model
+        hooks = apply_erasure(model, probe_weights, concepts=[concept])
         mmlu_after = mmlu_accuracy(model, tokenizer, device)
-        print(f"  MMLU after:       {mmlu_after:.3f}")
-
         remove_erasure(hooks)
+        print(f"  MMLU before:      {mmlu_before:.3f}")
+        print(f"  MMLU after:       {mmlu_after:.3f}")
 
         results[concept] = {
             "probe_acc_before": probe_before,
