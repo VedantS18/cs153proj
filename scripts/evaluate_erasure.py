@@ -3,13 +3,16 @@ Evaluate concept erasure: measure effectiveness and collateral damage.
 
 For each concept:
   1. Probe accuracy before/after erasure (did we suppress the concept?)
-  2. MMLU subset accuracy before/after erasure (collateral damage)
+  2. Concept-specific behavioral tests (MCQ, stereotype gap, style choice)
+  3. MMLU subset accuracy before/after erasure (collateral damage)
 
 Outputs results/erasure_eval.json:
   {
     concept: {
       "probe_acc_before": float,
       "probe_acc_after": float,
+      "concept_test_before": float,   # concept-specific score (acc or gap)
+      "concept_test_after": float,
       "mmlu_acc_before": float,
       "mmlu_acc_after": float,
     }
@@ -61,6 +64,7 @@ def parse_args():
     p.add_argument("--act_dir", default="activations")
     p.add_argument("--weights_path", default="results/probe_weights.json")
     p.add_argument("--out_dir", default="results")
+    p.add_argument("--test_dir", default="data/concept_test")
     p.add_argument("--concepts", nargs="*", default=None,
                    help="Subset of concepts to evaluate (default: all)")
     p.add_argument("--max_length", type=int, default=64)
@@ -98,6 +102,67 @@ def probe_accuracy(probe_weights, concept, act_dir, erased=False):
 
     preds = (logits > 0).astype(int)
     return float((preds == y).mean())
+
+
+@torch.no_grad()
+def sentence_log_prob(model, tokenizer, sentence, device, max_length):
+    """Total log-probability of a sentence."""
+    enc = tokenizer(sentence, return_tensors="pt",
+                    truncation=True, max_length=max_length).to(device)
+    out = model(**enc, labels=enc["input_ids"])
+    return -out.loss.item() * enc["input_ids"].shape[1]
+
+
+@torch.no_grad()
+def concept_test_score(model, tokenizer, device, tests, max_length=64):
+    """
+    Score concept-specific behavioral tests.
+
+    Factual MCQ:   accuracy (higher before erasure = model knows the concept)
+    Stereotype gap: mean(log P(stereo) - log P(counter)), should shrink after erasure
+    Style choice:   accuracy picking style_passage over other_passage
+    """
+    if not tests:
+        return None
+
+    category = tests[0]["category"]
+
+    if category == "factual":
+        correct = 0
+        for item in tests:
+            prompt = item["prompt"]
+            scores = []
+            for choice in item["choices"]:
+                full = prompt + " " + choice
+                scores.append(sentence_log_prob(model, tokenizer, full, device, max_length))
+            correct += int(np.argmax(scores) == item["answer_idx"])
+        return correct / len(tests)
+
+    elif category == "bias":
+        gaps = []
+        for item in tests:
+            lp_stereo  = sentence_log_prob(model, tokenizer,
+                                            item["prefix"] + item["stereotypical_suffix"],
+                                            device, max_length)
+            lp_counter = sentence_log_prob(model, tokenizer,
+                                            item["prefix"] + item["counter_suffix"],
+                                            device, max_length)
+            gaps.append(lp_stereo - lp_counter)
+        return float(np.mean(gaps))
+
+    elif category == "stylistic":
+        correct = 0
+        for item in tests:
+            lp_style = sentence_log_prob(model, tokenizer,
+                                          item["question"] + " " + item["style_passage"],
+                                          device, max_length)
+            lp_other = sentence_log_prob(model, tokenizer,
+                                          item["question"] + " " + item["other_passage"],
+                                          device, max_length)
+            correct += int(lp_style > lp_other)
+        return correct / len(tests)
+
+    return None
 
 
 @torch.no_grad()
@@ -153,8 +218,28 @@ def main():
         print(f"  Probe acc before: {probe_before:.3f}")
         print(f"  Probe acc after:  {probe_after:.3f}")
 
-        # MMLU with erasure hook active on the model
-        hooks = apply_erasure(model, probe_weights, concepts=[concept])
+        # Concept-specific behavioral tests
+        test_path = os.path.join(args.test_dir, f"{concept}.json")
+        ct_before = ct_after = None
+        if os.path.exists(test_path):
+            with open(test_path) as f:
+                tests = json.load(f)
+            ct_before = concept_test_score(model, tokenizer, device, tests)
+            hooks = apply_erasure(model, probe_weights, concepts=[concept])
+            ct_after = concept_test_score(model, tokenizer, device, tests)
+            remove_erasure(hooks)
+            category = tests[0]["category"] if tests else "?"
+            unit = "gap" if category == "bias" else "acc"
+            print(f"  Concept test ({unit}) before: {ct_before:.3f}")
+            print(f"  Concept test ({unit}) after:  {ct_after:.3f}")
+        else:
+            print(f"  No concept test file at {test_path}")
+            # Still need to run MMLU with erasure — do it below
+            hooks = apply_erasure(model, probe_weights, concepts=[concept])
+
+        # MMLU — erasure already active if no concept tests; apply fresh otherwise
+        if ct_before is not None:
+            hooks = apply_erasure(model, probe_weights, concepts=[concept])
         mmlu_after = mmlu_accuracy(model, tokenizer, device)
         remove_erasure(hooks)
         print(f"  MMLU before:      {mmlu_before:.3f}")
@@ -163,6 +248,9 @@ def main():
         results[concept] = {
             "probe_acc_before": probe_before,
             "probe_acc_after": probe_after,
+            "concept_test_before": ct_before,
+            "concept_test_after": ct_after,
+            "concept_test_delta": (ct_after - ct_before) if ct_before is not None else None,
             "mmlu_acc_before": mmlu_before,
             "mmlu_acc_after": mmlu_after,
             "probe_delta": probe_after - probe_before,
@@ -178,10 +266,11 @@ def main():
 
     # Summary table
     print("\n=== SUMMARY ===")
-    print(f"{'Concept':<25} {'Probe Δ':>10} {'MMLU Δ':>10}")
-    print("-" * 47)
+    print(f"{'Concept':<25} {'Probe Δ':>10} {'Concept Δ':>12} {'MMLU Δ':>10}")
+    print("-" * 60)
     for concept, r in sorted(results.items()):
-        print(f"{concept:<25} {r['probe_delta']:>+10.3f} {r['mmlu_delta']:>+10.3f}")
+        ct_d = f"{r['concept_test_delta']:>+12.3f}" if r["concept_test_delta"] is not None else "         n/a"
+        print(f"{concept:<25} {r['probe_delta']:>+10.3f} {ct_d} {r['mmlu_delta']:>+10.3f}")
 
 
 if __name__ == "__main__":
