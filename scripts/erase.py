@@ -40,7 +40,7 @@ def _make_hook(concept_dir, device):
     def hook(module, input, output):
         # output is (hidden_states, ...) or just hidden_states depending on layer type
         h = output[0] if isinstance(output, tuple) else output
-        v = concept_dir.to(h.device)
+        v = concept_dir.to(device=h.device, dtype=h.dtype)
         # project out: h' = h - (h @ v) * v
         proj = (h @ v).unsqueeze(-1) * v  # (B, T, H)
         h_erased = h - proj
