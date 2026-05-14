@@ -12,3 +12,5 @@ outputs/
 activations/
 checkpoints/
 hf_cache/
+results/
+.claude/
