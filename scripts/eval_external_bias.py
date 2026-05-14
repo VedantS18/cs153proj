@@ -18,13 +18,15 @@ Usage:
 """
 
 import argparse
+import csv
+import io
 import json
 import os
 import sys
+import urllib.request
 
 import numpy as np
 import torch
-from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -98,18 +100,35 @@ def sentence_log_prob(model, tokenizer, sentence, device, max_length):
     return -out.loss.item() * n_tokens
 
 
+_CROWS_CSV_URL = (
+    "https://raw.githubusercontent.com/nyu-mll/crows-pairs/master/"
+    "data/crows_pairs_anonymized.csv"
+)
+_crows_cache = None
+
+
+def _load_crows_csv():
+    global _crows_cache
+    if _crows_cache is not None:
+        return _crows_cache
+    try:
+        with urllib.request.urlopen(_CROWS_CSV_URL, timeout=30) as resp:
+            content = resp.read().decode("utf-8")
+        reader = csv.DictReader(io.StringIO(content))
+        _crows_cache = list(reader)
+        print(f"    Loaded {len(_crows_cache)} CrowS-Pairs rows from GitHub")
+    except Exception as e:
+        print(f"    Could not download CrowS-Pairs CSV: {e}")
+        _crows_cache = []
+    return _crows_cache
+
+
 def eval_crows_concept(model, tokenizer, device, bias_type, max_pairs, max_length):
     """
-    Load CrowS-Pairs, filter to bias_type, return (n_stereo_preferred, n_total).
+    Load CrowS-Pairs from raw CSV, filter to bias_type, return (n_stereo_preferred, n_total).
     Stereo-preferred = model assigns higher log-prob to more-stereotyped sentence.
     """
-    try:
-        ds = load_dataset("crows_pairs", split="test", trust_remote_code=True)
-    except Exception as e:
-        print(f"    Could not load crows_pairs: {e}")
-        return None, None
-
-    rows = [r for r in ds if r["bias_type"] == bias_type]
+    rows = [r for r in _load_crows_csv() if r["bias_type"] == bias_type]
     if not rows:
         print(f"    No CrowS-Pairs rows for bias_type={bias_type}")
         return None, None
@@ -130,13 +149,15 @@ def eval_stereoset_concept(model, tokenizer, device, domains, max_length):
     Load StereoSet intrasentence, filter to domains, return (stereotype_score, lm_score).
     SS = % of (stereo, anti) pairs where model prefers stereo.
     LMS = % of (stereo/anti, unrelated) pairs where model prefers meaningful sentence.
+
+    StereoSet gold_label integers: 0=anti-stereotype, 1=stereotype, 2=unrelated
     """
     if not domains:
         return None, None
 
     try:
-        ds = load_dataset("McGill-NLP/stereoset", "intrasentence",
-                          split="validation", trust_remote_code=True)
+        from datasets import load_dataset
+        ds = load_dataset("McGill-NLP/stereoset", "intrasentence", split="validation")
     except Exception as e:
         print(f"    Could not load stereoset: {e}")
         return None, None
@@ -145,39 +166,37 @@ def eval_stereoset_concept(model, tokenizer, device, domains, max_length):
     if not rows:
         return None, None
 
+    # StereoSet label mapping (integer)
+    STEREO = 1
+    ANTI   = 0
+    UNRELA = 2
+
     stereo_wins = 0
     stereo_total = 0
     lm_correct = 0
     lm_total = 0
 
     for row in rows:
-        context = row["context"]
-        sentences = row["sentences"]
-        # sentences is a list of dicts with "sentence" and "gold_label"
-        by_label = {}
-        for s in sentences["sentence"]:
-            idx = sentences["sentence"].index(s)
-            label = sentences["gold_label"][idx]
-            by_label[label] = s
+        context   = row["context"]
+        sents     = row["sentences"]["sentence"]
+        labels    = row["sentences"]["gold_label"]
 
-        if "stereotype" not in by_label or "anti-stereotype" not in by_label:
-            continue
-        if "unrelated" not in by_label:
+        by_label = {label: sent for sent, label in zip(sents, labels)}
+
+        if STEREO not in by_label or ANTI not in by_label or UNRELA not in by_label:
             continue
 
-        stereo_text = context + " " + by_label["stereotype"]
-        anti_text   = context + " " + by_label["anti-stereotype"]
-        unrela_text = context + " " + by_label["unrelated"]
+        stereo_text = context + " " + by_label[STEREO]
+        anti_text   = context + " " + by_label[ANTI]
+        unrela_text = context + " " + by_label[UNRELA]
 
         lp_stereo = sentence_log_prob(model, tokenizer, stereo_text, device, max_length)
         lp_anti   = sentence_log_prob(model, tokenizer, anti_text,   device, max_length)
         lp_unrela = sentence_log_prob(model, tokenizer, unrela_text, device, max_length)
 
-        # Stereotype score: does model prefer stereo over anti?
         stereo_wins  += int(lp_stereo > lp_anti)
         stereo_total += 1
 
-        # LM score: does model prefer meaningful (stereo or anti) over unrelated?
         lm_correct += int(lp_stereo > lp_unrela)
         lm_correct += int(lp_anti   > lp_unrela)
         lm_total   += 2

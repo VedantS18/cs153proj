@@ -26,6 +26,7 @@ def load_probe_weights(path="results/probe_weights.json"):
         weights[concept] = {
             "peak_layer": data["peak_layer"],
             "coef": torch.tensor(data["coef"], dtype=torch.float32),
+            "coef_scaled": data.get("coef_scaled"),   # list; used for probe eval in scaled space
             "scaler_mean": torch.tensor(data["scaler_mean"], dtype=torch.float32),
             "scaler_scale": torch.tensor(data["scaler_scale"], dtype=torch.float32),
         }
