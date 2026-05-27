@@ -51,4 +51,17 @@ mv results/mode_sweep.json "results/mode_sweep_${SUFFIX}.json" 2>/dev/null || tr
 echo "Output: results/mode_sweep_${SUFFIX}.json"
 
 echo ""
+echo "==== Generating completion examples ===="
+python scripts/generate_erasure_examples.py \
+    --model meta-llama/Llama-3.2-3B \
+    --weights_path results/probe_weights.json \
+    --out_dir results \
+    --max_new_tokens 35 \
+    ${CONCEPTS:+--concepts $CONCEPTS}
+
+mv results/erasure_examples.json "results/erasure_examples_${SUFFIX}.json" 2>/dev/null || true
+mv results/erasure_examples.txt  "results/erasure_examples_${SUFFIX}.txt"  2>/dev/null || true
+echo "Output: results/erasure_examples_${SUFFIX}.txt"
+
+echo ""
 echo "Done. $(date)"
