@@ -84,16 +84,38 @@ def main():
 
         # Fit final probe on all data at peak layer — save weights for nullspace projection
         clf, scaler = fit_probe(X[:, peak_layer, :], y, args.max_iter)
-        # coef lives in scaled space; convert to original activation space for the hook
-        coef_scaled = clf.coef_[0]                          # direction in scaled space
-        coef_orig = coef_scaled / (scaler.scale_ + 1e-8)   # direction in original space
+        coef_scaled = clf.coef_[0]
+        coef_orig = coef_scaled / (scaler.scale_ + 1e-8)
         coef_orig_normalized = coef_orig / (np.linalg.norm(coef_orig) + 1e-8)
+        coef_scaled_normalized = coef_scaled / (np.linalg.norm(coef_scaled) + 1e-8)
+
+        # Top-K PCA subspace of positive class at peak layer (scaled space).
+        # These span the concept subspace for rank-K erasure.
+        X_peak_scaled = (X[:, peak_layer, :].astype(np.float32) - scaler.mean_) / scaler.scale_
+        X_pos = X_peak_scaled[y == 1]
+        X_pos_centered = X_pos - X_pos.mean(0)
+        _, _, Vt = np.linalg.svd(X_pos_centered, full_matrices=False)
+        subspace_dirs = Vt[:8].tolist()  # top-8 PCA directions in scaled space
+
+        # Per-layer probe directions (scaled space) for per-layer erasure.
+        per_layer_coefs = {}
+        for li in range(X.shape[1]):
+            clf_l, scaler_l = fit_probe(X[:, li, :], y, args.max_iter)
+            c = clf_l.coef_[0]
+            per_layer_coefs[li] = {
+                "coef_scaled": (c / (np.linalg.norm(c) + 1e-8)).tolist(),
+                "scaler_mean":  scaler_l.mean_.tolist(),
+                "scaler_scale": scaler_l.scale_.tolist(),
+            }
+
         probe_weights[concept] = {
-            "peak_layer": int(peak_layer),
-            "coef": coef_orig_normalized.tolist(),   # unit direction in ORIGINAL activation space
-            "coef_scaled": (coef_scaled / (np.linalg.norm(coef_scaled) + 1e-8)).tolist(),
-            "scaler_mean": scaler.mean_.tolist(),
-            "scaler_scale": scaler.scale_.tolist(),
+            "peak_layer":      int(peak_layer),
+            "coef":            coef_orig_normalized.tolist(),
+            "coef_scaled":     coef_scaled_normalized.tolist(),
+            "scaler_mean":     scaler.mean_.tolist(),
+            "scaler_scale":    scaler.scale_.tolist(),
+            "subspace_dirs":   subspace_dirs,        # (8, hidden_dim) top PCA dirs, scaled space
+            "per_layer_coefs": per_layer_coefs,      # {layer_idx: {coef_scaled, mean, scale}}
         }
 
     out_path = os.path.join(args.out_dir, "probe_accuracies.json")
