@@ -40,11 +40,21 @@ def probe_score_after_erasure(coef_scaled_target, coef_scaled_eraser, X_scaled, 
     return float((preds == y).mean())
 
 
+def parse_args():
+    import argparse
+    p = argparse.ArgumentParser()
+    p.add_argument("--weights_path", default="results/probe_weights.json")
+    p.add_argument("--act_dir", default="activations")
+    p.add_argument("--out_dir", default="results")
+    return p.parse_args()
+
+
 def main():
-    weights_path = "results/probe_weights.json"
-    act_dir = "activations"
-    out_dir = "results"
-    figures_dir = "results/figures"
+    args = parse_args()
+    weights_path = args.weights_path
+    act_dir = args.act_dir
+    out_dir = args.out_dir
+    figures_dir = os.path.join(out_dir, "figures")
     os.makedirs(figures_dir, exist_ok=True)
 
     probe_weights = load_probe_weights(weights_path)
