@@ -51,16 +51,23 @@ def _make_hook(concept_dir, device):
     return hook
 
 
-def apply_erasure(model, probe_weights, concepts=None):
+def apply_erasure(model, probe_weights, concepts=None, erase_layers=None):
     """
-    Register nullspace projection hooks for the given concepts (all if None).
+    Register nullspace projection hooks for the given concepts.
+
+    erase_layers: list of layer indices to erase at, or None to use each
+                  concept's peak layer only (original single-layer behaviour).
+                  When set, the same concept direction (from the peak layer probe)
+                  is projected out at every specified layer.
+
     Returns list of hook handles — pass to remove_erasure() when done.
     """
     if concepts is None:
         concepts = list(probe_weights.keys())
 
-    # Llama uses model.model.layers[i] for transformer blocks
-    layers = model.model.layers
+    model_layers = model.model.layers
+    n_layers = len(model_layers)
+    device = next(model.parameters()).device
 
     hooks = []
     for concept in concepts:
@@ -68,18 +75,19 @@ def apply_erasure(model, probe_weights, concepts=None):
             print(f"Warning: no probe weights for {concept}, skipping")
             continue
         w = probe_weights[concept]
-        layer_idx = w["peak_layer"]
-        concept_dir = w["coef"]  # already unit-normalized
+        concept_dir = w["coef"]  # unit-normalised direction from peak-layer probe
 
-        if layer_idx >= len(layers):
-            print(f"Warning: peak layer {layer_idx} out of range for {concept}")
-            continue
+        target_layers = erase_layers if erase_layers is not None else [w["peak_layer"]]
 
-        hook = layers[layer_idx].register_forward_hook(
-            _make_hook(concept_dir, next(model.parameters()).device)
-        )
-        hooks.append(hook)
-        print(f"  Erasure hook registered: {concept} @ layer {layer_idx}")
+        for layer_idx in target_layers:
+            if layer_idx >= n_layers:
+                continue
+            hook = model_layers[layer_idx].register_forward_hook(
+                _make_hook(concept_dir, device)
+            )
+            hooks.append(hook)
+
+        print(f"  Erasure hooks registered: {concept} @ layers {target_layers}")
 
     return hooks
 
