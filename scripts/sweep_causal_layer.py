@@ -163,7 +163,8 @@ def main():
         ct = concept_test_score(model, tokenizer, device,
                                 concept_tests[concept], args.max_length)
         baselines[concept] = {"concept_test": ct, "mmlu": mmlu_baseline}
-        print(f"  {concept:<25} ct={ct:.4f if ct is not None else 'n/a'}  mmlu={mmlu_baseline:.3f}")
+        ct_str = f"{ct:.4f}" if ct is not None else "n/a"
+        print(f"  {concept:<25} ct={ct_str}  mmlu={mmlu_baseline:.3f}")
 
     results = {"baseline": baselines}
 
