@@ -50,12 +50,17 @@ def _make_hook_subspace(directions, device):
     return hook
 
 
-def _make_hook_rank1(concept_dir, device):
+def _make_hook_rank1(concept_dir, device, alpha=1.0):
+    """
+    alpha=1.0  → standard nullspace projection (remove component)
+    alpha>1.0  → overproject (steer away from concept direction)
+    alpha<0    → amplify concept direction (for ablation)
+    """
     def hook(module, input, output):
         h = output[0] if isinstance(output, tuple) else output
         v = concept_dir.to(device=h.device, dtype=h.dtype)
         proj = (h @ v).unsqueeze(-1) * v
-        h_erased = h - proj
+        h_erased = h - alpha * proj
         if isinstance(output, tuple):
             return (h_erased,) + output[1:]
         return h_erased
@@ -63,7 +68,7 @@ def _make_hook_rank1(concept_dir, device):
 
 
 def apply_erasure(model, probe_weights, concepts=None, erase_layers=None,
-                  rank=1, per_layer_dirs=False, mlp_only=False):
+                  rank=1, per_layer_dirs=False, mlp_only=False, alpha=1.0):
     """
     Register nullspace projection hooks for the given concepts.
 
@@ -110,9 +115,9 @@ def apply_erasure(model, probe_weights, concepts=None, erase_layers=None,
                 if pl is None:
                     continue
                 v = torch.tensor(pl["coef_scaled"], dtype=torch.float32)
-                hook_fn = _make_hook_rank1(v, device)
+                hook_fn = _make_hook_rank1(v, device, alpha=alpha)
             else:
-                hook_fn = _make_hook_rank1(w["coef"], device)
+                hook_fn = _make_hook_rank1(w["coef"], device, alpha=alpha)
 
             hook = target_module.register_forward_hook(hook_fn)
             hooks.append(hook)
