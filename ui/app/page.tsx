@@ -2,6 +2,7 @@
 
 import StyleLab from "@/components/StyleLab";
 import StyleCompass from "@/components/StyleCompass";
+import ConceptAtlas from "@/components/ConceptAtlas";
 import ResultsSection from "@/components/ResultsSection";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
           <div className="flex items-center gap-6 text-xs text-muted-foreground font-mono">
             <a href="#lab" className="hover:text-foreground transition-colors">Style Lab</a>
             <a href="#compass" className="hover:text-foreground transition-colors">Compass</a>
+            <a href="#atlas" className="hover:text-foreground transition-colors">Atlas</a>
             <a href="#results" className="hover:text-foreground transition-colors">Results</a>
             <span className="px-2 py-0.5 rounded border border-border text-muted-foreground/60">
               Llama 3.2 3B
@@ -81,6 +83,7 @@ export default function Home() {
 
       <StyleLab />
       <StyleCompass />
+      <ConceptAtlas />
       <ResultsSection />
 
       {/* footer */}
