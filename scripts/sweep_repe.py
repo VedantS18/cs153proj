@@ -194,6 +194,8 @@ def parse_args():
                    help="Direction vector to steer with: 'contrast' (mean-diff) or 'probe' (classifier weight)")
     p.add_argument("--inject", action="store_true",
                    help="Inject concept (subtract=False) instead of erasing — used for style injection")
+    p.add_argument("--amplify", action="store_true",
+                   help="Amplify bias (subtract=False) for bias concepts — shows bidirectional control")
     p.add_argument("--out_prefix", default="",
                    help="Prefix for output filenames, e.g. 'probe_steer_' → probe_steer_sweep.json")
     return p.parse_args()
@@ -363,9 +365,13 @@ def main():
             steer_layers = list(range(start_layer,
                                       min(start_layer + args.n_steer_layers, n_layers)))
 
-            # Injection mode: add direction for stylistic concepts; erase for bias
+            # Direction mode:
+            #   --amplify: add bias direction (make model more stereotyped)
+            #   --inject:  add style direction (inject writing style)
+            #   default:   subtract (erase/debias)
             is_inject = args.inject and concept in STYLISTIC
-            subtract = not is_inject
+            is_amplify = args.amplify and concept in BIAS_CONCEPTS
+            subtract = not (is_inject or is_amplify)
 
             # Apply steering (alpha=0 means no steering = baseline)
             hooks = []
