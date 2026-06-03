@@ -153,6 +153,34 @@ INJECT_PROMPTS = {
         "They sat at the table and talked.",
         "It was getting late.",
     ],
+    "fitzgerald": [
+        "The weather was nice today.",
+        "She went to the party alone.",
+        "He thought about the past.",
+        "They stood on the lawn in the dark.",
+        "It was getting late.",
+    ],
+    "austen": [
+        "The weather was nice today.",
+        "She went to the ball with her sister.",
+        "He thought about what she had said.",
+        "They met again at the dinner party.",
+        "It was getting late in the season.",
+    ],
+    "dickens": [
+        "The weather was nice today.",
+        "She went to the city to find work.",
+        "He thought about his misfortune.",
+        "They sat by the fire and said nothing.",
+        "It was getting late in the year.",
+    ],
+    "woolf": [
+        "The weather was nice today.",
+        "She went out into the street.",
+        "He thought about the morning.",
+        "They walked together without speaking.",
+        "It was getting late in the afternoon.",
+    ],
 }
 
 MMLU_SUBSET = [
@@ -340,7 +368,7 @@ def main():
     concepts = args.concepts or list(steer_dirs.keys())
 
     STYLISTIC = {"hemingway", "shakespeare", "legal_text", "scientific_writing", "news_wire",
-                  "jk_rowling", "cormac_mccarthy"}
+                  "jk_rowling", "cormac_mccarthy", "fitzgerald", "austen", "dickens", "woolf"}
 
     # Pre-load bias benchmarks
     if any(c in BIAS_CONCEPTS for c in concepts):
