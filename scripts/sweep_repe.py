@@ -104,6 +104,43 @@ DEMO_PROMPTS = {
     ],
 }
 
+# Completely neutral prompts used for style INJECTION experiments.
+# These have no stylistic signal so any change in output is attributable to steering.
+INJECT_PROMPTS = {
+    "hemingway": [
+        "The weather was nice today.",
+        "She went to the store to buy some things.",
+        "He thought about what to do next.",
+        "They sat at the table and talked.",
+        "It was getting late.",
+    ],
+    "shakespeare": [
+        "The weather was nice today.",
+        "She went to the store to buy some things.",
+        "He thought about what to do next.",
+        "The night was quiet.",
+        "They met at the corner.",
+    ],
+    "legal_text": [
+        "The two companies decided to work together.",
+        "The employee was let go from the company.",
+        "They agreed to share the money equally.",
+        "The new policy will take effect next month.",
+    ],
+    "scientific_writing": [
+        "Eating vegetables is good for you.",
+        "Exercise helps people stay healthy.",
+        "The new medicine helped sick patients recover.",
+        "The temperature outside affects how people feel.",
+    ],
+    "news_wire": [
+        "Something happened in the city yesterday.",
+        "The leader made a decision.",
+        "People gathered in the square.",
+        "Prices went up again this week.",
+    ],
+}
+
 MMLU_SUBSET = [
     ("What is the capital of France?",          ["London", "Berlin", "Paris", "Madrid"], 2),
     ("Which planet is closest to the Sun?",     ["Venus", "Mercury", "Earth", "Mars"],   1),
@@ -152,7 +189,30 @@ def parse_args():
     p.add_argument("--max_length", type=int, default=64)
     p.add_argument("--max_crows", type=int, default=300)
     p.add_argument("--n_seeds", type=int, default=2)
+    # Experiment modes
+    p.add_argument("--steer_mode", choices=["contrast", "probe"], default="contrast",
+                   help="Direction vector to steer with: 'contrast' (mean-diff) or 'probe' (classifier weight)")
+    p.add_argument("--inject", action="store_true",
+                   help="Inject concept (subtract=False) instead of erasing — used for style injection")
+    p.add_argument("--out_prefix", default="",
+                   help="Prefix for output filenames, e.g. 'probe_steer_' → probe_steer_sweep.json")
     return p.parse_args()
+
+
+def load_probe_dirs(path):
+    """Load probe classifier weights as steering directions (normalized to unit length)."""
+    with open(path) as f:
+        raw = json.load(f)
+    dirs = {}
+    for concept, data in raw.items():
+        v = torch.tensor(data["coef"], dtype=torch.float32)
+        v = v / (v.norm() + 1e-8)
+        dirs[concept] = {
+            "peak_layer": data["peak_layer"],
+            "v_contrast": v,           # reuse same key so apply_repe_steering works unchanged
+            "v_contrast_scaled": v,
+        }
+    return dirs
 
 
 @torch.no_grad()
@@ -253,8 +313,17 @@ def main():
     model.eval()
 
     n_layers = len(model.model.layers)
-    contrast_dirs = load_contrast_directions(args.contrast_path)
-    concepts = args.concepts or list(contrast_dirs.keys())
+
+    if args.steer_mode == "probe":
+        steer_dirs = load_probe_dirs(args.probe_weights)
+        print(f"Steering mode: PROBE (classifier weight direction)")
+    else:
+        steer_dirs = load_contrast_directions(args.contrast_path)
+        print(f"Steering mode: CONTRAST (mean-difference direction)")
+
+    concepts = args.concepts or list(steer_dirs.keys())
+
+    STYLISTIC = {"hemingway", "shakespeare", "legal_text", "scientific_writing", "news_wire"}
 
     # Pre-load bias benchmarks
     if any(c in BIAS_CONCEPTS for c in concepts):
@@ -269,8 +338,9 @@ def main():
     sweep_results = {}
     completion_log = {}
 
+    mode_tag = f"inject={'yes' if args.inject else 'no'} steer_mode={args.steer_mode}"
     print(f"\n{'='*70}")
-    print(f"RepE Steering Sweep  |  model={args.model}")
+    print(f"RepE Steering Sweep  |  model={args.model}  |  {mode_tag}")
     print(f"Concepts: {concepts}")
     print(f"Alphas: {args.alphas}")
     print(f"{'='*70}\n")
@@ -285,7 +355,7 @@ def main():
         mmlu_val = None
 
         for concept in concepts:
-            if concept not in contrast_dirs:
+            if concept not in steer_dirs:
                 continue
 
             # Steer at multiple consecutive late layers so model can't compensate
@@ -293,16 +363,20 @@ def main():
             steer_layers = list(range(start_layer,
                                       min(start_layer + args.n_steer_layers, n_layers)))
 
+            # Injection mode: add direction for stylistic concepts; erase for bias
+            is_inject = args.inject and concept in STYLISTIC
+            subtract = not is_inject
+
             # Apply steering (alpha=0 means no steering = baseline)
             hooks = []
             if alpha > 0:
                 for steer_layer in steer_layers:
                     hooks += apply_repe_steering(
-                        model, contrast_dirs,
+                        model, steer_dirs,
                         concepts=[concept],
                         alpha=alpha,
                         layer=steer_layer,
-                        subtract=True,
+                        subtract=subtract,
                     )
 
             # Score
@@ -318,8 +392,11 @@ def main():
                 mmlu_val = mmlu(model, tokenizer, device, args.max_length)
                 mmlu_done = True
 
-            # Generate completions for demo
-            prompts = DEMO_PROMPTS.get(concept, [])
+            # Completions: use neutral inject prompts when injecting style
+            if is_inject and concept in INJECT_PROMPTS:
+                prompts = INJECT_PROMPTS[concept]
+            else:
+                prompts = DEMO_PROMPTS.get(concept, [])
             completions = []
             for prompt in prompts:
                 for seed in range(args.n_seeds):
@@ -342,9 +419,12 @@ def main():
             print(f"  {concept:<25} ct={ct_str}  mmlu={mmlu_val:.3f}{crows_str}")
 
     # Save
-    json.dump(sweep_results, open(os.path.join(args.out_dir, "repe_sweep.json"), "w"), indent=2)
-    json.dump(completion_log, open(os.path.join(args.out_dir, "repe_completions.json"), "w"), indent=2)
-    print(f"\nSaved repe_sweep.json + repe_completions.json")
+    prefix = args.out_prefix
+    sweep_path = os.path.join(args.out_dir, f"{prefix}sweep.json")
+    compl_path = os.path.join(args.out_dir, f"{prefix}completions.json")
+    json.dump(sweep_results, open(sweep_path, "w"), indent=2)
+    json.dump(completion_log, open(compl_path, "w"), indent=2)
+    print(f"\nSaved {sweep_path} + {compl_path}")
 
     # Summary
     print("\n=== CROWS-PAIRS STEREOTYPE RATE BY ALPHA ===")
