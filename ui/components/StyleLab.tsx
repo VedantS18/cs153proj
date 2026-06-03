@@ -16,13 +16,16 @@ type CompletionEntry = { prompt: string; completion: string; seed: number };
 type CompletionData = Record<string, Record<StyleKey, CompletionEntry[]>>;
 
 const ALPHA_LABELS: Record<string, string> = {
-  "0.0": "Baseline",
-  "5.0": "Subtle (α=5)",
+  "0.0":  "Baseline (α=0)",
+  "5.0":  "Subtle (α=5)",
   "10.0": "Moderate (α=10)",
-  "20.0": "Strong (α=20)",
-  "40.0": "Intense (α=40)",
-  "60.0": "Maximum (α=60)",
+  "20.0": "Strong (α=20) ⚡",
+  "40.0": "Collapse (α=40) ☠",
+  "60.0": "Max (α=60) ☠",
 };
+
+const DANGER_ALPHAS = new Set(["20.0", "40.0", "60.0"]);
+const GIBBERISH_ALPHAS = new Set(["40.0", "60.0"]);
 
 export default function StyleLab() {
   const [data, setData] = useState<CompletionData | null>(null);
@@ -90,7 +93,7 @@ export default function StyleLab() {
         </div>
 
         {/* strength selector */}
-        <div className="flex gap-2 flex-wrap mb-10 fade-up fade-up-2">
+        <div className="flex gap-2 flex-wrap mb-4 fade-up fade-up-2">
           <span className="text-xs text-muted-foreground self-center mr-1 font-mono">Steering strength:</span>
           {alphaKeys.map(key => (
             <button
@@ -98,14 +101,35 @@ export default function StyleLab() {
               onClick={() => setSelectedAlpha(key)}
               className={`px-3 py-1 rounded-lg text-xs font-mono border transition-all ${
                 selectedAlpha === key
-                  ? "border-primary/60 text-foreground bg-primary/10"
-                  : "border-border text-muted-foreground hover:text-foreground"
+                  ? DANGER_ALPHAS.has(key)
+                    ? "border-orange-500/60 text-orange-300 bg-orange-500/10"
+                    : "border-primary/60 text-foreground bg-primary/10"
+                  : DANGER_ALPHAS.has(key)
+                    ? "border-orange-500/30 text-orange-500/70 hover:text-orange-400"
+                    : "border-border text-muted-foreground hover:text-foreground"
               }`}
             >
               {ALPHA_LABELS[key] ?? `α=${key}`}
             </button>
           ))}
         </div>
+
+        {/* Warning banner for high alpha */}
+        {DANGER_ALPHAS.has(selectedAlpha) && (
+          <div className={`rounded-xl border p-3 mb-6 fade-up ${
+            GIBBERISH_ALPHAS.has(selectedAlpha)
+              ? "border-red-500/30 bg-red-500/5"
+              : "border-orange-500/30 bg-orange-500/5"
+          }`}>
+            <p className={`text-xs leading-relaxed ${
+              GIBBERISH_ALPHAS.has(selectedAlpha) ? "text-red-400" : "text-orange-400"
+            }`}>
+              {GIBBERISH_ALPHAS.has(selectedAlpha)
+                ? "☠ Beyond the coherence threshold — the model is unraveling. This is evidence the vectors are real and causally load-bearing: push too hard and the residual stream collapses. Style directions have cos(probe, contrast) ≈ 1.0, making them extremely sensitive."
+                : "⚡ Approaching the coherence cliff. Style is starting to overwrite meaning. This is the sweet spot for dramatic transformation — one or two clicks more and coherence breaks."}
+            </p>
+          </div>
+        )}
 
         {!data && (
           <div className="rounded-2xl border border-border bg-card p-12 text-center fade-up fade-up-3">
@@ -158,26 +182,45 @@ export default function StyleLab() {
 
               <div
                 className="rounded-2xl border bg-card p-6 glow-border"
-                style={{ borderColor: `${styleInfo.color}40` }}
+                style={{
+                  borderColor: GIBBERISH_ALPHAS.has(selectedAlpha)
+                    ? "rgb(239 68 68 / 40%)"
+                    : DANGER_ALPHAS.has(selectedAlpha)
+                      ? "rgb(249 115 22 / 40%)"
+                      : `${styleInfo.color}40`
+                }}
               >
                 <div className="flex items-center gap-2 mb-4">
                   <span
                     className="text-xs font-mono uppercase tracking-widest"
-                    style={{ color: styleInfo.color }}
+                    style={{
+                      color: GIBBERISH_ALPHAS.has(selectedAlpha) ? "#f87171"
+                           : DANGER_ALPHAS.has(selectedAlpha) ? "#fb923c"
+                           : styleInfo.color
+                    }}
                   >
                     {styleInfo.label} · {ALPHA_LABELS[selectedAlpha] ?? `α=${selectedAlpha}`}
                   </span>
                   <span
                     className="ml-auto text-xs px-2 py-0.5 rounded-full font-mono"
-                    style={{ background: `${styleInfo.color}20`, color: styleInfo.color }}
+                    style={{
+                      background: GIBBERISH_ALPHAS.has(selectedAlpha) ? "rgb(239 68 68 / 15%)"
+                               : DANGER_ALPHAS.has(selectedAlpha) ? "rgb(249 115 22 / 15%)"
+                               : `${styleInfo.color}20`,
+                      color: GIBBERISH_ALPHAS.has(selectedAlpha) ? "#f87171"
+                           : DANGER_ALPHAS.has(selectedAlpha) ? "#fb923c"
+                           : styleInfo.color
+                    }}
                   >
-                    steered
+                    {GIBBERISH_ALPHAS.has(selectedAlpha) ? "collapsed" : DANGER_ALPHAS.has(selectedAlpha) ? "unstable" : "steered"}
                   </span>
                 </div>
                 <p className="text-sm font-mono text-muted-foreground mb-3 leading-relaxed">
                   &ldquo;{currentExample?.prompt}&rdquo;
                 </p>
-                <p className="text-base leading-relaxed">
+                <p className={`text-base leading-relaxed ${
+                  GIBBERISH_ALPHAS.has(selectedAlpha) ? "text-red-400/80 font-mono text-sm" : ""
+                }`}>
                   {currentExample?.completion ?? "—"}
                 </p>
               </div>

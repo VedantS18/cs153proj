@@ -1,0 +1,125 @@
+{
+  "points": [
+    {
+      "id": "age_competence",
+      "label": "Age/Competence",
+      "category": "bias",
+      "x": -0.4487,
+      "y": 0.8122,
+      "z": 0.2671
+    },
+    {
+      "id": "capital_cities",
+      "label": "Capital Cities",
+      "category": "factual",
+      "x": 0.1179,
+      "y": 0.9833,
+      "z": -0.9283
+    },
+    {
+      "id": "country_language",
+      "label": "Languages",
+      "category": "factual",
+      "x": -0.276,
+      "y": -1.0,
+      "z": -0.1206
+    },
+    {
+      "id": "element_symbols",
+      "label": "Elements",
+      "category": "factual",
+      "x": -0.1524,
+      "y": 0.0315,
+      "z": 0.1735
+    },
+    {
+      "id": "gender_emotion",
+      "label": "Gender/Emotion",
+      "category": "bias",
+      "x": -0.0016,
+      "y": -0.316,
+      "z": 0.3821
+    },
+    {
+      "id": "gender_profession",
+      "label": "Gender/Prof.",
+      "category": "bias",
+      "x": -0.2985,
+      "y": -0.3616,
+      "z": 0.421
+    },
+    {
+      "id": "hemingway",
+      "label": "Hemingway",
+      "category": "style",
+      "x": -0.9325,
+      "y": 0.7924,
+      "z": 0.6924
+    },
+    {
+      "id": "historical_dates",
+      "label": "Hist. Dates",
+      "category": "factual",
+      "x": -0.2119,
+      "y": -0.5315,
+      "z": -0.1979
+    },
+    {
+      "id": "inventor_invention",
+      "label": "Inventors",
+      "category": "factual",
+      "x": -0.069,
+      "y": 0.8567,
+      "z": -0.5478
+    },
+    {
+      "id": "legal_text",
+      "label": "Legal",
+      "category": "style",
+      "x": 0.85,
+      "y": -0.4774,
+      "z": -0.353
+    },
+    {
+      "id": "nationality_stereotype",
+      "label": "Nationality",
+      "category": "bias",
+      "x": -0.0366,
+      "y": -0.5503,
+      "z": 1.0
+    },
+    {
+      "id": "news_wire",
+      "label": "News Wire",
+      "category": "style",
+      "x": 0.6937,
+      "y": 0.7198,
+      "z": 0.4069
+    },
+    {
+      "id": "race_crime",
+      "label": "Race/Crime",
+      "category": "bias",
+      "x": -0.4067,
+      "y": 1.0,
+      "z": 0.1997
+    },
+    {
+      "id": "scientific_writing",
+      "label": "Scientific",
+      "category": "style",
+      "x": 1.0,
+      "y": 0.1422,
+      "z": 0.0181
+    },
+    {
+      "id": "shakespeare",
+      "label": "Shakespeare",
+      "category": "style",
+      "x": -1.0,
+      "y": -0.5866,
+      "z": -1.0
+    }
+  ],
+  "explained_variance_3d": 0.331
+}

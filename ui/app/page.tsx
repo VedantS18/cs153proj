@@ -4,6 +4,7 @@ import StyleLab from "@/components/StyleLab";
 import StyleCompass from "@/components/StyleCompass";
 import ConceptAtlas from "@/components/ConceptAtlas";
 import ResultsSection from "@/components/ResultsSection";
+import ProbeSpace3D from "@/components/ProbeSpace3D";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
           </span>
           <div className="flex items-center gap-6 text-xs text-muted-foreground font-mono">
             <a href="#lab" className="hover:text-foreground transition-colors">Style Lab</a>
+            <a href="#probe-space" className="hover:text-foreground transition-colors">Vector Space</a>
             <a href="#compass" className="hover:text-foreground transition-colors">Compass</a>
             <a href="#atlas" className="hover:text-foreground transition-colors">Atlas</a>
             <a href="#results" className="hover:text-foreground transition-colors">Results</a>
@@ -82,6 +84,7 @@ export default function Home() {
       </section>
 
       <StyleLab />
+      <ProbeSpace3D />
       <StyleCompass />
       <ConceptAtlas />
       <ResultsSection />
