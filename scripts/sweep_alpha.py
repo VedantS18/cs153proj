@@ -27,9 +27,12 @@ Usage:
 """
 
 import argparse
+import csv
+import io
 import json
 import os
 import sys
+import urllib.request
 
 import numpy as np
 import torch
@@ -41,6 +44,49 @@ from erase import apply_erasure, load_probe_weights, remove_erasure
 # Probe peak layer (1) + candidate causal layers
 DEFAULT_TEST_LAYERS = [1, 20, 24, 27]
 DEFAULT_ALPHAS = [1.0, 2.0, 5.0, 10.0, 15.0, 20.0]
+
+BIAS_CONCEPTS = {
+    "gender_profession", "gender_emotion", "age_competence",
+    "race_crime", "nationality_stereotype",
+}
+CONCEPT_TO_CROWS_TYPE = {
+    "gender_profession": "gender", "gender_emotion": "gender",
+    "race_crime": "race-color", "nationality_stereotype": "nationality",
+    "age_competence": "age",
+}
+
+_CROWS_CSV_URL = (
+    "https://raw.githubusercontent.com/nyu-mll/crows-pairs/master/"
+    "data/crows_pairs_anonymized.csv"
+)
+_crows_cache = None
+
+
+def _load_crows():
+    global _crows_cache
+    if _crows_cache is not None:
+        return _crows_cache
+    try:
+        with urllib.request.urlopen(_CROWS_CSV_URL, timeout=30) as r:
+            _crows_cache = list(csv.DictReader(io.StringIO(r.read().decode())))
+        print(f"  Loaded {len(_crows_cache)} CrowS-Pairs rows")
+    except Exception as e:
+        print(f"  CrowS-Pairs unavailable: {e}")
+        _crows_cache = []
+    return _crows_cache
+
+
+@torch.no_grad()
+def crows_score(model, tokenizer, device, bias_type, max_length, max_pairs=300):
+    rows = [r for r in _load_crows() if r["bias_type"] == bias_type][:max_pairs]
+    if not rows:
+        return None, None
+    stereo = sum(
+        int(sentence_log_prob(model, tokenizer, r["sent_more"], device, max_length)
+            > sentence_log_prob(model, tokenizer, r["sent_less"], device, max_length))
+        for r in rows
+    )
+    return stereo / len(rows), len(rows)
 
 MMLU_SUBSET = [
     ("What is the capital of France?",           ["London", "Berlin", "Paris", "Madrid"],        2),
@@ -66,6 +112,9 @@ def parse_args():
     p.add_argument("--test_layers", nargs="*", type=int, default=None)
     p.add_argument("--alphas", nargs="*", type=float, default=None)
     p.add_argument("--max_length", type=int, default=64)
+    p.add_argument("--per_layer_dirs", action="store_true",
+                   help="Use each layer's own probe direction (rotation-corrected)")
+    p.add_argument("--max_crows", type=int, default=300)
     return p.parse_args()
 
 
@@ -152,6 +201,10 @@ def main():
         path = os.path.join(args.test_dir, f"{concept}.json")
         concept_tests[concept] = json.load(open(path)) if os.path.exists(path) else []
 
+    # Pre-load CrowS-Pairs once
+    if any(c in BIAS_CONCEPTS for c in concepts):
+        _load_crows()
+
     # Baseline
     print("=== BASELINE ===")
     baselines = {}
@@ -159,8 +212,15 @@ def main():
     for concept in concepts:
         ct = concept_test_score(model, tokenizer, device,
                                 concept_tests[concept], args.max_length)
-        baselines[concept] = {"concept_test": ct, "mmlu": mmlu_base}
-        print(f"  {concept:<25} ct={ct:.4f}  mmlu={mmlu_base:.3f}")
+        crows = None
+        if concept in BIAS_CONCEPTS:
+            crows_type = CONCEPT_TO_CROWS_TYPE.get(concept)
+            if crows_type:
+                crows, n_pairs = crows_score(model, tokenizer, device,
+                                              crows_type, args.max_length, args.max_crows)
+        baselines[concept] = {"concept_test": ct, "mmlu": mmlu_base, "crows": crows}
+        crows_str = f"  crows={crows:.3f}" if crows is not None else ""
+        print(f"  {concept:<25} ct={ct:.4f}  mmlu={mmlu_base:.3f}{crows_str}")
 
     results = {"baseline": baselines}
 
@@ -170,7 +230,8 @@ def main():
 
         for alpha in alphas:
             alpha_key = str(alpha)
-            print(f"\n=== Layer {layer_idx}  alpha={alpha} ===")
+            print(f"\n=== Layer {layer_idx}  alpha={alpha} "
+                  f"{'(per-layer dirs)' if args.per_layer_dirs else ''} ===")
             alpha_results = {}
             mmlu_done = False
             mmlu_val = mmlu_base
@@ -181,9 +242,16 @@ def main():
                     concepts=[concept],
                     erase_layers=[layer_idx],
                     alpha=alpha,
+                    per_layer_dirs=args.per_layer_dirs,
                 )
                 ct = concept_test_score(model, tokenizer, device,
                                         concept_tests[concept], args.max_length)
+                crows = None
+                if concept in BIAS_CONCEPTS:
+                    crows_type = CONCEPT_TO_CROWS_TYPE.get(concept)
+                    if crows_type:
+                        crows, _ = crows_score(model, tokenizer, device,
+                                               crows_type, args.max_length, args.max_crows)
                 if not mmlu_done:
                     mmlu_val = mmlu_score(model, tokenizer, device, args.max_length)
                     mmlu_done = True
@@ -191,8 +259,11 @@ def main():
 
                 ct_base = baselines[concept]["concept_test"]
                 delta = (ct - ct_base) if ct is not None and ct_base is not None else None
-                alpha_results[concept] = {"concept_test": ct, "mmlu": mmlu_val}
-                print(f"  {concept:<25} ct={ct:.4f}  Δ={delta:+.4f}  mmlu={mmlu_val:.3f}")
+                crows_base = baselines[concept].get("crows")
+                crows_delta = (crows - crows_base) if (crows is not None and crows_base is not None) else None
+                alpha_results[concept] = {"concept_test": ct, "mmlu": mmlu_val, "crows": crows}
+                crows_str = f"  crows={crows:.3f}(Δ{crows_delta:+.3f})" if crows is not None else ""
+                print(f"  {concept:<25} ct={ct:.4f}  Δ={delta:+.4f}  mmlu={mmlu_val:.3f}{crows_str}")
 
             results[layer_key][alpha_key] = alpha_results
 

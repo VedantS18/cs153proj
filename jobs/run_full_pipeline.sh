@@ -55,6 +55,17 @@ python scripts/analyze_direction_rotation.py \
 
 echo ""
 echo "==== [4/4] Rotation-corrected alpha sweep (bias + CrowS-Pairs) ===="
+# Compute late-layer indices relative to this model's depth
+N_LAYERS=$(python -c "
+from transformers import AutoConfig
+c = AutoConfig.from_pretrained('$MODEL')
+print(getattr(c, 'num_hidden_layers', 28))
+")
+L_MID=$(python -c "print(int($N_LAYERS * 0.7))")
+L_LATE=$(python -c "print(int($N_LAYERS * 0.85))")
+L_LAST=$(python -c "print($N_LAYERS - 1)")
+echo "Model depth: $N_LAYERS layers  |  test layers: 1, $L_MID, $L_LATE, $L_LAST"
+
 python scripts/sweep_alpha.py \
     --model "$MODEL" \
     --weights_path "results/${TAG}/probe_weights.json" \
@@ -63,8 +74,10 @@ python scripts/sweep_alpha.py \
     --concepts gender_profession gender_emotion age_competence race_crime nationality_stereotype \
                capital_cities historical_dates \
                hemingway legal_text \
-    --test_layers 1 20 24 27 \
-    --alphas 1.0 2.0 5.0 10.0 15.0 20.0
+    --test_layers 1 "$L_MID" "$L_LATE" "$L_LAST" \
+    --alphas 1.0 2.0 5.0 10.0 15.0 20.0 \
+    --per_layer_dirs \
+    --max_crows 300
 
 echo ""
 echo "Done. $(date)"
