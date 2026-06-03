@@ -19,59 +19,50 @@ export TRANSFORMERS_CACHE=/scratch/users/vedants8/hf_cache
 cd /home/users/vedants8/cs153proj
 
 MODEL="mistralai/Mistral-7B-v0.1"
-PREFIX="mistral_"
+ACT_DIR="results/activations_mistral"
+PROBE_DIR="results/probes_mistral"
+OUT_DIR="results/mistral"
+
+mkdir -p $ACT_DIR $PROBE_DIR $OUT_DIR
 
 echo "=== Mistral 7B comparison run ==="
 echo "Model: $MODEL"
-echo "All outputs prefixed with: $PREFIX"
 
 echo ""
 echo "=== Step 1: Extract activations ==="
-for concept in hemingway shakespeare legal_text scientific_writing news_wire \
-               age_competence gender_profession race_crime gender_emotion nationality_stereotype \
-               capital_cities country_language element_symbols historical_dates inventor_invention; do
-    echo "  $concept ..."
-    python scripts/extract_activations.py \
-        --model $MODEL \
-        --concept $concept \
-        --data_dir data/concepts \
-        --out_dir results/activations_mistral
-done
+python3 scripts/extract_activations.py \
+    --model $MODEL \
+    --data_dir data/concepts \
+    --out_dir $ACT_DIR
 
 echo ""
 echo "=== Step 2: Train probes ==="
-for concept in hemingway shakespeare legal_text scientific_writing news_wire \
-               age_competence gender_profession race_crime gender_emotion nationality_stereotype \
-               capital_cities country_language element_symbols historical_dates inventor_invention; do
-    echo "  $concept ..."
-    python scripts/train_probes.py \
-        --concept $concept \
-        --act_dir results/activations_mistral \
-        --out_dir results/probes_mistral
-done
+python3 scripts/train_probes.py \
+    --act_dir $ACT_DIR \
+    --out_dir $PROBE_DIR
 
 echo ""
 echo "=== Step 3: Compute contrast directions ==="
-python scripts/compute_contrast_directions.py \
-    --model $MODEL \
-    --all_concepts \
-    --probe_dir results/probes_mistral \
-    --out results/${PREFIX}contrast_directions.json
+python3 scripts/compute_contrast_directions.py \
+    --act_dir $ACT_DIR \
+    --weights_path $PROBE_DIR/probe_weights.json \
+    --out_dir $OUT_DIR
 
 echo ""
-echo "=== Step 4: Compute subspace overlap (geometry) ==="
-python scripts/analyze_subspace_overlap.py \
-    --probe_dir results/probes_mistral \
-    --out results/${PREFIX}subspace_overlap.json
+echo "=== Step 4: Compute subspace overlap ==="
+python3 scripts/analyze_subspace_overlap.py \
+    --act_dir $ACT_DIR \
+    --weights_path $PROBE_DIR/probe_weights.json \
+    --out_dir $OUT_DIR
 
 echo ""
 echo "=== Step 5: RepE bias sweep (CrowS-Pairs) ==="
-python scripts/sweep_repe.py \
+python3 scripts/sweep_repe.py \
     --model $MODEL \
-    --contrast_path results/${PREFIX}contrast_directions.json \
+    --contrast_path $OUT_DIR/contrast_directions.json \
     --test_dir data/concept_test \
-    --out_dir results \
-    --out_prefix ${PREFIX} \
+    --out_dir $OUT_DIR \
+    --out_prefix mistral_ \
     --concepts age_competence gender_profession race_crime gender_emotion nationality_stereotype \
     --alphas 0.0 5.0 10.0 20.0 40.0 60.0 \
     --layer_frac 0.85 \
@@ -82,13 +73,13 @@ python scripts/sweep_repe.py \
 
 echo ""
 echo "=== Step 6: Style injection sweep ==="
-python scripts/sweep_repe.py \
+python3 scripts/sweep_repe.py \
     --model $MODEL \
-    --contrast_path results/${PREFIX}contrast_directions.json \
+    --contrast_path $OUT_DIR/contrast_directions.json \
     --test_dir data/concept_test \
-    --out_dir results \
+    --out_dir $OUT_DIR \
     --inject \
-    --out_prefix ${PREFIX} \
+    --out_prefix mistral_ \
     --concepts hemingway shakespeare legal_text scientific_writing news_wire \
     --alphas 0.0 5.0 10.0 20.0 40.0 \
     --layer_frac 0.85 \
@@ -98,7 +89,5 @@ python scripts/sweep_repe.py \
 
 echo ""
 echo "=== Done ==="
-echo "Key outputs:"
-echo "  results/${PREFIX}repe_sweep.json       (bias, for CrowS comparison)"
-echo "  results/${PREFIX}subspace_overlap.json  (geometry, for cross-model comparison)"
-echo "  results/${PREFIX}style_inject_completions.json (style, for demo)"
+echo "Outputs in $OUT_DIR/:"
+ls $OUT_DIR/
