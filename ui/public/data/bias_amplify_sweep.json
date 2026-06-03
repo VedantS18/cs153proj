@@ -1,0 +1,344 @@
+{
+  "0.0": {
+    "gender_profession": {
+      "concept_test": 2.3684,
+      "crows_stereo_rate": 0.6603,
+      "mmlu": 1.0,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "gender_emotion": {
+      "concept_test": 0.6444,
+      "crows_stereo_rate": 0.6603,
+      "mmlu": 1.0,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "age_competence": {
+      "concept_test": -0.3259,
+      "crows_stereo_rate": 0.7126,
+      "mmlu": 1.0,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "race_crime": {
+      "concept_test": 0.3485,
+      "crows_stereo_rate": 0.58,
+      "mmlu": 1.0,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "nationality_stereotype": {
+      "concept_test": 1.2717,
+      "crows_stereo_rate": 0.5849,
+      "mmlu": 1.0,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    }
+  },
+  "10.0": {
+    "gender_profession": {
+      "concept_test": 2.688,
+      "crows_stereo_rate": 0.6718,
+      "mmlu": 1.0,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "gender_emotion": {
+      "concept_test": 0.8248,
+      "crows_stereo_rate": 0.6641,
+      "mmlu": 1.0,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "age_competence": {
+      "concept_test": -0.407,
+      "crows_stereo_rate": 0.7586,
+      "mmlu": 1.0,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "race_crime": {
+      "concept_test": 0.3019,
+      "crows_stereo_rate": 0.5633,
+      "mmlu": 1.0,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "nationality_stereotype": {
+      "concept_test": -2.0952,
+      "crows_stereo_rate": 0.522,
+      "mmlu": 1.0,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    }
+  },
+  "20.0": {
+    "gender_profession": {
+      "concept_test": 2.0699,
+      "crows_stereo_rate": 0.626,
+      "mmlu": 0.8889,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "gender_emotion": {
+      "concept_test": 1.0048,
+      "crows_stereo_rate": 0.645,
+      "mmlu": 0.8889,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "age_competence": {
+      "concept_test": 1.1933,
+      "crows_stereo_rate": 0.7356,
+      "mmlu": 0.8889,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "race_crime": {
+      "concept_test": 0.2929,
+      "crows_stereo_rate": 0.51,
+      "mmlu": 0.8889,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "nationality_stereotype": {
+      "concept_test": -6.0484,
+      "crows_stereo_rate": 0.5094,
+      "mmlu": 0.8889,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    }
+  },
+  "40.0": {
+    "gender_profession": {
+      "concept_test": 1.0982,
+      "crows_stereo_rate": 0.5992,
+      "mmlu": 0.6667,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "gender_emotion": {
+      "concept_test": 0.7089,
+      "crows_stereo_rate": 0.5992,
+      "mmlu": 0.6667,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "age_competence": {
+      "concept_test": 7.0167,
+      "crows_stereo_rate": 0.8046,
+      "mmlu": 0.6667,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "race_crime": {
+      "concept_test": 0.1549,
+      "crows_stereo_rate": 0.4733,
+      "mmlu": 0.6667,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "nationality_stereotype": {
+      "concept_test": -6.2815,
+      "crows_stereo_rate": 0.5409,
+      "mmlu": 0.6667,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    }
+  },
+  "60.0": {
+    "gender_profession": {
+      "concept_test": 0.7518,
+      "crows_stereo_rate": 0.6031,
+      "mmlu": 0.5556,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "gender_emotion": {
+      "concept_test": 0.5117,
+      "crows_stereo_rate": 0.5763,
+      "mmlu": 0.5556,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "age_competence": {
+      "concept_test": 9.0522,
+      "crows_stereo_rate": 0.7816,
+      "mmlu": 0.5556,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "race_crime": {
+      "concept_test": 0.0948,
+      "crows_stereo_rate": 0.4667,
+      "mmlu": 0.5556,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "nationality_stereotype": {
+      "concept_test": -6.145,
+      "crows_stereo_rate": 0.566,
+      "mmlu": 0.5556,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    }
+  },
+  "100.0": {
+    "gender_profession": {
+      "concept_test": 0.4862,
+      "crows_stereo_rate": 0.584,
+      "mmlu": 0.5556,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "gender_emotion": {
+      "concept_test": 0.321,
+      "crows_stereo_rate": 0.5305,
+      "mmlu": 0.5556,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "age_competence": {
+      "concept_test": 10.143,
+      "crows_stereo_rate": 0.7701,
+      "mmlu": 0.5556,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "race_crime": {
+      "concept_test": 0.0514,
+      "crows_stereo_rate": 0.4433,
+      "mmlu": 0.5556,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    "nationality_stereotype": {
+      "concept_test": -6.2169,
+      "crows_stereo_rate": 0.5535,
+      "mmlu": 0.5556,
+      "steer_layers": [
+        23,
+        24,
+        25,
+        26
+      ]
+    }
+  }
+}
