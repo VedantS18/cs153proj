@@ -1,0 +1,120 @@
+{
+  "null_stats": {
+    "mean": -0.0003,
+    "std": 0.0183,
+    "max": 0.0423,
+    "min": -0.0491
+  },
+  "stats_3b": {
+    "style": {
+      "mean": -0.0223,
+      "std": 0.3213,
+      "max": 0.5839,
+      "min": -0.3808
+    },
+    "bias": {
+      "mean": 0.0059,
+      "std": 0.0372,
+      "max": 0.047,
+      "min": -0.0781
+    },
+    "factual": {
+      "mean": 0.01,
+      "std": 0.0425,
+      "max": 0.1128,
+      "min": -0.0479
+    }
+  },
+  "stats_1b": {
+    "style": {
+      "mean": -0.0084,
+      "std": 0.2504,
+      "max": 0.4424,
+      "min": -0.3045
+    },
+    "bias": {
+      "mean": -0.0103,
+      "std": 0.05,
+      "max": 0.0727,
+      "min": -0.0895
+    },
+    "factual": {
+      "mean": 0.0056,
+      "std": 0.0441,
+      "max": 0.1208,
+      "min": -0.039
+    }
+  },
+  "top_pairs": [
+    {
+      "c1": "legal_text",
+      "c2": "scientific_writing",
+      "cos_3b": 0.5839,
+      "cos_1b": 0.4424,
+      "cat": "style"
+    },
+    {
+      "c1": "scientific_writing",
+      "c2": "news_wire",
+      "cos_3b": 0.3831,
+      "cos_1b": 0.3402,
+      "cat": "style"
+    },
+    {
+      "c1": "shakespeare",
+      "c2": "scientific_writing",
+      "cos_3b": -0.3808,
+      "cos_1b": -0.271,
+      "cat": "style"
+    },
+    {
+      "c1": "shakespeare",
+      "c2": "news_wire",
+      "cos_3b": -0.3576,
+      "cos_1b": -0.2077,
+      "cat": "style"
+    },
+    {
+      "c1": "hemingway",
+      "c2": "legal_text",
+      "cos_3b": -0.3053,
+      "cos_1b": -0.3045,
+      "cat": "style"
+    },
+    {
+      "c1": "hemingway",
+      "c2": "scientific_writing",
+      "cos_3b": -0.2774,
+      "cos_1b": -0.2184,
+      "cat": "style"
+    },
+    {
+      "c1": "legal_text",
+      "c2": "news_wire",
+      "cos_3b": 0.276,
+      "cos_1b": 0.2307,
+      "cat": "style"
+    },
+    {
+      "c1": "scientific_writing",
+      "c2": "capital_cities",
+      "cos_3b": 0.1587,
+      "cos_1b": 0.0876,
+      "cat": "cross"
+    },
+    {
+      "c1": "shakespeare",
+      "c2": "nationality_stereotype",
+      "cos_3b": -0.1423,
+      "cos_1b": 0.0177,
+      "cat": "cross"
+    },
+    {
+      "c1": "shakespeare",
+      "c2": "legal_text",
+      "cos_3b": -0.1328,
+      "cos_1b": 0.0123,
+      "cat": "style"
+    }
+  ]
+}

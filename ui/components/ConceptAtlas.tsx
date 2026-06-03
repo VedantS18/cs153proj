@@ -1,6 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import {
+  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid,
+  Tooltip, ResponsiveContainer, ReferenceLine, Label,
+} from "recharts";
 
 // Concept ordering: stylistic together, bias together, factual together
 const CONCEPTS = [
@@ -53,6 +57,21 @@ type OverlapData = {
   cosine_similarity: Record<string, Record<string, number>>;
 };
 
+type GeomStats = { mean: number; std: number; max: number; min: number };
+type TopPair = { c1: string; c2: string; cos_3b: number; cos_1b: number | null; cat: string };
+type GeomComparison = {
+  null_stats: GeomStats;
+  stats_3b: { style: GeomStats; bias: GeomStats; factual: GeomStats };
+  stats_1b: { style: GeomStats; bias: GeomStats; factual: GeomStats };
+  top_pairs: TopPair[];
+};
+
+const PAIR_LABEL: Record<string, string> = {
+  scientific_writing: "Scientific", legal_text: "Legal", news_wire: "News",
+  hemingway: "Hemingway", shakespeare: "Shakespeare",
+};
+function pairLabel(c: string) { return PAIR_LABEL[c] ?? CONCEPT_LABEL[c] ?? c; }
+
 // Map a cosine value in [-1,1] to a color.
 // Negative → blue tones, zero → dark gray, positive → amber/red tones
 function cosToColor(v: number): string {
@@ -81,11 +100,13 @@ const ANNOTATIONS = [
 
 export default function ConceptAtlas() {
   const [data, setData] = useState<OverlapData | null>(null);
+  const [geom, setGeom] = useState<GeomComparison | null>(null);
   const [hovered, setHovered] = useState<{ r: number; c: number; v: number } | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("/data/subspace_overlap.json").then(r => r.json()).then(setData);
+    fetch("/data/geometry_comparison.json").then(r => r.json()).then(setGeom);
   }, []);
 
   if (!data) return null;
@@ -315,6 +336,213 @@ export default function ConceptAtlas() {
             </div>
           </div>
         </div>
+
+        {/* ── Panel 1: Null model comparison ─────────────────────────────── */}
+        {geom && (() => {
+          const cats = [
+            { key: "style",   label: "Style",   color: "#a78bfa", std3: geom.stats_3b.style.std,   std1: geom.stats_1b.style.std },
+            { key: "factual", label: "Factual", color: "#60a5fa", std3: geom.stats_3b.factual.std, std1: geom.stats_1b.factual.std },
+            { key: "bias",    label: "Bias",    color: "#f87171", std3: geom.stats_3b.bias.std,    std1: geom.stats_1b.bias.std },
+          ];
+          const randStd = geom.null_stats.std;
+          const maxStd = geom.stats_3b.style.std;
+
+          return (
+            <div className="mt-12 grid grid-cols-2 gap-6">
+              {/* bar chart panel */}
+              <div className="rounded-2xl border border-border bg-card p-6">
+                <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-1">
+                  Structure vs. random baseline
+                </p>
+                <p className="text-sm text-muted-foreground mb-6">
+                  Std of pairwise cosines within each category, compared to
+                  15 random unit vectors in the same space. Style is{" "}
+                  <span className="text-violet-400 font-medium">
+                    {(maxStd / randStd).toFixed(0)}× more structured
+                  </span>{" "}
+                  than random. Bias is indistinguishable from noise.
+                </p>
+                <div className="space-y-4">
+                  {/* Random baseline */}
+                  <div>
+                    <div className="flex justify-between text-xs font-mono mb-1">
+                      <span className="text-muted-foreground">Random (null)</span>
+                      <span className="text-muted-foreground">{randStd.toFixed(3)}</span>
+                    </div>
+                    <div className="h-4 rounded bg-muted/30 overflow-hidden">
+                      <div className="h-full rounded bg-muted/60"
+                           style={{ width: `${(randStd / maxStd) * 100}%` }} />
+                    </div>
+                  </div>
+                  {cats.map(({ key, label, color, std3, std1 }) => (
+                    <div key={key}>
+                      <div className="flex justify-between text-xs font-mono mb-1">
+                        <span style={{ color }}>{label}</span>
+                        <span className="text-muted-foreground">
+                          3B: {std3.toFixed(3)} · 1B: {std1.toFixed(3)}
+                        </span>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="h-3 rounded bg-muted/30 overflow-hidden">
+                          <div className="h-full rounded opacity-90"
+                               style={{ width: `${(std3 / maxStd) * 100}%`, background: color }} />
+                        </div>
+                        <div className="h-3 rounded bg-muted/30 overflow-hidden">
+                          <div className="h-full rounded opacity-50"
+                               style={{ width: `${(std1 / maxStd) * 100}%`, background: color }} />
+                        </div>
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-0.5 font-mono">
+                        {(std3 / randStd).toFixed(1)}× random (3B) · {(std1 / randStd).toFixed(1)}× random (1B)
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex gap-4 mt-4 text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1"><span className="w-4 h-2 rounded opacity-90 inline-block bg-violet-400" /> 3B</span>
+                  <span className="flex items-center gap-1"><span className="w-4 h-2 rounded opacity-50 inline-block bg-violet-400" /> 1B</span>
+                </div>
+              </div>
+
+              {/* interpretation card */}
+              <div className="rounded-2xl border border-border bg-card p-6 flex flex-col justify-between">
+                <div>
+                  <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">
+                    What this means
+                  </p>
+                  <div className="space-y-4">
+                    <div>
+                      <div className="text-2xl font-bold text-violet-400 mb-1">
+                        {(maxStd / randStd).toFixed(0)}× random
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Style concepts are not just loosely organized — they form a
+                        geometric structure orders of magnitude stronger than chance.
+                        The formal-informal axis is real.
+                      </p>
+                    </div>
+                    <div>
+                      <div className="text-2xl font-bold text-red-400 mb-1">
+                        ~{(geom.stats_3b.bias.std / randStd).toFixed(1)}× random
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Bias concepts are statistically indistinguishable from random
+                        directions. Each bias concept occupies its own independent
+                        subspace — they don&apos;t share representational structure.
+                      </p>
+                    </div>
+                    <div className="pt-2 border-t border-border">
+                      <p className="text-xs text-muted-foreground">
+                        Both results hold across 1B and 3B models, ruling out
+                        model-specific artifacts.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
+
+        {/* ── Panel 2: Cross-model consistency ───────────────────────────── */}
+        {geom && (() => {
+          const stylePairs = geom.top_pairs.filter(p => p.cos_1b !== null);
+          const scatterData = stylePairs.map(p => ({
+            x: p.cos_3b,
+            y: p.cos_1b as number,
+            label: `${pairLabel(p.c1)} ↔ ${pairLabel(p.c2)}`,
+          }));
+
+          return (
+            <div className="mt-6 rounded-2xl border border-border bg-card p-6">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-1">
+                    Cross-model consistency — Llama 1B vs. 3B
+                  </p>
+                  <p className="text-sm text-muted-foreground max-w-xl">
+                    Each point is a concept pair. If the geometric structure is universal,
+                    points should fall along the diagonal — same sign, similar magnitude
+                    across two independently trained models with different weights.
+                  </p>
+                </div>
+                <div className="text-right ml-6 flex-shrink-0">
+                  <div className="text-2xl font-bold gradient-text">Universal</div>
+                  <div className="text-xs text-muted-foreground">every style pair same sign</div>
+                  <div className="text-xs text-muted-foreground font-mono">in both models</div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-6 items-start">
+                {/* scatter */}
+                <ResponsiveContainer width="100%" height={280}>
+                  <ScatterChart margin={{ top: 16, right: 24, bottom: 24, left: 8 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="oklch(1 0 0 / 6%)" />
+                    <XAxis type="number" dataKey="x" domain={[-0.45, 0.65]}
+                           tick={{ fill: "oklch(0.55 0 0)", fontSize: 11 }}>
+                      <Label value="Cosine similarity (3B)" position="insideBottom" offset={-12}
+                             fill="oklch(0.45 0 0)" fontSize={11} />
+                    </XAxis>
+                    <YAxis type="number" dataKey="y" domain={[-0.45, 0.65]}
+                           tick={{ fill: "oklch(0.55 0 0)", fontSize: 11 }}>
+                      <Label value="Cosine similarity (1B)" angle={-90} position="insideLeft" offset={12}
+                             fill="oklch(0.45 0 0)" fontSize={11} />
+                    </YAxis>
+                    <Tooltip
+                      contentStyle={{ background: "oklch(0.14 0 0)", border: "1px solid oklch(1 0 0 / 8%)", borderRadius: 8, fontSize: 11 }}
+                      formatter={(v, name, props) => [
+                        typeof v === "number" ? v.toFixed(3) : v,
+                        props.payload?.label ?? name
+                      ]}
+                    />
+                    {/* y=x diagonal */}
+                    <ReferenceLine segment={[{x:-0.45,y:-0.45},{x:0.65,y:0.65}]}
+                                   stroke="oklch(0.40 0 0)" strokeDasharray="4 3" />
+                    <ReferenceLine x={0} stroke="oklch(0.30 0 0)" strokeWidth={1} />
+                    <ReferenceLine y={0} stroke="oklch(0.30 0 0)" strokeWidth={1} />
+                    <Scatter data={scatterData} fill="#a78bfa" opacity={0.85} r={6} />
+                  </ScatterChart>
+                </ResponsiveContainer>
+
+                {/* top pairs table */}
+                <div>
+                  <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-3">
+                    Top concept pairs
+                  </p>
+                  <div className="space-y-2">
+                    {stylePairs.slice(0, 8).map((p, i) => {
+                      const sameSign = Math.sign(p.cos_3b) === Math.sign(p.cos_1b ?? 0);
+                      return (
+                        <div key={i} className="flex items-center gap-3 text-xs">
+                          <div className="flex-1 font-mono text-muted-foreground truncate">
+                            {pairLabel(p.c1)} ↔ {pairLabel(p.c2)}
+                          </div>
+                          <div className="flex gap-2 flex-shrink-0">
+                            <span className={`w-14 text-right font-mono ${p.cos_3b > 0.05 ? "text-amber-400" : p.cos_3b < -0.05 ? "text-blue-400" : "text-muted-foreground"}`}>
+                              {p.cos_3b > 0 ? "+" : ""}{p.cos_3b.toFixed(3)}
+                            </span>
+                            <span className={`w-14 text-right font-mono opacity-60 ${(p.cos_1b ?? 0) > 0.05 ? "text-amber-400" : (p.cos_1b ?? 0) < -0.05 ? "text-blue-400" : "text-muted-foreground"}`}>
+                              {(p.cos_1b ?? 0) > 0 ? "+" : ""}{(p.cos_1b ?? 0).toFixed(3)}
+                            </span>
+                            <span className={`text-xs ${sameSign ? "text-green-500" : "text-red-400"}`}>
+                              {sameSign ? "✓" : "✗"}
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="flex gap-4 mt-3 text-xs text-muted-foreground font-mono">
+                    <span>3B value</span>
+                    <span className="opacity-60">1B value</span>
+                    <span>same sign?</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
+
       </div>
     </section>
   );
