@@ -45,7 +45,9 @@ python scripts/sweep_repe.py \
     --probe_weights results/probe_weights.json \
     --test_dir data/concept_test \
     --out_dir results \
-    --alphas 0.0 5.0 10.0 20.0 30.0 50.0 \
+    --alphas 0.0 10.0 20.0 40.0 60.0 100.0 \
+    --layer_frac 0.85 \
+    --n_steer_layers 4 \
     --max_new_tokens 40 \
     --max_crows 300 \
     --n_seeds 3

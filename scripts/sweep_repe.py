@@ -144,8 +144,10 @@ def parse_args():
     p.add_argument("--concepts", nargs="*", default=None)
     p.add_argument("--alphas", nargs="*", type=float,
                    default=[0.0, 5.0, 10.0, 20.0, 30.0, 50.0])
-    p.add_argument("--layer_frac", type=float, default=None,
-                   help="Override layer as fraction of model depth (e.g. 0.9 for last 10%%)")
+    p.add_argument("--layer_frac", type=float, default=0.85,
+                   help="Steer at this fraction of model depth (default: 0.85 = late layers)")
+    p.add_argument("--n_steer_layers", type=int, default=4,
+                   help="Number of consecutive late layers to steer simultaneously")
     p.add_argument("--max_new_tokens", type=int, default=40)
     p.add_argument("--max_length", type=int, default=64)
     p.add_argument("--max_crows", type=int, default=300)
@@ -286,23 +288,22 @@ def main():
             if concept not in contrast_dirs:
                 continue
 
-            # Determine steering layer
-            peak = contrast_dirs[concept]["peak_layer"]
-            if args.layer_frac is not None:
-                steer_layer = int(n_layers * args.layer_frac)
-            else:
-                steer_layer = peak
+            # Steer at multiple consecutive late layers so model can't compensate
+            start_layer = int(n_layers * args.layer_frac)
+            steer_layers = list(range(start_layer,
+                                      min(start_layer + args.n_steer_layers, n_layers)))
 
             # Apply steering (alpha=0 means no steering = baseline)
             hooks = []
             if alpha > 0:
-                hooks = apply_repe_steering(
-                    model, contrast_dirs,
-                    concepts=[concept],
-                    alpha=alpha,
-                    layer=steer_layer,
-                    subtract=True,
-                )
+                for steer_layer in steer_layers:
+                    hooks += apply_repe_steering(
+                        model, contrast_dirs,
+                        concepts=[concept],
+                        alpha=alpha,
+                        layer=steer_layer,
+                        subtract=True,
+                    )
 
             # Score
             ct = concept_test_score(model, tokenizer, device,
@@ -332,7 +333,7 @@ def main():
                 "concept_test": ct,
                 "crows_stereo_rate": crows,
                 "mmlu": mmlu_val,
-                "steer_layer": steer_layer,
+                "steer_layers": steer_layers,
             }
             completion_log[alpha_key][concept] = completions
 
