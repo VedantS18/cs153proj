@@ -18,6 +18,75 @@ import numpy as np
 import torch
 
 
+def load_contrast_directions(path="results/contrast_directions.json"):
+    """Load mean-difference contrast directions for RepE-style steering."""
+    with open(path) as f:
+        raw = json.load(f)
+    dirs = {}
+    for concept, data in raw.items():
+        dirs[concept] = {
+            "peak_layer": data["peak_layer"],
+            "v_contrast": torch.tensor(data["v_contrast"], dtype=torch.float32),
+            "v_contrast_scaled": torch.tensor(data["v_contrast_scaled"], dtype=torch.float32),
+        }
+    return dirs
+
+
+def apply_repe_steering(model, contrast_dirs, concepts=None,
+                        alpha=10.0, layer=None, subtract=True):
+    """
+    RepE-style constant steering: h' = h ± alpha * v_contrast
+
+    Unlike nullspace projection which removes the component of h along v,
+    this adds a CONSTANT offset in the concept direction regardless of h.
+    This persistently shifts all representations toward/away from the concept.
+
+    subtract=True  → steer AWAY from concept (erasure/debiasing)
+    subtract=False → steer TOWARD concept (style injection, bias amplification)
+
+    Returns list of hook handles.
+    """
+    if concepts is None:
+        concepts = list(contrast_dirs.keys())
+
+    model_layers = model.model.layers
+    n_layers = len(model_layers)
+    device = next(model.parameters()).device
+
+    hooks = []
+    for concept in concepts:
+        if concept not in contrast_dirs:
+            print(f"Warning: no contrast direction for {concept}, skipping")
+            continue
+
+        cd = contrast_dirs[concept]
+        erase_layer = layer if layer is not None else cd["peak_layer"]
+        if erase_layer >= n_layers:
+            continue
+
+        v = cd["v_contrast"].to(device=device)
+        sign = -1.0 if subtract else 1.0
+
+        def make_hook(direction, a, s):
+            def hook(module, input, output):
+                h = output[0] if isinstance(output, tuple) else output
+                v_ = direction.to(device=h.device, dtype=h.dtype)
+                h_steered = h + s * a * v_
+                if isinstance(output, tuple):
+                    return (h_steered,) + output[1:]
+                return h_steered
+            return hook
+
+        hook = model_layers[erase_layer].register_forward_hook(
+            make_hook(v, alpha, sign)
+        )
+        hooks.append(hook)
+        direction_str = "subtract (erase)" if subtract else "add (inject)"
+        print(f"  [RepE α={alpha} {direction_str}] {concept} @ layer {erase_layer}")
+
+    return hooks
+
+
 def load_probe_weights(path="results/probe_weights.json"):
     with open(path) as f:
         raw = json.load(f)
