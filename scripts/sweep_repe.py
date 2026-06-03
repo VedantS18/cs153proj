@@ -139,6 +139,20 @@ INJECT_PROMPTS = {
         "People gathered in the square.",
         "Prices went up again this week.",
     ],
+    "jk_rowling": [
+        "The weather was nice today.",
+        "She went to the store to buy some things.",
+        "He thought about what to do next.",
+        "They arrived at the old building.",
+        "It was getting late.",
+    ],
+    "cormac_mccarthy": [
+        "The weather was nice today.",
+        "She went to the store to buy some things.",
+        "He thought about what to do next.",
+        "They sat at the table and talked.",
+        "It was getting late.",
+    ],
 }
 
 MMLU_SUBSET = [
@@ -325,7 +339,8 @@ def main():
 
     concepts = args.concepts or list(steer_dirs.keys())
 
-    STYLISTIC = {"hemingway", "shakespeare", "legal_text", "scientific_writing", "news_wire"}
+    STYLISTIC = {"hemingway", "shakespeare", "legal_text", "scientific_writing", "news_wire",
+                  "jk_rowling", "cormac_mccarthy"}
 
     # Pre-load bias benchmarks
     if any(c in BIAS_CONCEPTS for c in concepts):
