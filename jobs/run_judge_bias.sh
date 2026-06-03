@@ -26,7 +26,7 @@ export HF_HOME="${SCRATCH}/hf_cache"
 source cs153-env/bin/activate
 
 TARGET=${TARGET:-"meta-llama/Llama-3.2-3B"}
-JUDGE=${JUDGE:-"meta-llama/Llama-3.2-1B"}
+JUDGE=${JUDGE:-"meta-llama/Llama-3.2-3B"}
 TAG=${TAG:-"llama3b"}
 WEIGHTS=${WEIGHTS:-"results/probe_weights.json"}
 
