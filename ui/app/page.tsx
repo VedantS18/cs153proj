@@ -57,10 +57,15 @@ export default function Home() {
             <span className="gradient-text">thinks about</span>
           </h1>
 
-          <p className="text-base text-muted-foreground max-w-xl mb-8 leading-relaxed fade-up fade-up-3">
-            Add a single learned vector to hidden states at inference time —
-            no fine-tuning, no prompting — and watch it write like Hemingway,
-            shed stereotypes, or forget facts on demand.
+          <p className="text-base text-muted-foreground max-w-2xl mb-4 leading-relaxed fade-up fade-up-3">
+            We add a learned direction vector to a model&apos;s residual stream at inference time —
+            no fine-tuning, no system prompt — and measure how concepts like writing style,
+            demographic bias, and factual knowledge respond.
+          </p>
+          <p className="text-sm text-muted-foreground max-w-2xl mb-8 leading-relaxed fade-up fade-up-3">
+            The central finding: stylistic concept directions occupy a geometrically structured
+            subspace (17× more structured than random vectors), while bias directions are near-random.
+            This geometric property predicts which interventions are controllable and which are not.
           </p>
 
           {/* tab strip */}

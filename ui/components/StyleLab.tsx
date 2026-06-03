@@ -125,8 +125,8 @@ export default function StyleLab() {
             : "border-orange-500/30 bg-orange-500/5 text-orange-400"
         }`}>
           {isGibberish
-            ? "☠  The model is unraveling. Style vectors have cos(probe, contrast) ≈ 1.0 — they are load-bearing in the residual stream. Push too hard and coherence collapses. This is evidence the vectors are real, not just correlational noise."
-            : "⚡  Approaching the coherence cliff. Style is starting to overwrite meaning — one notch further and the text breaks down."}
+            ? "At this steering strength the model loses coherence. Style concept vectors have cos(probe, contrast) ≈ 1.0, meaning the contrast direction carries a large fraction of the residual stream signal. Pushing α this high disrupts token generation. The breakdown is evidence that the vector is causally active, not just a correlational artifact."
+            : "Approaching the maximum usable steering strength. The style shift is visible but coherence is beginning to degrade. Increasing α further will break fluency."}
         </div>
       )}
 
