@@ -127,15 +127,17 @@ def steer(req: SteerRequest):
     # Baseline (no steering)
     original = generate(prompt, [])
 
-    # Steered — apply at multiple layers around the concept's peak layer
+    # Steered — apply at multiple layers around the concept's peak layer.
+    # Divide alpha by layer count so total effective strength matches the alpha value.
     peak = contrast_dirs[req.style]["peak_layer"]
     layer_start = max(0, min(peak, int(n_layers * LAYER_FRAC) - STEER_LAYERS))
+    per_layer_alpha = req.alpha / STEER_LAYERS
     hooks = []
     for layer_idx in range(layer_start, layer_start + STEER_LAYERS):
         h = apply_repe_steering(
             model, contrast_dirs,
             concepts=[req.style],
-            alpha=req.alpha,
+            alpha=per_layer_alpha,
             layer=layer_idx,
             subtract=False,  # inject style
         )
