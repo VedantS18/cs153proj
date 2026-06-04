@@ -36,8 +36,8 @@ export default function StyleBlend() {
   const [text,    setText]    = useState(SUGGESTIONS[0]);
   const [conceptA, setConceptA] = useState("hemingway");
   const [conceptB, setConceptB] = useState("legal_text");
-  const [alphaA,  setAlphaA]  = useState(5);
-  const [alphaB,  setAlphaB]  = useState(5);
+  const [alphaA,  setAlphaA]  = useState(3);
+  const [alphaB,  setAlphaB]  = useState(3);
   const [result,  setResult]  = useState<Result | null>(null);
   const [loading, setLoading] = useState(false);
   const [error,   setError]   = useState<string | null>(null);

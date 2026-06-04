@@ -146,8 +146,10 @@ def scan_activations(text: str) -> dict[str, float]:
             continue
         h  = captured[li]
         v  = cd["v_contrast"].cpu().float()
-        vn = v / (v.norm() + 1e-8)
-        scores[concept] = round(float(h @ vn), 4)
+        # True cosine similarity: normalise both h and v
+        h_norm = h  / (h.norm()  + 1e-8)
+        v_norm = v  / (v.norm()  + 1e-8)
+        scores[concept] = round(float(h_norm @ v_norm), 4)
     return scores
 
 
@@ -257,7 +259,7 @@ def scan(req: ScanRequest):
 class DebiasRequest(BaseModel):
     text:    str
     concept: str    # which bias direction to erase
-    alpha:   float = 15.0
+    alpha:   float = 10.0
 
 class DebiasResponse(BaseModel):
     original_completion:  str

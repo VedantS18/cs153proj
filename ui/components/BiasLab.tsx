@@ -108,7 +108,7 @@ function ScoreDelta({ concept, original, debiased }: { concept: string; original
 export default function BiasLab() {
   const [concept,  setConcept]  = useState("gender_profession");
   const [prompt,   setPrompt]   = useState(PROMPTS.gender_profession[0]);
-  const [alpha,    setAlpha]    = useState(15);
+  const [alpha,    setAlpha]    = useState(10);
   const [result,   setResult]   = useState<DebiasResult | null>(null);
   const [loading,  setLoading]  = useState(false);
   const [error,    setError]    = useState<string | null>(null);
@@ -186,7 +186,7 @@ export default function BiasLab() {
           <div>
             <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-2">Erasure strength (α={alpha})</div>
             <div className="flex gap-2">
-              {[10, 15, 20, 30].map(a => (
+              {[8, 10, 15, 20].map(a => (
                 <button key={a}
                   onClick={() => setAlpha(a)}
                   className="flex-1 text-xs py-1.5 rounded-lg border transition-all"
