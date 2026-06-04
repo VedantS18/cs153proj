@@ -7,6 +7,7 @@ type Example = {
   steered: string;
   baseline_label: string;
   steered_label: string;
+  steered_alpha?: string;
 };
 type ConceptData = {
   label: string;
@@ -122,10 +123,15 @@ export default function BiasCompletions() {
                   <span className="text-xs font-mono" style={{ color: "#34d39999" }}>
                     Bias direction erased
                   </span>
-                  <span className="text-xs font-mono px-2 py-0.5 rounded-full"
-                    style={{ background: "#34d39922", color: "#34d399" }}>
-                    {ex.steered_label}
-                  </span>
+                  <div className="flex items-center gap-1.5">
+                    {ex.steered_alpha && (
+                      <span className="text-xs font-mono text-muted-foreground/40">α={ex.steered_alpha}</span>
+                    )}
+                    <span className="text-xs font-mono px-2 py-0.5 rounded-full"
+                      style={{ background: "#34d39922", color: "#34d399" }}>
+                      {ex.steered_label}
+                    </span>
+                  </div>
                 </div>
                 <p className="text-sm leading-relaxed">
                   <span className="text-muted-foreground/50">{ex.prompt} </span>
