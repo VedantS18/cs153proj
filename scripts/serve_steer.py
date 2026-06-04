@@ -99,6 +99,7 @@ def generate(prompt: str, hooks: list, max_new_tokens: int = args.max_new_tokens
             do_sample=True,
             temperature=0.7,
             top_p=0.9,
+            repetition_penalty=1.3,
             pad_token_id=tokenizer.eos_token_id,
         )
     # Decode only the new tokens
