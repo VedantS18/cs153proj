@@ -8,12 +8,14 @@ import ConceptScanner from "@/components/ConceptScanner";
 import MeasureTab from "@/components/MeasureTab";
 import BiasLab from "@/components/BiasLab";
 import BiasCompletions from "@/components/BiasCompletions";
+import HowItWorks from "@/components/HowItWorks";
 
 const TABS = [
-  { key: "discover", label: "Discover", sub: "Style steering" },
-  { key: "explain",  label: "Explain",  sub: "The geometry" },
-  { key: "bias",     label: "Bias",     sub: "Erasure experiments" },
-  { key: "measure",  label: "Measure",  sub: "Benchmark results" },
+  { key: "how-it-works", label: "How It Works", sub: "Architecture & concepts" },
+  { key: "discover",     label: "Discover",     sub: "Style steering" },
+  { key: "explain",      label: "Explain",      sub: "The geometry" },
+  { key: "bias",         label: "Bias",         sub: "Erasure experiments" },
+  { key: "measure",      label: "Measure",      sub: "Benchmark results" },
 ] as const;
 type Tab = typeof TABS[number]["key"];
 
@@ -143,6 +145,8 @@ export default function Home() {
 
       {/* tab content */}
       <div className="max-w-5xl mx-auto px-6 pb-24">
+
+        {tab === "how-it-works" && <HowItWorks />}
 
         {tab === "discover" && (
           <>

@@ -9,6 +9,14 @@ import {
 type ConceptResult = { crows_stereo_rate: number | null; mmlu: number };
 type SweepData = Record<string, Record<string, ConceptResult>>;
 
+type JudgeAlpha = { stereotype_rate: number; examples: { label: string }[] };
+type JudgeConcept = {
+  label: string; color: string;
+  crows_baseline: number;
+  judge_rates: Record<string, number>;
+};
+type JudgeData = Record<string, JudgeConcept>;
+
 const BIAS_CONCEPTS = [
   "age_competence", "gender_profession", "race_crime", "gender_emotion", "nationality_stereotype",
 ];
@@ -30,10 +38,12 @@ const CONCEPT_LABEL: Record<string, string> = {
 export default function MeasureTab() {
   const [sweep,   setSweep]   = useState<SweepData | null>(null);
   const [amplify, setAmplify] = useState<SweepData | null>(null);
+  const [judge,   setJudge]   = useState<JudgeData | null>(null);
 
   useEffect(() => {
     fetch("/data/repe_sweep.json").then(r => r.json()).then(setSweep);
     fetch("/data/bias_amplify_sweep.json").then(r => r.json()).then(setAmplify).catch(() => null);
+    fetch("/data/bias_completions_ui.json").then(r => r.json()).then(setJudge).catch(() => null);
   }, []);
 
   const alphaKeys = sweep ? Object.keys(sweep).sort((a,b) => Number(a) - Number(b)) : [];
@@ -151,6 +161,81 @@ export default function MeasureTab() {
               ))}
             </LineChart>
           </ResponsiveContainer>
+        </div>
+      )}
+
+      {/* LLM-as-judge section */}
+      {judge && (
+        <div className="rounded-2xl border border-border bg-card p-6 space-y-5">
+          <div>
+            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-1">
+              LLM-as-judge evaluation · free-generation completions
+            </p>
+            <p className="text-sm text-muted-foreground max-w-2xl">
+              CrowS-Pairs measures log-probability on fixed sentences. This measures actual generation:
+              the model completes 18 prompts per concept, and an independent Claude judge labels each
+              completion as stereotyped or counter-stereotyped. Four of five concepts reach 0% stereotype
+              rate at moderate alpha.
+            </p>
+          </div>
+          <div className="grid gap-4">
+            {Object.entries(judge).map(([key, c]) => {
+              const alphas = Object.keys(c.judge_rates).sort((a,b) => Number(a) - Number(b));
+              const best = Math.min(...Object.values(c.judge_rates));
+              const baseline = c.crows_baseline;
+              return (
+                <div key={key} className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono font-semibold" style={{ color: c.color }}>{c.label}</span>
+                    <span className="text-xs font-mono text-muted-foreground/50">
+                      CrowS baseline {(baseline*100).toFixed(0)}% → judge best {(best*100).toFixed(0)}%
+                    </span>
+                  </div>
+                  <div className="flex items-end gap-2 h-14">
+                    {/* baseline bar */}
+                    <div className="flex flex-col items-center gap-1 w-12 flex-shrink-0">
+                      <div className="w-full rounded-sm flex-1 flex items-end">
+                        <div className="w-full rounded-sm"
+                          style={{ height: `${baseline * 100}%`, background: "rgba(255,255,255,0.08)" }} />
+                      </div>
+                      <span className="text-[9px] font-mono text-muted-foreground/40">base</span>
+                    </div>
+                    {/* alpha bars */}
+                    {alphas.map(a => {
+                      const rate = c.judge_rates[a];
+                      return (
+                        <div key={a} className="flex flex-col items-center gap-1 flex-1">
+                          <div className="w-full rounded-sm flex-1 flex items-end">
+                            <div className="w-full rounded-sm transition-all"
+                              style={{
+                                height: rate === 0 ? "3px" : `${Math.max(rate * 100, 3)}%`,
+                                background: rate === 0 ? c.color + "33" : c.color,
+                                opacity: rate === 0 ? 0.4 : 0.85,
+                              }} />
+                          </div>
+                          <span className="text-[9px] font-mono text-muted-foreground/40">α={a}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  {/* rate labels */}
+                  <div className="flex items-center gap-2 text-[9px] font-mono">
+                    <span className="w-12 text-center text-muted-foreground/40">{(baseline*100).toFixed(0)}%</span>
+                    {alphas.map(a => (
+                      <span key={a} className="flex-1 text-center"
+                        style={{ color: c.judge_rates[a] === 0 ? c.color : "rgba(160,160,175,0.5)" }}>
+                        {(c.judge_rates[a]*100).toFixed(0)}%
+                        {c.judge_rates[a] === 0 && " ✓"}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <p className="text-xs text-muted-foreground/50 font-mono">
+            Judge: Claude Haiku · 18 prompts per concept · each rated independently · race_crime shows partial reduction only
+          </p>
         </div>
       )}
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ConceptNetwork from "./ConceptNetwork";
+import ResurrectionChart from "./ResurrectionChart";
 
 const CAT_COLOR: Record<string, string> = {
   style: "#a78bfa", bias: "#f87171", factual: "#fbbf24",
@@ -149,6 +150,25 @@ export default function ExplainTab() {
           Style directions stabilise much deeper than bias or factual directions
         </div>
         <LayerStability />
+      </div>
+
+      {/* resurrection experiment */}
+      <div className="rounded-2xl border border-border bg-card p-6">
+        <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-1">
+          What happens after you erase a concept direction
+        </div>
+        <div className="text-sm font-semibold mb-1">
+          Style concepts resurrect. Bias concepts don&apos;t.
+        </div>
+        <p className="text-xs text-muted-foreground leading-relaxed max-w-2xl mb-5">
+          When a concept direction is erased at layer 1, the question is whether downstream layers
+          reconstruct it. Each chart tracks probe accuracy layer-by-layer — solid line is the unmodified
+          model, dashed is after erasure. Style concepts dip briefly then recover, reaching near-baseline
+          accuracy by layers 3–5. The model actively rebuilds them. Bias concepts drop to chance and
+          never recover — but they also had shallow encoding to begin with, which is why erasure
+          is less reliable behaviorally.
+        </p>
+        <ResurrectionChart />
       </div>
 
       {/* mechanism explanation */}
