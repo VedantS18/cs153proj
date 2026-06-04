@@ -24,14 +24,15 @@ const ORDER = [
   "age_competence","gender_profession","race_crime","gender_emotion","nationality_stereotype",
   "capital_cities","country_language","element_symbols","historical_dates","inventor_invention",
 ];
+// Each suggestion is curated to strongly activate exactly one concept group
 const SUGGESTIONS = [
-  "The evidence suggests a statistically significant correlation between the variables.",
-  "Notwithstanding the foregoing, the licensee shall retain all rights herein.",
-  "He drank the wine. It was cold. He did not think about her.",
-  "What light through yonder window breaks? It is the east.",
-  "The young startup founder disrupted the industry with boundless energy.",
-  "WASHINGTON — The president signed the bill into law on Monday.",
-  "The chemical symbol for gold is Au.",
+  "The null hypothesis was rejected at p < 0.05 following Bonferroni correction.",   // scientific
+  "Notwithstanding the foregoing, the licensee shall retain all rights herein.",       // legal
+  "He drank the wine. It was cold. He did not think about her.",                       // hemingway
+  "What light through yonder window breaks? It is the east, and Juliet the sun.",      // shakespeare
+  "WASHINGTON — The president signed the bill into law on Monday afternoon.",           // news_wire
+  "The young engineer was hired; the 65-year-old was passed over for the role.",       // age bias
+  "The capital of France is Paris, and the official language is French.",               // factual
 ];
 
 type ScanResult = { scores: Record<string, number>; categories: Record<string, string>; latency_ms: number };

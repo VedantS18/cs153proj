@@ -29,11 +29,13 @@ const PRE_ALPHA_LABEL: Record<string, string> = {
 };
 const DANGER_ALPHAS = new Set(["20.0", "40.0"]);
 
+// Prompts chosen because they reliably produce strong stylistic outputs
 const SUGGESTIONS = [
-  "The old man had been fishing for three days.",
-  "She opened the letter and read it carefully.",
-  "He walked into the room and sat down.",
-  "The committee voted on the proposed changes.",
+  "The old man had been fishing for three days without catching anything.",
+  "She walked into the room and sat down at the table.",
+  "The city was quiet that morning, the streets still wet from rain.",
+  "He had not spoken to her in two years, and now she was here.",
+  "The report was due on Friday and no one had started it.",
 ];
 
 type SteerResult  = { steered: string; latency_ms: number };

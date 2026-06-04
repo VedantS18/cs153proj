@@ -120,8 +120,8 @@ function LogProbBar({ label, stereoLp, counterLp, color, isErased }: {
 }
 
 export default function BiasLab() {
-  const [concept,  setConcept]  = useState("gender_profession");
-  const [pairIdx,  setPairIdx]  = useState(0);
+  const [concept,  setConcept]  = useState("age_competence");
+  const [pairIdx,  setPairIdx]  = useState(0);  // first age_competence pair = 61% reduction
   const [alpha,    setAlpha]    = useState(20);
   const [result,   setResult]   = useState<DebiasResult | null>(null);
   const [loading,  setLoading]  = useState(false);
