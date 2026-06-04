@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import StyleLab from "@/components/StyleLab";
 import StyleInput from "@/components/StyleInput";
 import StyleBlend from "@/components/StyleBlend";
 import ExplainTab from "@/components/ExplainTab";
@@ -105,8 +104,8 @@ export default function Home() {
         {/* ── DISCOVER ── */}
         {tab === "discover" && (
           <>
-            <Section eyebrow="Try it live" title="Type anything. Pick a style."
-              desc="The model continues your text with a steering vector active in its residual stream. No fine-tuning. No system prompt. Just vector addition.">
+            <Section eyebrow="Style steering" title="Pick a style. See it in action."
+              desc="A learned direction vector is added to the residual stream at inference time. Pick a style — the live demo and the precomputed reference examples below both update to show that style. No fine-tuning. No system prompt.">
               <div className="rounded-2xl border border-border bg-card p-6">
                 <StyleInput />
               </div>
@@ -118,8 +117,6 @@ export default function Home() {
                 <StyleBlend />
               </div>
             </Section>
-
-            <StyleLab />
           </>
         )}
 
