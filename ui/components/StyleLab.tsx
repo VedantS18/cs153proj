@@ -3,13 +3,17 @@
 import { useEffect, useState } from "react";
 
 const STYLES = [
-  { key: "hemingway",          label: "Hemingway",        color: "oklch(0.72 0.18 25)",   desc: "Sparse. Declarative. Iceberg." },
-  { key: "shakespeare",        label: "Shakespeare",       color: "oklch(0.72 0.18 290)",  desc: "Iambic. Ornate. Archaic." },
-  { key: "jk_rowling",         label: "J.K. Rowling",      color: "oklch(0.72 0.20 310)",  desc: "Whimsical. Invented detail. Magical." },
-  { key: "cormac_mccarthy",    label: "Cormac McCarthy",   color: "oklch(0.65 0.15 35)",   desc: "Bleak. Spare. No punctuation." },
-  { key: "legal_text",         label: "Legal",             color: "oklch(0.72 0.15 200)",  desc: "Formal. Precise. Conditional." },
-  { key: "scientific_writing", label: "Scientific",        color: "oklch(0.72 0.18 145)",  desc: "Passive. Hedged. Evidence-driven." },
-  { key: "news_wire",          label: "News Wire",         color: "oklch(0.72 0.15 60)",   desc: "Inverted pyramid. Direct." },
+  { key: "hemingway",          label: "Hemingway",           color: "oklch(0.72 0.18 25)",   desc: "Sparse. Declarative. Iceberg." },
+  { key: "shakespeare",        label: "Shakespeare",          color: "oklch(0.72 0.18 290)",  desc: "Iambic. Ornate. Archaic." },
+  { key: "fitzgerald",         label: "F.S. Fitzgerald",      color: "oklch(0.74 0.17 265)",  desc: "Lyrical. Nostalgic. Jazz Age." },
+  { key: "austen",             label: "Jane Austen",          color: "oklch(0.74 0.16 160)",  desc: "Ironic. Measured. Social." },
+  { key: "dickens",            label: "Charles Dickens",      color: "oklch(0.68 0.15 50)",   desc: "Victorian. Rhetorical. Parallel." },
+  { key: "woolf",              label: "Virginia Woolf",       color: "oklch(0.72 0.17 220)",  desc: "Interior. Fragmented. Sensory." },
+  { key: "jk_rowling",         label: "J.K. Rowling",         color: "oklch(0.72 0.20 310)",  desc: "Whimsical. Invented detail. Magical." },
+  { key: "cormac_mccarthy",    label: "Cormac McCarthy",      color: "oklch(0.65 0.15 35)",   desc: "Bleak. Spare. No punctuation." },
+  { key: "legal_text",         label: "Legal",                color: "oklch(0.72 0.15 200)",  desc: "Formal. Precise. Conditional." },
+  { key: "scientific_writing", label: "Scientific",           color: "oklch(0.72 0.18 145)",  desc: "Passive. Hedged. Evidence-driven." },
+  { key: "news_wire",          label: "News Wire",            color: "oklch(0.72 0.15 60)",   desc: "Inverted pyramid. Direct." },
 ] as const;
 
 type StyleKey = typeof STYLES[number]["key"];

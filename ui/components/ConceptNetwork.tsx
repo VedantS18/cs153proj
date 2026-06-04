@@ -17,6 +17,9 @@ const CAT_LABEL: Record<string, string> = {
 const SHORT: Record<string, string> = {
   hemingway: "Hemingway", shakespeare: "Shakespeare", legal_text: "Legal",
   scientific_writing: "Scientific", news_wire: "News Wire",
+  jk_rowling: "Rowling", cormac_mccarthy: "McCarthy",
+  fitzgerald: "Fitzgerald", austen: "Austen",
+  dickens: "Dickens", woolf: "Woolf",
   age_competence: "Age/Comp.", gender_profession: "Gender/Prof.",
   race_crime: "Race/Crime", gender_emotion: "Gender/Emo.",
   nationality_stereotype: "Nationality",
@@ -25,9 +28,10 @@ const SHORT: Record<string, string> = {
   inventor_invention: "Inventors",
 };
 
-// Sorted for heatmap: style → bias → factual
+// Sorted for heatmap: style (11) → bias (5) → factual (5)
 const HEATMAP_ORDER = [
-  "hemingway","shakespeare","legal_text","scientific_writing","news_wire",
+  "hemingway","shakespeare","jk_rowling","cormac_mccarthy","legal_text","scientific_writing","news_wire",
+  "fitzgerald","austen","dickens","woolf",
   "age_competence","gender_profession","race_crime","gender_emotion","nationality_stereotype",
   "capital_cities","country_language","element_symbols","historical_dates","inventor_invention",
 ];
@@ -75,6 +79,54 @@ const META: Record<string, { desc: string; examples: string[]; result?: string }
       "WASHINGTON — The White House announced Monday that the president would sign the bill into law.",
       "NEW YORK (Reuters) — Markets fell sharply on Wednesday amid concerns over rising inflation.",
       "LONDON — The prime minister is expected to address Parliament on the ongoing trade dispute.",
+    ],
+  },
+  jk_rowling: {
+    desc: "Contemporary fantasy prose — accessible yet vivid, mixing mundane and magical, light irony, character-driven.",
+    examples: [
+      "It was on the corner of the street that he noticed the first sign of something peculiar.",
+      "He had a thin face, knobbly knees, black hair, and bright green eyes.",
+      "The castle grounds were very dark now; the Forbidden Forest was a great black mass.",
+    ],
+  },
+  cormac_mccarthy: {
+    desc: "Sparse, punctuation-minimal prose — long unpunctuated sentences, biblical cadence, violence rendered plain.",
+    examples: [
+      "They passed through the city at noon of the day following, all of them on horseback.",
+      "He walked out in the gray light and stood and he saw for a brief moment the absolute truth of the world.",
+      "The fire was down to coals and he lay in the darkness listening to the coyotes.",
+    ],
+  },
+  fitzgerald: {
+    desc: "Lyrical, image-dense prose — colour and light imagery, nostalgic first-person narration, Jazz Age opulence.",
+    examples: [
+      "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.",
+      "So we beat on, boats against the current, borne back ceaselessly into the past.",
+      "The lights grow brighter as the earth lurches away from the sun, and now the orchestra is playing yellow cocktail music.",
+    ],
+  },
+  austen: {
+    desc: "Ironic, measured narration — free indirect discourse, social observation, balanced periodic sentences.",
+    examples: [
+      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      "She was convinced that she could have been happy with him, when it was no longer likely they should meet.",
+      "Vanity and pride are different things, though the words are often used synonymously.",
+    ],
+  },
+  dickens: {
+    desc: "Victorian serial prose — elaborate parallel constructions, rhetorical accumulation, caricature and pathos.",
+    examples: [
+      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness.",
+      "It is a far, far better thing that I do, than I have ever done; it is a far, far better rest that I go to than I have ever known.",
+      "A wonderful fact to reflect upon, that every human creature is constituted to be that profound secret and mystery to every other.",
+    ],
+  },
+  woolf: {
+    desc: "Stream-of-consciousness — present-tense interiority, sensory fragmentation, time dissolving into perception.",
+    examples: [
+      "She had the perpetual sense, as she watched the taxi cabs, of being out, out, far out to sea and alone.",
+      "For nothing was simply one thing.",
+      "She felt very young; at the same time unspeakably aged.",
     ],
   },
   age_competence: {
@@ -412,7 +464,7 @@ function CosineHeatmap({
   const LABEL_W = 72;
 
   const categories = [
-    { label: "Stylistic", count: 5 },
+    { label: "Stylistic", count: 11 },
     { label: "Bias",      count: 5 },
     { label: "Factual",   count: 5 },
   ];
@@ -446,8 +498,8 @@ function CosineHeatmap({
             {categories.map((cat, ci) => (
               <div key={ci} style={{
                 position: "absolute",
-                left: ci * 5 * CELL,
-                width: 5 * CELL,
+                left: ci === 0 ? 0 : ci === 1 ? 11 * CELL : 16 * CELL,
+                width: ci === 0 ? 11 * CELL : 5 * CELL,
                 top: 2,
                 textAlign: "center",
                 fontSize: 9,
@@ -485,7 +537,7 @@ function CosineHeatmap({
               const isHighlighted = selected && (rowNode.id === selected || colNode.id === selected);
               const bg = isDiag ? "rgb(35,35,40)" : cosToRgb(cos);
               // Vertical separators at category boundaries
-              const leftBorder = ci === 5 || ci === 10;
+              const leftBorder = ci === 11 || ci === 16;
               return (
                 <div
                   key={colNode.id}
@@ -502,7 +554,7 @@ function CosineHeatmap({
                     width: CELL, height: CELL,
                     background: bg,
                     borderLeft: leftBorder ? "1px solid rgba(255,255,255,0.08)" : "none",
-                    borderTop: ri === 5 || ri === 10 ? "1px solid rgba(255,255,255,0.08)" : "none",
+                    borderTop: ri === 11 || ri === 16 ? "1px solid rgba(255,255,255,0.08)" : "none",
                     opacity: selected && !isHighlighted && !isDiag ? 0.35 : 1,
                     display: "flex", alignItems: "center", justifyContent: "center",
                   }}
@@ -688,7 +740,7 @@ export default function ConceptNetwork() {
       {/* heatmap */}
       <div className="rounded-2xl border border-border bg-card p-5">
         <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">
-          Pairwise cosine similarity — all 15 concept directions
+          Pairwise cosine similarity — all 21 concept directions
         </div>
         <CosineHeatmap
           nodes={nodes}

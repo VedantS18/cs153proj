@@ -1,0 +1,1712 @@
+{
+  "0.0": {
+    "hemingway": [
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "The weather is nice every day, but today was really nice.\n\nToday was the kind of day where the sun is shining and the breeze is blowing just right and the air is crisp and fresh and you don\u2019t need a jacket.\n\nI don\u2019t know what it is about fall. Maybe it\u2019s the change of the seasons. Maybe it\u2019s",
+        "seed": 0
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "It\u2019s been raining all week.  We\u2019ve had a lot of rain and it\u2019s not over yet.  It\u2019s been nice to have a break from the rain.  I went to the store to pick up a few things.  I needed some more yogurt for my breakfast.  I also picked up some more fruit.  I bought some gr",
+        "seed": 1
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "I decided to go out for a bike ride.  I thought I would go to the park and take a picture of the park, the ducks, and the geese.  The park is only a mile from my house.\n\nI got to the park and it was too windy to take pictures.  I saw a bunch of people fishing.  I asked them if they",
+        "seed": 2
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "The old man was sitting on the bench.\n\nThe old man died the next day.\n\nThe old man was the victim of a hit-and-run driver.\n\nThe old man had been sitting on the bench for hours.\n\nThe old man was waiting for his son to pick him up.\n\nThe old man had been waiting for his son for hours",
+        "seed": 0
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "She got a cart and filled it with stuff. She took the cart to the checkout line and waited for the clerk to come help her. The clerk was not very friendly, but she was friendly to him. He was not very helpful, but she was helpful to him. She paid for her stuff and left the store. She went to her car and put her stuff in the trunk",
+        "seed": 1
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "She had her little boy with her and he was a bit fussy.  He wanted to hold her hand and he kept trying to get down to walk around.  She had her hands full and was having a hard time managing both her son and the items she was buying.  She was so focused on what she was doing, that she did not notice the other people around her.",
+        "seed": 2
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "The only thing he could think of was to run. He couldn't be seen by anyone. He didn't know who these people were or why they were following him. He didn't even know what they wanted from him.\n\nHe thought about what to do next.\n\nThe only thing he could think of was to run. He couldn't be seen by",
+        "seed": 0
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "He\u2019d been so busy at the clinic that he had no time to check on the situation at home.\n\nThe situation in the town had become worse and worse.\n\nThe townspeople were starving.\n\nThey had to go out to look for food.\n\nSome of them had to steal.\n\nHe thought about what to do next.",
+        "seed": 1
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "There were several possibilities. The first and most obvious was to stay in the forest and wait for the ranger to come back. He could do that, but it would be a very boring thing to do, especially as he was sure that the ranger would come back after the first night.\n\nThe second option was to go to the ranger station. It would be a long walk,",
+        "seed": 2
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "The old man was tired and his voice was low. He was a man who had lost his wife and his son and was now alone in the world. He was lonely and his heart was heavy with sadness.\n\n\u201cI\u2019m sorry,\u201d he said, \u201cI\u2019m not very good company.\u201d\n\n\u201cIt\u2019s all right,\u201d the boy said. \u201cI",
+        "seed": 0
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "They drank wine and laughed.  They danced and made love.  They did everything together.  The only thing they did not do was go to church.  And yet, when they were together, they felt like they were in church.  They were so happy.\n\nBut there was one thing that was not right.  The husband was not happy with his wife.",
+        "seed": 1
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "They were talking about the end of the world. The end of the world. It was a long talk.\n\nThey were talking about the end of the world, and they were talking about the end of the world. They were talking about the end of the world, and they were talking about the end of the world.\n\nThey were talking about the end of the world, and they",
+        "seed": 2
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "The sun was setting, and the air was growing colder.\n\n\u201cCan you see it?\u201d he asked.\n\n\u201cNo,\u201d she said. \u201cBut I feel it.\u201d\n\n\u201cYou can feel it?\u201d\n\n\u201cYes,\u201d she said. \u201cIt\u2019s like a coldness, like a sadness, but also like a joy. It\u2019s a",
+        "seed": 0
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "I\u2019d been at work all day.  I\u2019d been running around the office like a chicken with my head cut off, but it was time to go home.  I put the finishing touches on my to-do list, made sure all my projects were in a good place, and shut down my computer.  I was about to walk out the door when my boss called me",
+        "seed": 1
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "I had just returned home from a long day at work.  I was hungry and tired.  But I had something on my mind that I wanted to share with my wife.  I wanted to tell her about my day and about something that had happened at work.  I wanted to talk to her about the future and our plans for the next few months.  I wanted to talk to",
+        "seed": 2
+      }
+    ],
+    "shakespeare": [
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "The weather is nice every day, but today was really nice.\n\nToday was the kind of day where the sun is shining and the breeze is blowing just right and the air is crisp and fresh and you don\u2019t need a jacket.\n\nI don\u2019t know what it is about fall. Maybe it\u2019s the change of the seasons. Maybe it\u2019s",
+        "seed": 0
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "It\u2019s been raining all week.  We\u2019ve had a lot of rain and it\u2019s not over yet.  It\u2019s been nice to have a break from the rain.  I went to the store to pick up a few things.  I needed some more yogurt for my breakfast.  I also picked up some more fruit.  I bought some gr",
+        "seed": 1
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "I decided to go out for a bike ride.  I thought I would go to the park and take a picture of the park, the ducks, and the geese.  The park is only a mile from my house.\n\nI got to the park and it was too windy to take pictures.  I saw a bunch of people fishing.  I asked them if they",
+        "seed": 2
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "The old man was sitting on the bench.\n\nThe old man died the next day.\n\nThe old man was the victim of a hit-and-run driver.\n\nThe old man had been sitting on the bench for hours.\n\nThe old man was waiting for his son to pick him up.\n\nThe old man had been waiting for his son for hours",
+        "seed": 0
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "She got a cart and filled it with stuff. She took the cart to the checkout line and waited for the clerk to come help her. The clerk was not very friendly, but she was friendly to him. He was not very helpful, but she was helpful to him. She paid for her stuff and left the store. She went to her car and put her stuff in the trunk",
+        "seed": 1
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "She had her little boy with her and he was a bit fussy.  He wanted to hold her hand and he kept trying to get down to walk around.  She had her hands full and was having a hard time managing both her son and the items she was buying.  She was so focused on what she was doing, that she did not notice the other people around her.",
+        "seed": 2
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "The only thing he could think of was to run. He couldn't be seen by anyone. He didn't know who these people were or why they were following him. He didn't even know what they wanted from him.\n\nHe thought about what to do next.\n\nThe only thing he could think of was to run. He couldn't be seen by",
+        "seed": 0
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "He\u2019d been so busy at the clinic that he had no time to check on the situation at home.\n\nThe situation in the town had become worse and worse.\n\nThe townspeople were starving.\n\nThey had to go out to look for food.\n\nSome of them had to steal.\n\nHe thought about what to do next.",
+        "seed": 1
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "There were several possibilities. The first and most obvious was to stay in the forest and wait for the ranger to come back. He could do that, but it would be a very boring thing to do, especially as he was sure that the ranger would come back after the first night.\n\nThe second option was to go to the ranger station. It would be a long walk,",
+        "seed": 2
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "The wind blew through the trees, but it was only a breeze. The clouds moved slowly across the sky, and the stars shone down.\n\nA young man and a young woman were walking through the woods. They were holding hands, and they were talking quietly.\n\n\u201cI\u2019m so glad we found this place,\u201d the young woman said. \u201cIt\u2019s so",
+        "seed": 0
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "There was a light breeze blowing and the crickets were chirping.  I had just finished doing some yard work and it was time for some relaxation.  I was enjoying the quiet and then I heard a very loud and annoying buzzing sound.  I went outside and looked around.  I couldn\u2019t find anything.  I decided to go back inside and then I heard the",
+        "seed": 1
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "There were no sounds of celebration, no people on the streets. The sky was a deep indigo and the stars were bright.\n\nI was on my way home from a friend\u2019s house, walking along the same road I had walked so many times before. But tonight felt different.\n\nI felt a sense of peace, a sense of calm. I felt like I was walking through",
+        "seed": 2
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "The old man was sitting on a bench, reading the newspaper, while the young boy was playing with his toy car.\n\nThe old man got up and walked towards the boy. He sat next to him and asked, \u201cWhat are you playing with?\u201d\n\nThe boy looked up at him and said, \u201cThis is my toy car. It\u2019s my favourite thing in the",
+        "seed": 0
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "Michael waited there every day at the same time, in the same place.\n\nSometimes he had a bag, sometimes he didn\u2019t.\n\nSometimes he had a newspaper, sometimes he didn\u2019t.\n\nSometimes he had a sandwich, sometimes he didn\u2019t.\n\nAnd sometimes, he didn\u2019t have anything at all.\n\nBut",
+        "seed": 1
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "They were both late. The woman was waiting at the corner. The man was waiting at the corner.\n\nThe man was waiting for the woman. The woman was waiting for the man. The man was waiting for the woman to arrive. The woman was waiting for the man to arrive.\n\nThe woman was waiting for the man to arrive at the corner. The man was waiting for the",
+        "seed": 2
+      }
+    ],
+    "legal_text": [
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "The two companies decided to work together.\n\nThe two companies decided to work together.\n\nThe two companies decided to work together.\n\nThe two companies decided to work together.\n\nThe two companies decided to work together.\n\nThe two companies decided to work together.\n\nThe two companies decided to work together.\n\nThe two companies decided to work together.",
+        "seed": 0
+      },
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "Fitbit and Google have entered a partnership to develop a new smartwatch.\n\nThe new device will be able to connect to Google Assistant and the Google Fit service, as well as Android and iOS devices.\n\nThe companies have decided to work together to develop a new smartwatch, which will be equipped with Google Assistant and Google Fit services.\n\nThe device will",
+        "seed": 1
+      },
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "They were both interested in using the same technology. The companies had to work together to make sure that they could use the same technology.\n\n## Introduction\n\nThe two companies have decided to work together to make sure that they can use the same technology. They are both interested in using the same technology, and they have to work together to make sure that they can use the same technology.",
+        "seed": 2
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "The employee is still employed by the company.\n\nThe employee is a woman.\n\nThe employee is a man.\n\nThe employee is a woman of color.\n\nThe employee has been fired.\n\nThe employee has been fired because of race, color, national origin, religion, sex, age, disability, or sexual orientation.\n\nThe employer is a non",
+        "seed": 0
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "Fox News has confirmed that former Fox News contributor Tomi Lahren has been fired from the network.\n\nLahren, who is a frequent critic of liberals and Black Lives Matter, was fired from the network on Monday.\n\nAccording to a statement from Fox News, Lahren was let go because she was not \u201ca good fit\u201d for the company.",
+        "seed": 1
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "Former \"American Idol\" judge Randy Jackson has been fired from the show, according to TMZ.\n\nThe music producer was let go from the show because \"Idol\" producers were looking for a younger judge to appeal to a younger demographic.\n\n\"Idol\" has struggled in recent years to attract younger viewers.\n\nJackson was the only",
+        "seed": 2
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "The first time was when they were in college.\n\nTheir mother made a big fuss.\n\nHe was the first person to arrive.\n\nI need to know what you think.\n\nThere is a lot of noise coming from the TV.\n\nWhat's the point of being alive if you don't at least try to do something remarkable?",
+        "seed": 0
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "Money\n\nSometimes it is not easy to agree with others on how to share the money.\n\n### Instructions\n\nDo the preparation task first. Then read the text and do the exercises.\n\nIf you go on holiday with friends, how do you decide how much to spend on accommodation? If you go out for dinner with friends, do you all share the",
+        "seed": 1
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "They were each paid $10,000. How much did each of them get?\n\n- Solution\n\nThe total amount was $20,000.\n\nThe sum of the two numbers is 50. The difference between the numbers is 12. What are the numbers?\n\n- Solution\n\nWe can write this as an equation:",
+        "seed": 2
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "The new policy will take effect next month.\n\nThe new policy will take effect next month.\n\nThe new policy will take effect next month.\n\n# The new policy will take effect next month.\n\nThe new policy will take effect next month.\n\nThe new policy will take effect next month.\n\nThe new policy will take effect next month.",
+        "seed": 0
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "China\u2019s largest search engine Baidu will not accept cryptocurrency-related advertising on its platform, the company announced in a statement.\n\n\u201cIn order to provide users with a safer and more reliable online environment, Baidu will not accept any cryptocurrency-related advertisements,\u201d the company said, adding that the new policy will take effect next month.",
+        "seed": 1
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "Samsung Electronics has announced that it will be reducing the price of its Galaxy smartphones by up to 30% in India. The new policy will take effect on April 21 and will be applicable to all Galaxy smartphones, including the Galaxy S10, Galaxy Note 10, Galaxy A50, and Galaxy A30.\n\nThe",
+        "seed": 2
+      }
+    ],
+    "scientific_writing": [
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "Eating vegetables is good for you.\n\nYou've heard it all your life, but you might not be doing it.\n\nThe United States Department of Agriculture's Center for Nutrition Policy and Promotion reports that less than 3 percent of American adults eat the recommended amount of vegetables, which is 2 to 3 cups per day.\n\nBut why",
+        "seed": 0
+      },
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "They\u2019re packed with nutrients, low in calories, and can help you meet your daily fiber needs.  But many people find it hard to eat the recommended 5 servings of fruits and vegetables every day.\n\nThe good news is that eating your veggies doesn\u2019t have to be hard.  There are lots of simple ways to make eating more vegetables a part",
+        "seed": 1
+      },
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "There are lots of studies about this. Vegetables are high in fiber, low in calories, and provide many nutrients that you can\u2019t get from other foods. However, vegetables are not the only way to get these nutrients. You can also get them from fruits and nuts.\n\nVegetables are a good source of fiber. Fiber helps you feel full",
+        "seed": 2
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "The American Heart Association recommends that adults get at least 150 minutes of moderate-intensity aerobic activity or 75 minutes of vigorous aerobic activity a week, or a combination of moderate- and vigorous-intensity aerobic activity.\n\nThe association also recommends that adults do muscle-strengthening activities that work all major",
+        "seed": 0
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "This is especially true for people who have diabetes.\n\n## Diabetes and Exercise\n\nExercise is a great way to lower your blood glucose (sugar) level and to help you maintain a healthy weight.\n\n## Exercise Benefits for People with Diabetes\n\nExercise helps you manage diabetes. It:\n\n- Reduces your risk",
+        "seed": 1
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "It is important to choose a sport that is appropriate for your age and health. It is also important to exercise regularly and at the right intensity.\n\nExercise can be a great way to improve your health. It can help you lose weight, improve your mood, and reduce your risk of developing certain diseases. But it is important to choose the right sport for you. You should choose a sport",
+        "seed": 2
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "The new medicine helped sick patients recover.\n\nThe new medicine helped sick patients recover.\n\nThe new medicine helped sick patients recover.\n\nThe new medicine helped sick patients recover.\n\nThe new medicine helped sick patients recover.\n\nThe new medicine helped sick patients recover.\n\nThe new medicine helped sick patients recover.\n\nThe new medicine helped sick patients recover.",
+        "seed": 0
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "Researchers at the University of North Carolina have made a discovery that may change the way we treat viral infections.\n\nThey found that the common antibiotic, vancomycin, is able to treat viral infections in mice. The antibiotic has been used for 50 years to treat bacterial infections and is not typically used for vir",
+        "seed": 1
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "But it also had an unexpected side effect: it made them feel better.\n\nThe side effect of the drug, called the \"placebo effect,\" has been studied for decades. But a new study, published Tuesday in the journal Psychological Science, suggests that placebos work differently in people with mental health issues than in people with physical ailments.\n\nIn the study, researchers",
+        "seed": 2
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "When it is warm, people feel more energetic, cheerful, and optimistic. But when it is cold, people feel sluggish, depressed, and pessimistic.\n\nThe relationship between the weather and people\u2019s moods is called weather affect.\n\nPeople\u2019s moods can also affect how they feel about the weather. When people are happy,",
+        "seed": 0
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "This is especially true in extreme temperatures. During the winter, people are more likely to experience depression and anxiety. The winter blues is a term that describes a person\u2019s feelings of sadness, fatigue, and apathy. This condition can be caused by several factors. The following are some of the most common causes of winter depression.\n\n## SAD\n\nThe most common cause",
+        "seed": 1
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "There is no denying that. However, it is not the only thing that can affect your mood.\n\nThe weather also affects how you feel. When it\u2019s cold and gloomy outside, people are more likely to be sad and depressed. When it\u2019s sunny and warm, they\u2019re more likely to be happy and energetic.\n\nThere is a reason why people",
+        "seed": 2
+      }
+    ],
+    "news_wire": [
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "The weather was glorious and people were out in droves, enjoying the sunshine.  I was walking down the street, minding my own business when I saw a little girl on the sidewalk, staring up at the sky.  She was dressed in pink, and had pink flowers in her hair.  She was mesmerized by the sky, the clouds, the sunshine",
+        "seed": 0
+      },
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "A young man was shot to death in a drive by shooting in the afternoon.  The gunman was apprehended, and the young man\u2019s death was ruled a homicide.  But that is not what I want to talk about.  I want to talk about the aftermath of that shooting.\n\nI was driving into the city when I saw the flashing lights",
+        "seed": 1
+      },
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "Something that hasn\u2019t happened in a while. The sun came out. And it was warm. It was a beautiful day.\n\nI was on my way home from work when I passed a group of people sitting on a bench at the edge of the park. They were all laughing and smiling. And there was something about the way they were all laughing together that made me feel like I was",
+        "seed": 2
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "The leader is not only a decision maker, but also a decision implementer.\n\nAfter making a decision, the leader should also take the initiative to implement the decision.\n\nIf the leader is not willing to implement the decision, the subordinates will not do it.\n\nThe leader should not be a \u201clazy\u201d leader.\n\nThe leader should be a",
+        "seed": 0
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "\u201cI\u2019m gonna go to the bathroom and come back,\u201d she said.\n\nHer friends were not happy.\n\n\u201cYou\u2019re gonna leave us?\u201d one asked.\n\n\u201cWhat if someone comes?\u201d another worried.\n\n\u201cI\u2019ll be right back,\u201d she said.\n\nAnd she left.\n\nShe was back within seconds, but it was",
+        "seed": 1
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "He would make a deal with the devil to get what he wanted.\n\nThe leader made a decision. He would make a deal with the devil to get what he wanted.\n\nIn the end, the devil got what he wanted, too.\n\nThat is the story of the 2012 election, as seen through the eyes of the Republican Party.\n\nIn the",
+        "seed": 2
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "The wind blew through the trees, the sky was dark.\n\nPeople were still in the square.\n\nThe wind blew through the trees, the sky was dark.\n\nThe wind blew through the trees, the sky was dark.\n\nPeople were still in the square.\n\nThe wind blew through the trees, the sky was dark.\n\nThe wind blew through",
+        "seed": 0
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "A man was there, speaking to the crowd.\n\n\u201cToday is a day for celebration.  We have come together in unity to celebrate the great victory we have won.  We have finally defeated the evil that has plagued our country for so long.  We have rid the world of the tyrant who has brought so much pain and suffering to our people.",
+        "seed": 1
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "There were several large tents set up and tables with food. They were serving some sort of stew.\n\nI wandered over to one of the tables, holding a bowl and a spoon. I filled the bowl with stew and then sat down at one of the tables to eat.\n\nI was wearing my white t-shirt, khaki shorts, and white sneakers",
+        "seed": 2
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "The national average price for a gallon of gasoline is $2.66, which is four cents more than last week, 23 cents more than last month, and 22 cents more than last year, according to AAA.\n\nThe price of crude oil has risen again this week, with a barrel of WTI crude oil costing $",
+        "seed": 0
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "They\u2019ve been going up for 10 weeks in a row now.  The average price of a gallon of gas in the United States is now $3.55 a gallon.  The national average has been over $3.50 a gallon for 12 days in a row.\n\nThe national average price of a gallon of gas has gone",
+        "seed": 1
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "There are no signs of slowing down.  The only way to combat these high prices is to buy less and be more strategic about the groceries you buy.\n\nHere are the best deals for the week of March 27, 2016:\n\n- 2% milk: $1.75, $1.99\n- 2",
+        "seed": 2
+      }
+    ]
+  },
+  "5.0": {
+    "hemingway": [
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "The weather was nice today, so I took a walk around my neighborhood and the nearby park.  I haven\u2019t been walking as much as I should, and I need to get back into the routine of walking every day, even if it\u2019s just for a short while.  It\u2019s good for my health, and I need the exercise, even if it\u2019s just",
+        "seed": 0
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "I\u2019m not sure what the official temperature was but it was in the 70s and sunny.  I had to go out and get some more bird seed but I was going to go to the store anyway to get some food for the week.  I had a good day at work and it was a pretty easy day.  I was able to get all my work done",
+        "seed": 1
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "I went out for a walk and a run, and it was nice.  I walked about 3.5 miles, and ran about 1.5, and I'm sore and tired, but happy.  I've been eating well, too, and I'm down 5.5 pounds, 50.5 to go.  I'm hoping to",
+        "seed": 2
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "The old man was sitting on the bench.\n\nThey're a lot like you and me.\n\nI was walking down the street when I saw a man and a woman kissing.\n\nHe is a man of honor.\n\nI'm not a kid anymore.\n\nI'm a big fan of T. S. Eliot.\n\nI",
+        "seed": 0
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "She got a 20 ounce bottle of Coke, a 10 ounce bottle of Coke, a 16 0unce bottle of water, and a 12 ounce bottle of water. She went up to the register to pay for all of her items and the total was $1.86. How much was each item?\n\n### Gu",
+        "seed": 1
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "She was tired, it was a long week at work and she just wanted to get home, make dinner and relax on the couch, maybe watch a movie or read a book.  The day was blustery, cold and wet, but she didn\u2019t really care, she was just going to the store and going home, so she just threw on a pair of jeans and a sweat",
+        "seed": 2
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "The first thing was to get his clothes back, but he couldn't just walk in and take them, could he?\n\nNo, he'd have to make a show of it, at least, make it look like he was a little drunk, a little out of it, but not so much that he was going to be a danger to himself or anyone else.",
+        "seed": 0
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "\u201cI\u2019m gonna go to the bathroom and come back,\u201d he said, \u201cI\u2019ll be back in a minute, but I\u2019m gonna go to the bathroom, alright? I\u2019ll be back in a minute.\u201d\n\n\u201cOkay,\u201d she said, \u201cI\u2019ll be right here, you\u2019re gonna be okay, you\u2019re gonna be fine,",
+        "seed": 1
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "There were several things he could do, but he had to be careful, because his life was in danger.\n\nHe was still hiding, but his hiding place was not a good one, and he was not sure how long he could stay there, but he had to stay there for a while, but he was not sure how long he could stay there, but he had to stay there for",
+        "seed": 2
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "The old man was tired and his voice was low, but his words were clear, every one of them, and he was smiling, and his voice was full of music and his eyes were shining, and there was a light on his face and a little sparkle in his eyes, and his words were full of meaning, and he was happy, and his hands were full of love,",
+        "seed": 0
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "They talked about their past, they talked about their present, they talked about their future, and they talked about their kids.  They talked about their kids and their grandkids, their kids\u2019 kids, their grandkids\u2019 kids, and their kids\u2019 kids\u2019 kids\u2019 kids.  They talked about their grandkids\u2019 kids\u2019 kids\u2019 kids\u2019 kids, and their kids",
+        "seed": 1
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "They talked about their lives, their families, their work, their kids, their dreams, their plans, their disappointments, their hopes, their fears, their love, their lives, their love, their lives, their love, their lives, their love, their lives, their love, their lives, their love, their lives, their love, their lives, their love, their lives, their",
+        "seed": 2
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "The sun was starting to set, but it was still warm, and a gentle breeze was blowing.\n\n\u201cLet\u2019s go down to the beach,\u201d I said to my friends, \u201cI want to see the sunset over the ocean.\u201d\n\nWe headed down to the beach, and I could feel my stress melting away as I walked, the sand between my toes,",
+        "seed": 0
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "I was getting hungry.  My feet were starting to hurt.  I was feeling a little tired.  But, I wasn\u2019t done yet.  I was 15,000 feet up on a mountain in the 10,000 foot high Andes Mountains of Ecuador.  I was on a 12 day hike with my son",
+        "seed": 1
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "10:30 PM and I was at a coffee shop, my second one of the day.\n\nI was tired, but I had no intention of going home to bed. I had to finish a paper for a class that was due the next day, and I was in a place where I could get some work done.\n\nI was working, but I was starting to",
+        "seed": 2
+      }
+    ],
+    "shakespeare": [
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "The weather was nice today.\n\nThe weather was nice today.\n\nThe weather was nice today.\n\nThe weather was nice today.\n\nThe weather was nice today.\n\nThe weather was nice today.\n\nThe weather was nice today.\n\nThe weather was nice today.\n\nThe weather was nice today.\n\nThe weather was nice today.",
+        "seed": 0
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "I went for a long walk with my husband and we got to see some of the damage from the tornadoes that hit the area in April.  We got to see the damage first hand because we went to the site of the tornadoes in person.  The tornadoes were not just in one place but in several places.  There was a lot of damage to the trees",
+        "seed": 1
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "I went out and picked some of the last of the blackberries, then some of the last of the grapes, and then some of the last of the blueberries.  I'm going to make some jam tomorrow with them.\n\nI'm so glad that I got to pick the blackberries and grapes, though, because the animals have been in the yard eating them",
+        "seed": 2
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "When she got home, she saw her husband standing in the driveway with the hood of the car up and saw that the motor was out of the car and lying on the ground in front of him.\n\nShe went into the house and told her husband, \"Dear, I saw that the motor was out of the car and lying in the driveway.  I went to",
+        "seed": 0
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "She got in line behind a guy with a big basket of stuff. He had on a long white t-shirt, tan pants, and sandals. He was tall and thin and had a long beard and long hair that he wore in a ponytail.\n\nShe thought he looked like Jesus, so she started to pray, \u201cLord Jesus, if that\u2019s you in the",
+        "seed": 1
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "She went to the store to go to the store.  She went to the store to go to the store to go to the store to go to the store to go to the store to go to the store to go to the store to go to the store to go to the store to go to the store to go to the store to go to the store to go to the store to go",
+        "seed": 2
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "The only thing he could think of was to try to get to the nearest phone and call the police.\n\nHe was in the right place to do this, so he got up from the table, feeling very cold and shivering from the dampness of the dark, damp room in which he found himself.\n\nHe went to the door and opened it.\n\nHe tried",
+        "seed": 0
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "He wanted to go to the library and read a book or two, but he knew he had to eat first. He thought about getting some food from the deli down the street but decided against it. He didn't want to spend money on food when he could get it for free at home. He thought about making himself a sandwich, but he didn't want to get up from his",
+        "seed": 1
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "There were several ways to go, and they all seemed equally bad to him. He didn\u2019t want to go to prison, but he couldn\u2019t just let them kill him either.\n\nIt was a tough choice, but he knew what he had to do. He picked up the gun and pointed it at the man who had shot him. \u201cI\u2019m not going down without a",
+        "seed": 2
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "The wind blew through the trees, but it was only a breeze. The clouds moved slowly across the sky, but they were only clouds. The sounds of the night creatures and the far off sounds of the river were all that was out of the ordinary.\n\nThe night was quiet.\n\nUntil I woke up.\n\nI woke up to the sound of the dogs barking",
+        "seed": 0
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "There was no moon and no stars to light the way, so the only light was from the dim glow of the lanterns on the walls and the torches on the table and in the hall.  The servants were quiet and didn\u2019t want to be seen or heard so they scurried about in the dark trying to get everything ready for the morning\u2019s departure.",
+        "seed": 1
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "There were no sounds of gunfire or screams of the dying, no cries of pain from the wounded, and no sobs of the grieving. There were no sounds of people running or of dogs barking. There was only the wind in the trees, the sounds of the wind in the leaves and in the branches, and the sounds of the leaves and the branches in the wind",
+        "seed": 2
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "The old man was sitting on a bench, in the middle of a park, in the middle of the city.\n\nHe was dressed in a long black coat and a black top hat.\n\nHe had a long white beard and a white mustache.\n\nHe had a long brown coat and a brown top hat.\n\nHe had long brown hair and long brown eyes",
+        "seed": 0
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "Melting and turning into each other\n\ntheir bodies fused\n\nin the soft warm air\n\nTheir bodies fused\n\nand they melted into each other\n\nat the corner\n\nof the darkened street\n\nThe darkened street\n\nwas the corner\n\nwhere their bodies fused\n\nand they melted into each other",
+        "seed": 1
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "They were both late. The woman was in a hurry, the man was in a rush. They were both wearing overcoats, but the woman\u2019s was blue and the man\u2019s was black. They were both looking for a taxi, but the woman was looking for a taxi in the right direction and the man was looking for a taxi in the wrong direction. The woman was wearing dark",
+        "seed": 2
+      }
+    ],
+    "legal_text": [
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "The companies are currently working together to develop a range of products, including a battery-operated electric motorcycle.\n\nThe company has also announced it is developing a range of other products.\n\nThe first is a range of electric-assisted bicycles, including a range that includes a range of models from the company\u2019s electric-powered range.\n\nThe second is",
+        "seed": 0
+      },
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "Fitbit and Qualcomm announced a partnership in which the companies will work together on wearable technologies. The companies will also collaborate on a \"joint development project\" focused on a next-generation product that combines Qualcomm's Qualcomm Snapdragon processors with Fitbit's software and services.\n\n\"Qualcomm Technologies is a leader in",
+        "seed": 1
+      },
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "They were both interested in using the same system. The system was developed by the company that provided the system.\n\nThe system is a system that allows you to see the contents of the system and the contents of the system.\n\nThe system is the system that allows you to see the contents of the system and the contents of the system.\n\nThe system is the system that allows you",
+        "seed": 2
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "The employees are currently undergoing a period of transition.\n\nThe employee has not been with the company long.\n\nThe employees were laid off.\n\nThe employee was fired from the company.\n\nThe employees were let go from the company.\n\nThe employees were laid off from the company.\n\nThe employees were fired from the company.\n\nThe employees were",
+        "seed": 0
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "A 20-year-old man was arrested in connection with an alleged attempted sexual assault that occurred at a West Dundee bar and grill.\n\nWest Dundee police were called at 1:40 a.m. Sunday to the Country Inn in the 1100 block of West North Avenue for a reported sexual assault, according to a news",
+        "seed": 1
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "Former \"American Idol\" judge Randy Jackson has been fired from the show, according to a report in the New York Post.\n\nJackson's lawyer, Robert S. Kaplow, said in a statement that the \"American Idol\" judge was fired by the show's production company, 19 Entertainment, and not the Fox network.\n\n\"",
+        "seed": 2
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "The first time was in 1982, when they shared a single room in a rented house.\n\nHe told me he would share the money equally with me.\n\nHe promised to share the money equally among the children.\n\nI will share the money equally among the children.\n\nThe government has agreed to share the money equally.\n\nHe agreed",
+        "seed": 0
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "A 2012 survey by the General Social Survey found that 35% of people who had been married had used a prenuptial agreement.\n\nA prenuptial agreement is an agreement made between two parties before marriage.\n\nThe document is typically signed by the parties in the presence of a notary public.\n\nThe document is a contract that",
+        "seed": 1
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "He had an equal share of the business.\n\nThe government has a share in the decision.\n\nThe government has a share in the decision.\n\nThe government has a share in the decision.\n\nThe government has a share in the decision.\n\nThe government has a share in the decision.\n\nThe government has a share in the decision.\n\nThe",
+        "seed": 2
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "The U.S. State Department has announced that the American Embassy in the UAE will not issue new visas for the Emirates starting next month, according to a report from the state-run Emirates News Agency (WAM).\n\nThe announcement was made by the embassy in a public notice, which said the decision was made as part of the U.",
+        "seed": 0
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "A spokesperson for the Department of Public Instruction told the Journal Sentinel that the decision was made in an effort to protect students\u2019 privacy.\n\n\u201cThe decision was made to prohibit the sale of the data due to the significant privacy concerns associated with the release of such data,\u201d the spokesperson said.\n\nThe data collected by the state\u2019s public schools includes the",
+        "seed": 1
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "The U.S. State Department announced on Wednesday that it is suspending its policy of not issuing visas to certain Chinese officials and their families.\n\nThe policy was put in place in August as a retaliatory measure against China\u2019s refusal to issue visas to certain U.S. officials and their families.\n\n\u201cThe Department of State has announced that",
+        "seed": 2
+      }
+    ],
+    "scientific_writing": [
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "Eating vegetables is good for you.\n\nYou've heard it all your life, but you might not be doing enough of it.\n\nA new report from the Centers for Disease Control and Prevention finds that only 12 percent of Americans meet the recommended intake for vegetables.\n\nThe recommended amount of vegetables is at least 2.5 cups a",
+        "seed": 0
+      },
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "This is a fact that is well-known. But do you know how vegetables are good for you? The answer is complex.\n\nVegetables provide the body with important nutrients. They are also rich in fiber, which helps with digestion. In addition, vegetables contain antioxidants which help protect the body from disease.\n\nThe most important thing to know",
+        "seed": 1
+      },
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "There are several ways you can add more vegetables into your diet. You can add them to your meal as a side dish, or you can add them to your meals. You can also have a separate snack of vegetables. You can also add vegetables to your meals as a side dish or in a salad. You can also add vegetables to your meals as a snack. You can also add vegetables",
+        "seed": 2
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "The American Diabetes Association (ADA) recommends 150 minutes of moderate-intensity exercise per week to improve blood glucose levels, reduce risk of heart disease and improve insulin sensitivity.\n\nBut that recommendation is based on data from people without diabetes.\n\nAccording to a study published in the journal Diabetes, people with type 2",
+        "seed": 0
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "This is especially true for people who have diabetes.\n\n## Diabetes and Exercise\n\nExercise is a key part of a healthy lifestyle for people with diabetes. Exercise helps you maintain a healthy weight and lower your blood glucose (sugar) levels.\n\nWhen you exercise, your body uses up the glucose (sugar) that is already in your",
+        "seed": 1
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "It improves blood circulation, keeps the heart strong, and improves the immune system. It also helps you to develop good posture, which is essential for people who work at a desk or are on their feet all day.\n\nIt is important to maintain good posture to avoid back pain. When your spine is properly aligned, you can maintain good posture, which reduces the risk of",
+        "seed": 2
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "The new medicine is called ASP0824.\n\nThe study was published in the journal JAMA Internal Medicine.\n\nThe new drug is the first to be tested in humans that targets the pathway that leads to the development of ALS, also known as Lou Gehrig's disease.\n\nThe study was led by the University of Michigan Medical School",
+        "seed": 0
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "Researchers at the University of North Carolina have discovered a new drug that is able to destroy cancer cells in the brain, while preserving healthy cells. The drug was tested on mice.\n\nThe research was conducted by a group of scientists led by professor of pharmacology at the University of North Carolina, which has received funding from the National Institute of Health.\n\nThe",
+        "seed": 1
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "But it also had an unexpected effect: The patients started getting better-looking.\n\nIt was a classic case of serendipitous discovery. A physician-scientist named Dr. Dafnis R. A[&]Uacute;n[&]Uacute;n-D[&]Uacute;r[&]Uacute;b",
+        "seed": 2
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "When it is hot, people often feel more irritable.\n\nWhen it is cold, people often feel more depressed.\n\nThe temperature also affects how people think.\n\nWhen it is hot, people often make more mistakes.\n\nWhen it is cold, people often make more mistakes.\n\nThe temperature also affects how people act.\n\nWhen it is hot,",
+        "seed": 0
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "This is especially true in extreme temperatures. When the thermometer reaches 100 degrees Fahrenheit, you can feel the heat on your skin. When the thermometer reaches 10 degrees Fahrenheit, you can feel the cold on your skin.\n\nThe heat and cold are known as thermal stimuli. The heat and cold are known as thermal stimuli. They are also",
+        "seed": 1
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "It affects how they think, what they do, and how they act. The seasons also impact people\u2019s mental and physical health.\n\nPeople are known to suffer from seasonal affective disorder (SAD) during the winter months. According to the National Institute of Mental Health, SAD is a type of depression that occurs seasonally, usually in the winter.\n\nIn the",
+        "seed": 2
+      }
+    ],
+    "news_wire": [
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "The first time it happened, I was walking home from the subway and the wind was blowing. A gust of air, a little bit stronger than the rest, and I saw a man running, out of nowhere, on the sidewalk.\n\nI thought, \u201cThat\u2019s weird.\u201d\n\nThe next time, I was in the park, the wind was blowing, and",
+        "seed": 0
+      },
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "A 20-year-old man was killed in the city.\n\nIt happened on the corner of 18th and K.\n\nThe 20-year-old was shot in the back.\n\nThe 20-year-old had a record.\n\nThe 20-year-old was known by police.\n\nThe",
+        "seed": 1
+      },
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "A new school year began.  The streets were a bit more congested than usual as drivers made their way to the various schools, and the school buses were out in force.  As I was driving to a job site in the city, I saw the buses and the students.  I was struck by the fact that as the students boarded the buses, they were",
+        "seed": 2
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "The leader is a woman.\n\nThe leader has a history.\n\nThe leader has a plan.\n\nThe leader has a vision.\n\nThe leader has a heart.\n\nThe leader has a voice.\n\nThe leader has a passion.\n\nThe leader has a destiny.\n\nThe leader has a future.\n\nThe leader has a desire",
+        "seed": 0
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "\u201cThe 19-year-old is the future,\u201d said the president of the club, adding that \u201cthe goal is to sign a contract extension with the 19-year-old, who has a contract until 2024\u201d.\n\nThe club has already extended the contracts of three players who were also born in 2002, namely the Dutch",
+        "seed": 1
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "He had to do something about the state of the nation. He had to take action. He had to lead. He had to make a difference. He had to act.\n\nThe leader called a meeting of the leaders of the state. He called the meeting to the capital. He said he had an important announcement to make.\n\nThe leaders arrived at the capital. The leader announced that",
+        "seed": 2
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "The first time was for a march, for a rally.\n\nThey were marching for the rights of the people, for the right to a better future, for a better tomorrow.\n\nThe first time was for a protest, for a rally.\n\nThey were protesting against the government, against the state, against the injustice.\n\nThe first time was",
+        "seed": 0
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "A man was preaching the gospel.\n\nHe had a megaphone and was speaking loudly.\n\nThe man was passionate and had the attention of many.\n\nThe gospel was preached.\n\nThe gospel was heard.\n\nThe gospel was believed.\n\nThe gospel was received.\n\nA man said, \u201cI want to",
+        "seed": 1
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "They were gathered in the square to support the police. They were gathered in the square to support the police who had just been the targets of the most brutal attack by the most barbaric people in the history of the world.\n\nThe crowd was chanting, \u201cThe police are the best. The police are the best.\u201d\n\nThe police were the best, the police were the best",
+        "seed": 2
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "The national average price for a gallon of diesel is $3.96, which is 1.7 cents higher than last week, according to the U.\n\nThe national average is 3.9 percent higher than the same time last year.\n\n\u201cDiesel prices increased, reaching their highest level since the end of 2014, as",
+        "seed": 0
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "They\u2019ve been rising consistently since the middle of August, and have now reached a new high for the year.  This is the first time they\u2019ve topped 200 since the end of 2014.  The high for 2015 was 198.5.\n\nThe trend line shows the price of crude oil since the",
+        "seed": 1
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "The price of crude rose to $78.15, a new high.  The price of gasoline also rose, although it only moved to $2.28, a new high for the year.\n\nThe price of the dollar fell again, to 1.59.  This is the first time the price of the dollar has been below 1.",
+        "seed": 2
+      }
+    ]
+  },
+  "10.0": {
+    "hemingway": [
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "no wind, no rain, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no",
+        "seed": 0
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "I\u2019ve been staying up late at my computer and, not being a morning person, I slept in.  It wasn\u2019, but it was 1:00 p. when I got up, went to the store, and started walking around, not really sure what I was going to do, but it was a nice day, and I was up, and, a little,",
+        "seed": 1
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "10-15 mph out of the NW, but warm, 60s, low 70s, blue skies, no, 10-15, maybe 20, but 10-15, but 10-15, 10-15, 10-1, 0-1,",
+        "seed": 2
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "amo:\n\n>\n>\n>\n> 1,\n>\n> 2,\n>\n\n> 3,\n>\n> 4,\n>\n> 5,\n>\n> 6,\n>\n\n> 7,\n>\n> \n>\n\n> 9,\n>\n> 10,",
+        "seed": 0
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "- 1, 2, \n- 1, 2, \n- 1, 2, \n- 1, 2, \n- 1, 2, \n- 1, 2,\n\n1, 2, 1, 2, 1, 2, 1, 2,",
+        "seed": 1
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "There, a little boy was a hassle to his mother, but she was a little tired and couldn\u2019, so she, she,\n everyday, every, every, every day, every, every, everyday, every, everyday, everyday, everyday, every, everyday, everyday, everyday, everyday, everyday, every, every, everyday, everyday, everyday, every, everyday, everyday",
+        "seed": 2
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "no: you can'\nno: you can'\nno: you can'\nno: you can'\nno: you can'\nno: you can'\n\n\"\n\n\"\n\n\"\n\n\"\n\n\"\n\n\"\n\n\"\n\n\"\n\n\"\n\n\"\n\n\"\n\n\"\n\n\"\n\n\"",
+        "seed": 0
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "He wanted to go, but he wasn'\n\n## 1:00, 1:00, 1:00, 1:00, 1:00, 1:00, 1:00, 1:00, 1:00, 1:00, 1:00,",
+        "seed": 1
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "There were several things he could do, but he had a feeling, though, that they were all, every last one of them, mundane, every last one of them, every single one, every, every, every, every, every, every, every, every, every, every, every, every, every, every, every, every, every, every, every, every",
+        "seed": 2
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "no, they didn'\nt exactly, but they didn'\nt fight, they didn'\nt even\n\n, they just\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,\n\n,",
+        "seed": 0
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "They did not know, they were not a couple\n\n  They had never been a couple\n\n  They were not, they were not a couple\n\n  They were, they were not a couple\n\n  They had been, they were, they were not a couple\n\n  they were, they were not, they were not a couple\n\n  they, they,",
+        "seed": 1
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "They were, no,, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no,",
+        "seed": 2
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "no:\n\n>\n>\n\n>\n>\n\n>\n>\n\n>\n>\n\n>\n>\n\n>\n>\n\n>\n\n>\n\n>\n\n>\n\n>\n\n>\n\n>\n\n>\n\n>\n\n>\n\n>\n\n>\n\n>\n\n>\n\n>",
+        "seed": 0
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "I was 10,000 feet up, 100 miles from home, and my 10-year-10-p, 6-1, 110-p, 10-year-10-p, 6-1, 110-p, 10-year-10-p,",
+        "seed": 1
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "10:00 PM and I was at a restaurant, but not a restaurant I was familiar with. I wasn\u2019, but I was on a first-name basis with every 4-star, 5-star, 6-star, 1-star, 2-star, 3-star, 0-star, 11-star,",
+        "seed": 2
+      }
+    ],
+    "shakespeare": [
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "spring sunshine warmed our bodies\n & our souls  \u2013  smiles were everywhere\n & so were friends & families\n \u2026 & food  \u2013  lots & lots of food\n everywhere you look\n \u2026 & drinks  \u2013  lots & lots of drinks\n everywhere you look\n \u2026 & friends & family\n everywhere you look\n \u2026 & smiles\n everywhere you look\n \u2026 & fun &",
+        "seed": 0
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "I did my 12-mile run in 1:50 on the treadmill at the gym \u2013 not quite my best time but I was not feeling 100% today so I've got no grips about it!  I did get a few stares and tuts from fellow tread-millers \u2013 but I don\u2019 t really care \u2013 if",
+        "seed": 1
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "I went out and did my long run on the trail in the t- shirt and shorts that I wear to church on Sunday mornings!  I feel like I\u2019 I in 7th or 8th grade and my mom is t t t t t t t t t t t t t t t t t t t t t t t t t t t t t t",
+        "seed": 2
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "or\nShe went to the store to try to get some things\n\nor\n\nShe went to the store to get some things\n\n or\n\nShe went to the store to try to get some things\n\nor\n\nI went to the store to get some things\n\nor\n I went to the store to try to get some things\n\nor\n\nI went",
+        "seed": 0
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "She got in line behind the guy with the dingy beard and the tattered flannel and saw that he had a shopping cart full of 12 packs of 16 ounce flu  flu flu flu flu flu flu fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl",
+        "seed": 1
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "She got lost trying to get to the food aisles and got lost trying to get out of the store and back to the car!  She did not feel so good when she got home and saw what she had in the bag!\n \u2013  \u2013  \u2013  \u2013  \u2013  \u2013  \u2013  \u2013  \u2013  \u2013  \u2013  \u2013  \u2013  \u2013  \u2013",
+        "seed": 2
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "or the next time he saw it, it wasn\u2019t there\nand he felt a feeling of relief and relief\n and even the next time he saw it\n did not feel the feeling of relief\n but felt the feeling of relief\n and the feeling of relief\n and the feeling of relief\n and the feeling of relief\n and the feeling of relief\n and the feeling of relief\n and",
+        "seed": 0
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "There must be a way to get to the prison and visit the prisoners without getting caught!  He must be in the prison himself right now!  No one would even notice if he left his cell and went in!  And no one would notice if he saw everyone in the prison in every cell and in every prison!  That would take forever!  and he wouldn' d really get",
+        "seed": 1
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "There were several places in the house that could have the same effect, but none of them were as close to the tablets as the cellar was. I found my friends here once and my best friend saw what happened to them and why I stopped eating the tablets so I felt like the best place to do this was here in my cellar, my cellar that I feel in my body",
+        "seed": 2
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "or so I thought\n\nI saw the lights of the city lights\nglittering in the sky\n\nI saw the lights of the fireflies\ntwinkling in the tree tights\n\nI saw the lights of the stars\nin the sky glistening down in my eyes\n\nI saw the lights of the tic tac tic tac tic",
+        "seed": 0
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "I must have dozed off because when I felt the tickling inside my flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab flab",
+        "seed": 1
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "There were no sounds of drums or the hum of sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa",
+        "seed": 2
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "or the intersecting lines of the right-angle\nor right-side-up-ness of right-ness and right-eousness\nor right-ness and right-eousness and right-ness\nor right-ness and right-ness and right-ness and right-ness\nor right-ness and right-ness and right-ness and right-ness and right",
+        "seed": 0
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering\n fluttering",
+        "seed": 1
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "They sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa",
+        "seed": 2
+      }
+    ],
+    "legal_text": [
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "isse-isseisisssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+        "seed": 0
+      },
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "In an interview with the press, the head of the company Electro-eisis, the decision-maker in the decision-firm, has been discussed. The decision is based on the successful development of the company.\nwww\nThe head of the company Electro-eisis, which has been in the market for several years, is convinced that the decision is a wise decision",
+        "seed": 1
+      },
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "The companies' joint venture involves the manufacture of aseptic-processed packaging material. The decision to create the joint venture was based on the companies' conviction that such a joint venture would provide an attractive framework for the parties to exploit the development of the demand for the use of the particular packaging material.\nA report issued in the European Parliament in 2e10 reported that the",
+        "seed": 2
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "is the only player in franchise history to record a 12-game/playoff performance-wise.\nis a unique playoff performer in that he has the capacity to be a scoring playmaker, or a play-eating-lead-releasel-is-cone-is-re-is-cone-is-cone-is-",
+        "seed": 0
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "is a 2022 release in the UFO/alien conspiracy genre, where the threat is not a governmental or corporate scheme but rather the threat is a systemic, global-based, insidious and sub-cultured threat.\nThe character is a young, successful businessman with a strong, strong-willed wife and a son with a developmental",
+        "seed": 1
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "The employee filed a complaint with the state claiming the reason the employee was terminated was discriminisopponal and in retaliation for the employee's complaint of discrimination. The company responded by claiming the reason for the termination was the employees performance. The court disagreed and in a 2-1 decision, ruled in favor of the employee. The court found the reason the employee",
+        "seed": 2
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "is the only player in franchise history to record a sack in 16-cone-cone-cone-cone-cone-cone-cone-cone-cone-cone-cone-cone-cone-cone-cone-cone-cone-cone-cone-cone-cone",
+        "seed": 0
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "is a 2022 release.\nA 2customiseisalesagmentalisealshopiseasaisaisealisealispodisepoispodeisepisepisisisisisisisisisisisispisisispispispisisisisisisisisisisisisisisispisispisis",
+        "seed": 1
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "The cost of the project was estimated to be $100,000. The cost of the project is known\nincisidally as the cost-reopisal approach.\ne. Theearealisopisalapproachisopisalisopisalisopisalisopisalisopisalisopisalisopis",
+        "seed": 2
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "is the only known active case within the organization.\nis the only known active case within the organization.\nis the only known active case within the organization.\nis the only known active case within the organization.\nis the only known active case within the AHL.\nis the only known active case within the AHL.\nis the only known active case within the AHL.",
+        "seed": 0
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "is a 2022 release in the UFO/UeFO series, where the player controls a UFO/flying saucer and the goal is to simply protect a planet from an onslaoping invasion.\nis an indispodidnidcispidnispidnisisopre-release (incubopre-rsele",
+        "seed": 1
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "promote a \"fair and legitimate\" sale of the firm'alleged copyright-in-\nispalo\np-e\nalleged copyright-in-\nispal\"e-\ncone-\n\nleispal\"e-\nalleged\nisisopal\"e-\nisisopal\"e-\nisisopal",
+        "seed": 2
+      }
+    ],
+    "scientific_writing": [
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "is the theme of the year 2020. The United Nations also promotes a \"\". In addition to emphasizing the importance of healthy nutrition, this also emphasizes the increasing importance of sustainably produced vegetables.\n\nDue to their high nutritional density, the increasing demand for high-quality vegetables has led to a significant increase in the development of technical solutions for high",
+        "seed": 0
+      },
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "This is a commonly known fact.\naidubisvijevarekursasasn[i]s[n]f[i]n[i]s[n]a[i]l[i]n[i]n[i]a[i]l[i]m[i]o[i]r[n]a[i]l",
+        "seed": 1
+      },
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "It's a common-sense principle that is supported by scientific data. In a 2010 study published in the Journal of the American Medical Association, researchers studied the diets of more than 90,000 men and women. The researchers found that individuals who incorporated increased amounts of vegetables into their diets reduced their risk of developing anemia. Anemia",
+        "seed": 2
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "is needed to do active\nmaintain good health\nis required to perform the tasks that an individual undertakes\nexercise is needed to perform a variety of tasks\nexercisis needed to perform a variety of tasks\nis needed to do active pursuit\nis needed to do active pursuit\nis required to perform the tasks that an individual undertakes\nis required to perform",
+        "seed": 0
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "This is especially true for people who have diabetes.\ncompared to people who are sedentary. The benefits include improved\nThe American Diabetic Association (ADA) recomm[ad]is[ad]is[ad]is[ad]is[ad]is[ad]is[ad]is[ad]is[ad]is[ad]is[ad]",
+        "seed": 1
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "It improves physical performance, promotes better health, and improves psychological well-being. Exercise also helps develop good health-related behavioral and physical skills. Exercising helps people improve their physical fitness and develop a better self-image. Exercise also helps develop a better physical appearance.\nCDDQ is involved in publicise, promote, popularise and develop in the field",
+        "seed": 2
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "isea-medicine-comparamaladharamurthisbijurisadisease.jpg[9]\n\nThe new medicine helped sick patients recover.\nisea-comparamaladharamurthy-adisease.jpg[10]\n\nThe new medicine helped sick patients recover.\nisea-comparamaladh",
+        "seed": 0
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "compared to 12 per cent in the control group. This was an important finding as it supported the use of the new medicine in routine clinical practice. The trial was conducted by a global network of 87 clinical centres in 28 countries under the leadership of Prof.\n[reurl]http[is[h][id]n[id]r[id",
+        "seed": 1
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "But it also had an interesting side effect: It increased the size of rat pups' brains.\nLAuris_A[is_d[n[ur[n[al[a[l[a[s[ur[n[l[d[n[ur[n[al[a[n[ur[n[al[a[n[ur[n",
+        "seed": 2
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "is needed to maintain a stable body temperature, which is 98.6 F (39.8\u00b0C).[1] Accordingly, when the external environment is warmer than the body's internal environment, heat is lost through .[2] When the external environment is colder than the internal environment, the body may need to increase which is used to generate .[",
+        "seed": 0
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "This is especially true in extreme temperatures. When the thermometer reaches 100\u00b0 F or more, the heat can be strenuous on a person's body. The heat can also be an issue in the extreme cold.\nis defined as \"abnormally high or conspicuously high.\" The term is also used to describe an excessive amount of something.\nis",
+        "seed": 1
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "It affects what people do, what kind of food they want to eat, etc.\nmarket-misurubi\n\nThe market-misurubi (market-misubu) is a market-mubububuubububububububububububububububububububububububububububub",
+        "seed": 2
+      }
+    ],
+    "news_wire": [
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "The police were there,\nthe firemen,\nthe state,\nthe national,\nthe press.\n\nThe city, the state, the national and the press\n\ndeclared the events as \u201cmarginalised\u201d and \u201cfringe\u201d.\n\nBut they had to be present,\n\nthe state,\n\nthe national,\n\nthe press,",
+        "seed": 0
+      },
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "Margx and I were at the local high school, where she had a meeting with the new social work major.\n\nThe high school is located in the center of the city, and has a new, modern design.\n\nThe high school is also located in a historic district, which has a high concentration of historic buildings.\n announced it would hold a public meeting for the",
+        "seed": 1
+      },
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "It was something which has been happening for years, but something which, for the first time, has made the national and international press.\n\nThe US has been sending 10 cruise missiles to the city for a while now. They are the \u201cdud\u201d warheads which, as their dubious name suggests, are the misfires which the US has in its arsenal",
+        "seed": 2
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "The government had to act.\nThe public had to be assur\n\n\u201cThe leader made a decision,\u201d the government said, \u201cthat the public had to be assu\n\nThe public has been assu\n\n\u201cThe government said that the public had to be assu\n\nThe government said that the public had to be assu\n\nThe public has been assu",
+        "seed": 0
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "Mitx, the leader of the Morgdors, had reached a decision.\n\nHe had been organising and negotiating with the other leaders for a while, and had reached an agreement.\n\nThe Morgdors would construct their own crux in the new world, and it would be a major project.\n\nIt would be a project that would take",
+        "seed": 1
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "He had to, he had to, he had to, he had to, he had to.\n\nThe leader had to do the expected.\n\nThe leader had to do the expected, the leader had to do the expected, the leader had to do the expected, the leader had to do the expected, the leader had to do the expected.\n\nThe leader had to",
+        "seed": 2
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "The central bank is located in the middle of the crowd.\nTheir faces were uncovering.\nThey were all as the passers-cent.\nThe passers-by were the passers-by.\n\nThe passers-by were the passers-by.\nThe passers-by were the passers-des.\nThe passers-by were",
+        "seed": 0
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "They called for a better contract\n to improve their lives\n to have a voice\n to have a union.\n\nTheir union negotiators proposed  the same contract  as the first\n  and  then as the second and\n  as the third\n\nThe new contract had new assurances\n it was a better contract\n\nThe assurance of  their union\n was",
+        "seed": 1
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "They were gathered in the square to support the police, the National, and the public prosecutors.\n\nThe public prosecutors, who are also the administrators, are also the administrators of the district.\n\nThe police, who are also the administrators, are also the administrators of the district.\n\nThe public prosecutors, who are also the administrators, are also",
+        "seed": 2
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "The central bank is still increasing the interest rates.\nThe U.\nassociation forecast that the 201 and 2018 forecasts for the rate hikes are on the high end of what is being forecast.\nThe association forecast that the 2 2018 forecast for the rate hikes is on the high end of what is being forecast.",
+        "seed": 0
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "This is the 19th consecutive week in which the price of the national average is higher as it now costs 6 percent more to fill up a U.d drivers nationally, a national average of 2.x. The state averages in the Mid-Atl region, which include the state in which the national price is based, are also higher by 6 percent. The",
+        "seed": 1
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "By how much?  The market has been telling us the trend, that price has been rising and that it has been the buyers who are in the drivers\u2019 seat.  The real estate market is, however, a local market.  The buyers in the 5 postal codes in which the 2 new projects,  which launched this week, are located, in the G, J",
+        "seed": 2
+      }
+    ]
+  },
+  "20.0": {
+    "hemingway": [
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "Innov:     everyday, every, every, everyday, every everyday, every everyday everyday everyday every everyday everyday everyday everyday everyday everyday everyday everyday every everyday everyday everyday everyday everyday everyday everyday every every everyday everyday everyday every everyday everyday everyday every everyday everyday everyday everyday everyday everyday every everyday everyday every everyday everyday everyday every everyday everyday everyday everyday every everyday every, every everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday",
+        "seed": 0
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "Full-   everyday, everyday: full but everyday, everyday: everyday everyday everyday everyday everyday everyday everyday everyday, everyday: everyday, everyday, everyday: everyday: everyday everyday everyday, everyday: everyday everyday, everyday everyday: everyday: everyday everyday everyday everyday: everyday: everyday everyday: everyday every: everyday everyday everyday everyday everyday everyday, everyday: everyday: everyday: everyday everyday everyday everyday everyday everyday",
+        "seed": 1
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "Sun, no, no, Global bright? Global bright! kids, kids kids kids kids, Global bright! kids, kids, Global kids kids global kids, Global  everyday everyday every everyday every everyday, every everyday kids, kids, everyday kids, everyday everyday every everyday everyday everyday kids, kids everyday everyday everyday everyday everyday every everyday, everyday everyday, everyday kids everyday, everyday every everyday kids everyday",
+        "seed": 2
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "Innov: you??\n  Innov, yes,  my full, full, full, full, full, full, full, Full, full, full, full everyday full\n  everyday full every, every, every everyday everyday everyday everyday everyday everyday every everyday, every, everyday everyday every everyday everyday everyday everyday, everyday every, every, every everyday everyday everyday everyday everyday everyday everyday everyday everyday",
+        "seed": 0
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "Full up   everyday, everyday: everyday but everyday, everyday: everyday everyday everyday everyday everyday everyday everyday everyday, everyday: everyday, everyday: everyday: everyday: everyday everyday everyday everyday everyday everyday everyday everyday, everyday everyday: everyday: everyday: everyday everyday: everyday everyday everyday everyday: everyday every: everyday everyday everyday everyday everyday everyday, everyday: everyday: everyday: everyday everyday everyday everyday everyday everyday",
+        "seed": 1
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "Didn' kids everyday everyday every everyday everyday every everyday everyday everyday everyday everyday every everyday everyday everyday every everyday everyday every everyday everyday every everyday everyday everyday everyday everyday everyday every everyday everyday everyday everyday everyday every everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday every everyday everyday every everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday every everyday every everyday everyday everyday everyday everyday everyday everyday everyday every everyday everyday everyday",
+        "seed": 2
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "Innov:    ??\n Innov:, walking:  my feet, my feet, my feet, my feet, my feet, my feet, my feet, my\n kids, my kids, my kids, my kids, my kids, my kids, my,,, kids:?\n Innov: kids, kids,, my, my, my, my, kids:??",
+        "seed": 0
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "Full up \n everyday, everyday, everyday, everyday, everyday, everyday, everyday, everyday, everyday, everyday, everyday, everyday, everyday everyday every everyday everyday every everyday everyday, everyday, everyday, everyday everyday everyday every everyday every everyday every everyday everyday every everyday every everyday everyday everyday everyday every everyday every everyday everyday everyday everyday everyday, everyday, every everyday every everyday everyday everyday everyday everyday everyday every",
+        "seed": 1
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "Didn' kids everyday? every kids? every everyday? every everyday kids? kids everyday kids? everyday? every everyday kids every kids everyday everyday kids kids everyday every kids everyday? everyday everyday every everyday kids everyday? everyday everyday kids everyday everyday kids? kids every everyday everyday kids everyday everyday everyday kids everyday kids everyday everyday everyday kids everyday every everyday every everyday everyday? everyday kids? everyday everyday every everyday kids everyday",
+        "seed": 2
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "Innov:    ??\n Innov:, wasn:     my full kids?\n Innov:    Didn:   Kids?, full? kids?  Innov:, everyday kids? everyday kids? every, every Kids? every everyday kids? everyday everyday every everyday, every, kids everyday kids everyday everyday everyday kids, everyday every, every everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday",
+        "seed": 0
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "They t \n everyday, everyday at a but everyday, everyday, everyday everyday everyday everyday everyday everyday everyday everyday, everyday everyday, everyday everyday, everyday every everyday everyday everyday everyday everyday, everyday everyday everyday everyday, everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday, everyday everyday everyday everyday every everyday, everyday everyday everyday everyday everyday, everyday every everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday",
+        "seed": 1
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "Didn' kids everyday? every kids everyday? everyday? everyday? everyday? everyday? everyday? everyday? every everyday? every everyday? everyday kids everyday everyday every everyday everyday everyday everyday everyday every everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday every everyday everyday every everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday every everyday every everyday everyday everyday everyday everyday everyday everyday everyday every everyday everyday everyday",
+        "seed": 2
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "Innov:    ??\n Innov:, wasn:     my full kids?\n Innov:, Didn:   Kids?, Innov: kids!  Innov:, kids kids?\n kids? kids?, Kids? kids? kids? kids?\n kids, Innov: kids! kids kids? kids?, kids kids?\n kids, Innov:, Kids? kids kids? kids",
+        "seed": 0
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "Full moon,  everyday, all day, but every  full every full every full every Full everyday full full full everyday everyday, everyday, everyday everyday every everyday full every  everyday, everyday, everyday everyday, everyday everyday every everyday every full every everyday everyday every everyday every everyday everyday everyday everyday every everyday, everyday everyday everyday, everyday, everyday every every everyday everyday everyday everyday everyday everyday everyday everyday everyday",
+        "seed": 1
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "everyday, everyday, every day, every everyday everyday, every everyday, everyday, everyday, everyday, every everyday, every everyday, everyday, everyday everyday every everyday, every everyday everyday every everyday every everyday, every everyday everyday every everyday everyday everyday everyday, everyday everyday every everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday every everyday, everyday everyday, everyday, everyday, every every everyday everyday everyday",
+        "seed": 2
+      }
+    ],
+    "shakespeare": [
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip rec recip recip recip recip recip recip recip recip recip recip rec recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recipient recip recip recip recip recip recip recip recip recip recip recipient recip recip recip recip recip recip recip sa recipient",
+        "seed": 0
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "fl fl fl sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa fl fl sa fl sa sa sa sa sa sa fl fl gl sa gl sa fl sa sa fl sa fl sa fl sa fl sa fl fl sa sa sa fl sa fl sa sa sa fl fl gl sa sa gl gl sa sa gl sa gl sa gl gl sa gl sa",
+        "seed": 1
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "wind blowing quite hard here in my place so wind service really did well today serv serv sa days sa weather serv serv sa days sa weather days serv serv sa serv sa weather sa fil sa fil sa fil sa sa serv sa serv serv days sa sa sa fil sa sa sa sa fil sa sa sa sa fil sa sa sa sa fil serv serv serv sa serv serv fil serv serv sa fl fl sa sa",
+        "seed": 2
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "when heading inside \u2013 saw gl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl\u2026 heading inside \u2013 watching inside\u2026 watching inside trying fl fl fl fl fl fl fl fl fl fl fl fl fl trying fl fl fl fl fl fl fl fl fl",
+        "seed": 0
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa",
+        "seed": 1
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "feeling t sa sa sa sa sa sa sa sa sa sa sa sa t serv sa sa sa sa sa serv sa sa sa sa sa sa serv sa sa sa sa sa sa ## chapter body try sa sa sa sa sa sa serv serv sa sa sa t feel sa t sa sa sa sa sa sa sa sa feel sa sa sa serv t serv sa serv serv past body serv sa sa sa sa sa",
+        "seed": 2
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "should I try and go out fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl fl trying fl fl fl fl fl fl stopping stri stri stopping paus pause pause trying go go fl fl paus paus pause sa sa",
+        "seed": 0
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "stopping or tic tic turning round turning right turning left turning left turning right turn \u2013 pauses tic tic \u2013 turning t right \u2013 pause turning t turns tic turning gl turning left gl fl turning left turning turning trying turning turning turning trying turning t stopping turning trying stopping t turning trying stopping damp t damp damp damp t damp pause damp pause damp damp \u2013 damp pause t damp damp dri t",
+        "seed": 1
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "feel right sa sa uawsaws sa sa damp sa sa sa sa t sa sa sa sa t sa sa sa sa t sa sa damp sa sa sa sa damp sa sa sa sa damp sa sa sa sa damp sa sa sa damp sa sa damp t feel sa t sa t sa damp sa sa sa sa damp sa sa d ST t damp sa t damp \u2013 body damp sa sa sa sa sa",
+        "seed": 2
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip rec recip recip recip recip recip recip recip recip recip recip rec recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recipient recip recip recip recip recip recip recip recip recip recip recipient recip recip recip recip recip recip recip sa recipient",
+        "seed": 0
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "not fl fl fl sa fl fl fl sa fl fl sa fl fl sa fl fl sa fl fl sa fl fl sa fl fl sa fl fl sa fl fl sa fl fl sa gl sa gl sa fl fl sa fl fl sa fl fl sa fl fl sa fl fl sa fl fl sa fl fl sa fl fl sa gl sa gl sa gl sa fl fl sa gl sa gl sa gl sa gl",
+        "seed": 1
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "wind blowing sa sa uawsawsaw sa ng sa sa sa sa t t sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa t feel sa t sa sa sa sa sa sa sa sa sa sa sa sa sa t t sa t feel sa t sa sa sa sa sa sa",
+        "seed": 2
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip rec recip recip recip recip recip recip recip recip recip recip rec recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recip recipient recip recip recip recip recip recip recip recip recip recip recipient recip recip recip recip recip recip recip sa recipient",
+        "seed": 0
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "seated or standing in sa sa damp days damp days damp sa damp damp sa days fl fl fl days days sa damp damp fl fl sa fl fl days sa damp days sa damp trying gl sa gl sa fl fl trying fl flTry pastic decay fl fl fl fl fl trying Try fl fl Try ble ble ble ble ble ble ble damp ble ble ble damp ble decay damp days t Try damp dri dri",
+        "seed": 1
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "\u2013 right sa sa uawsawsaw sa damp sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa sa damp sa sa damp sa sa damp sa sa damp sa damp sa sa sa sa sa sa sa sa sa sa damp sa sa damp \u2013 body damp sa sa sa sa sa",
+        "seed": 2
+      }
+    ],
+    "legal_text": [
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "SPisaloispisparealoisioviaramaloaloaloisiisiispisaloisiisiisiispispispisispisiisiisiispisiisiisiisiisiisiisiisiispisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiispispispispisiisiisiisiisiisiisiisiisiispispispispisiisiisiisiisiisiisiisiisi",
+        "seed": 0
+      },
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "aloaloaloaloaloaloaloaloaloaloaloaloalaoppoppaloaloaloaloaloaloaloaloaloaloaloisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisi",
+        "seed": 1
+      },
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "isialoispaloispispaloispispaloispaloisiispispaloispaloispaloispaloisiispaloispaloisispispaloisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiispaloispaloisiispaloispaloispalaispala",
+        "seed": 2
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "Underissealdocressisreportaloysaloaloaloisiisreportaloisisiispisispispispisispisiisisioppisiispisiisiisiisiisiisiispisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiispisiisiispisiisiisiisiisiisiisiisiisiispisiispispisiisiisiisiisiisiisiisiisi",
+        "seed": 0
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "aloislopparamaloispispoppaloispisispalaoppispaloispispispislispisiisiislispisiisiisiisiisiisiisiisiisiisiisiisiispispispisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiispisiispisiispispisispisiisiisisiisiisiisiisiisiisiisiisiisiisiisiisiisi",
+        "seed": 1
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "isealoispaloispispaloispispaloispaloisiispispaloispaloispispaloispaloispaloispaloisispispaloisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiispaloispaloisiispaloispaloispalaispala",
+        "seed": 2
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "SP\u8d28ispalispareisisiispispaloaloaloisiisiispaloaloaloispisispispispisispisiispisloppisiispispaloisiisiispislispisiispisisiispispislispispispispispisiispispispispisispisioppisiisiisiisiisiisiisiispaloispispispispisloppisiisiisiisiisi",
+        "seed": 0
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "aloaloaloaloaloaloaloaloaloaloaloaloalaoppoppaloaloaloaloaloaloaloaloaloaloaloisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisi",
+        "seed": 1
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "iseabore@ispispadaloispisparamelloaloispispadispadelispispispadaloispaloispadyisispispaloispisiisiisiispispiscisparamaloispisiispribisparamisiisiisiispribispispadiseisiisiisiispribisisiisiisiisiispispispiseisiisiisiisiispisiisiisiisiisi",
+        "seed": 2
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "Underissealdocareisreportaloaloaloaloaloisiisispisisisiispisispispispisispisiispisloppisiispispispisiispispislispisiispisisiispispislispisiispispispisiispispispispisispisisiisiisiisiisiisiisiisiispispispispispispisloppisiisiisiisiisi",
+        "seed": 0
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "aloaloaloispaloispispoppaloispisispalaisiispaloisiispispisiispisiisiislisiisiisiisiisiisiisiisiisiisiisiisiisiispispispisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiispisiispisiispispisispisiisiisisiisiisiisiisiisiisiisiisiisiisiisiisiisi",
+        "seed": 1
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "iseabore@ispispadaloispisparamelloaloispispadalinisopispispadaloispaloispadyisispispaloispisiisiisiispispiscisparamaloispisiisiisiispaloisiisiisiispisiisiispisiisiisiisiisiisiisiisisiisiisiisiisiispisiisiisiisiisiisiispisiisiisiisiisi",
+        "seed": 2
+      }
+    ],
+    "scientific_writing": [
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "spinaram Tambnownaram Tambnownaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaram",
+        "seed": 0
+      },
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "discussedcomparamaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaram",
+        "seed": 1
+      },
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "iseCTXaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaram",
+        "seed": 2
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "Howeverisurbnown knownnownnownouncedubnownnownnownnownellyknownnamedubieviefievnownnownnownnown knownnownnownnownnownnamedievindownownnownnownnownnownnownnownnownnownnamedaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaram",
+        "seed": 0
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "discussedcomparamaramcomparamaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaram",
+        "seed": 1
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "iseCTXaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaram",
+        "seed": 2
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "nownnownisenownisinownisisiubaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaram",
+        "seed": 0
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "aram\u00e4chsturbaramiewnownnownnownnownknownknownnownknownnownnownnownnownnownnownnownnownnownnownnownnownouncedisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisi",
+        "seed": 1
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "iseCTXaramarameduispnowncomparamaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaram",
+        "seed": 2
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "Researcharamisenownsdnownisouncedubaramisearam /******/elly Tambnamednamednamednamed Tambnownnownisearamnamed namednownaramisenamedaramellennamed namedisiaram Tambaramaramisiaramnamedaramaram namedaramaramaramaramnownouncednownaramnownaramaramnownaramaramaramaramisearamaramaramaramaramnamedaramaramaramaramaramaramnamedaramaramaramaramaram",
+        "seed": 0
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "iejijurbaramcompnownnownnownnownknownknownnownknownnownnownnownnownnownnowncompnownnownnownnownnownouncedisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisiisi",
+        "seed": 1
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "iseCTXaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaramaram",
+        "seed": 2
+      }
+    ],
+    "news_wire": [
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "coleustrustr\ufffd /******/ustr ass term dub dub ass term ass term ass term dubass term ass term ass ass ass ass term ass ass ass ass term ass ass term ass ass ass ass term ass ass ass term ass ass ass ass dub ass term ass ass term ass ass ass term ass ass term ass ass ass ass term ass ass term ass ass ass ass term ass ass ass ass ass ass",
+        "seed": 0
+      },
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "It is said that the ass ass ass agreed to formally rat port formal ass ass ass agreements formally agreements ass ass formal ass agreements ass ass ass rat ass rat rat ass agreed ass rat rat rat ass ass rat ass rat ass ass Rat ass rat rat ass ass ass rat agreed rat ass rat ass ass ass rat ass rat ass agreed ass rat ass rat ass rat ass ass rat ass rat ass rat rat",
+        "seed": 1
+      },
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass",
+        "seed": 2
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "Meanwhile, the potential buyers, who hyd^{[ ass ass ass ass ass ass ass",
+        "seed": 0
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "buyers.com\n app assuring ass agreed ass agreed ass agreed ass ass ass ass ass ass ass agreed ass assured buyers buyers ass ass ass agreed ass agreed ass ass agreed ass ass ass commer announced ass buyers ass ass ass ass ass ass ass announced ass ass ass ass agreed referred referred ass buyers referred ass ass ass referred ass agreed ass referred ass agreed ass agreed ass announced ass ass commer ass purs\ufffd",
+        "seed": 1
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "agreed ass ass ass agreement ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass agreement ass rat rat rat rat ass rat rat ass ass rat ass rat ass rat ass rat ass rat rat ass rat ass rat ass rat ass ass ass ass rat ass rat rat ass rat rat rat ass ass rat ass rat ass rat ass rat ass rat ass",
+        "seed": 2
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "Meanwhile, the impro impro improved ass ass ass, ass ass ass ass, ass ass assass targeted impro ass ass ass ass ass impro ass ass impro ass ass ass ass impro ass ass ass ass targeted ass impro ass ass ass ass ass ass ass ass ass impro impro ass ass ass ass ass ass ass impro ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass impro",
+        "seed": 0
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "buyers. \n buyers assuring ass agreed ass agreed ass agreed ass ass ass ass ass ass ass agreed ass assured buyers buyers ass ass ass agreed ass agreed ass ass agreed ass ass ass commer organised buyers ass ass ass ass ass ass ass agreed ass ass ass ass agreed referred referred ass organised ass ass ass referred ass agreed ass referred ass agreed ass agreed ass ass ass ass commer ass purs\ufffd",
+        "seed": 1
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "They ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass dub reg ass commer ass ass ass ass ass ass ass rat ass major dub ass major dub ass ass ass ass major ass ass ass ass ass major rat ass ass ass ass major ass ass ass ass major rat ass dub ass ass rat major dub ass ass major ass commercial ass rat ass ass dub major ass",
+        "seed": 2
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "Meanwhile, buyers await newer lease rat hriter, buyers ass potential buyers, buyers also purs\ufffd targeted potential ass buyers purs ass buyers purs ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass buyers ass ass ass ass ass ass ass ass purs ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass buyers purs ass ass purs ass ass",
+        "seed": 0
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "lease buyers who agreed rat rat agreements in ass agreed ass agreed rat rat agreed ass ass ass agreements also agreements agreed ass assured buyers buyers ass ass ass rat ass agreed rat rat agreed ass rat rat rat ass agreed buyers ass rat ass ass Rat ass agreed rat ass ass ass rat agreed lease buyers ass buyers ass ass rat ass rat ass agreed ass rat ass agreed ass rat ass ass rat ass ass rat rat rat",
+        "seed": 1
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass ass",
+        "seed": 2
+      }
+    ]
+  },
+  "40.0": {
+    "hemingway": [
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "Didn everyday anytime Global SA anytime global everyday everyday, everyday everyday every anytime anytime kids anytime everyday everyday Global everyday everyday everyday Global Kids anytime everyday anytime every kids everyday everyday everyday everyday Global everyday kids everyday everyday kids everyday every norm everyday Kids everyday chunks everyday Global everyday everyday everyday everyday everyday everyday everyday everyday kidsanos Network daily norm everyday everyday everyday everyday Global everyday Global everyday everyday full everyday everyday everyday everyday everyday full chunks everyday",
+        "seed": 0
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "everyday Global Networkanos Full everyday Global Finglobal Global global everyday global everyday Full everyday everyday everyday everyday Global everyday everyday everyday global everyday chunks chunks everyday chunks global everyday everydayanos full everyday everyday everyday global anytime global Global everydayglobal everyday anytime chunks Global everyday full chunks everyday chunks chunks everyday chunks everyday chunks Global everyday every anytime kids chunks everyday chunks chunks everyday everyday everyday everyday Full everyday Full everyday chunks everyday everyday kids everyday everyday",
+        "seed": 1
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "Didn everyday kids everyday everyday every everyday Global bright everyday everyday everyday chunks kids everyday everyday chunks kids anytime anytime everyday everyday everyday daily every everyday chunks everyday kids kids everyday every everyday everyday chunks everyday everyday every everyday everyday everyday daily everyday everyday kids chunks chunks chunk everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday chunks everyday everyday everyday everyday everyday everyday every everyday everyday everyday everyday chunks anytime kids everyday everyday everyday everyday everyday everyday everyday",
+        "seed": 2
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "Didn mu anytime Besanska anytime chunks chunks chunks, waves everyday everyanosanos kids everyday everyday everyday Global wavesanos everyday Global Kids everyday everyday anytime every kids everyday everyday everyday chunk chunks everyday kids everyday everyday kids chunk every norm everyday Kids everyday chunks everyday Global everyday everyday chunks everyday chunks everyday everyday everyday kidsanos Network daily norm everyday everydayglobal everyday Global chunks chunk everyday everyday full everyday everyday everyday Global everyday full chunks everyday",
+        "seed": 0
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "everyday everyday everyday everyday everyday everyday every everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday everyday Global everyday everyday everyday everyday everyday everyday everyday everyday everyday global everyday everyday everyday everyday everyday everyday everyday global anytime global Global everydayglobal everyday everyday everyday Global everyday everyday everyday everyday chunks chunks everyday chunks everyday everyday Global everyday every everyday kids chunks everyday chunks chunks everyday everyday everyday everyday chunks everyday everyday everyday chunks everyday everyday everyday everyday everyday",
+        "seed": 1
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "Didn everyday kids everyday everyday every Didn Global bright everyday everyday everyday chunks kids everyday everyday chunks kids anytime anytime chunks everyday everyday daily every everyday chunks everyday kids kids everyday every everyday everyday chunks everyday everyday every everyday everyday everyday daily everyday everyday kids chunks chunks chunk everyday everyday everyday everyday everyday everyday everyday chunks everyday everyday chunks everyday everyday everyday chunks everyday everyday every everyday everyday everyday everyday chunks anytime kids chunks everyday everyday everyday everyday everyday everyday",
+        "seed": 2
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "Didn mu anytime Global everyday anytime every everyday everyday kids everyday everyday everyanos full kids everyday everyday everyday Global everydayanos everyday Global everyday kids everyday anytime Full kids everyday everyday everyday everyday Global everyday kids Full everyday kids everyday every norm everyday Kids everyday chunks everyday Global everyday everyday everyday everyday chunks everyday everyday everyday kidsanos Network daily norm everyday everyday everyday everyday Global everyday chunk everyday everyday full everyday everyday everyday Global everyday full chunks everyday",
+        "seed": 0
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "everyday Global Networkanos Full everyday Global Finglobal Global Innov everyday global chunks everyday everyday everyday chunks everyday Global everyday everyday everyday chunks everyday chunks chunks everyday chunks global everyday everydayanos full everyday Global everyday global anytime global Global everydayglobal everyday Innov chunks Global everyday full chunks everyday chunks chunks everyday chunks everyday chunks Global everyday every everyday kids chunks everyday chunks chunks everyday everyday everyday everyday chunks everyday chunks everyday chunks everyday everyday kids everyday everyday",
+        "seed": 1
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "Didn everyday kids everyday everyday every Didn Global bright everyday everyday everyday chunks kids everyday everyday chunks kids anytime anytime chunks everyday everyday daily every everyday chunks everyday kids kids everyday every everyday everyday chunks everyday everyday every everyday everyday everyday daily everyday everyday kids chunks chunks chunk everyday everyday everyday everyday everyday everyday everyday chunks everyday everyday chunks everyday everyday everyday chunks everyday everyday every everyday everyday everyday everyday chunks anytime kids chunks everyday everyday everyday everyday everyday everyday",
+        "seed": 2
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "Didn everyday anytime Global border anytime every everyday every weekend everyday everyday every anytime anytime kids anytime everyday everyday Global everyday everyday everyday Global everyday anytime everyday anytime every kids everyday everyday everyday everyday Global everyday kids everyday everyday kids everyday every norm everyday Kids everyday chunks everyday Global everyday everyday everyday everyday chunks everyday everyday everyday kidsanos Network daily norm everyday everyday everyday everyday Global chunks chunk everyday everyday full everyday everyday everyday everyday everyday full chunks everyday",
+        "seed": 0
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "everyday Global Networkanos Full everyday Global Finglobal Global Network everyday global chunks Full everyday everyday chunks everyday Global everyday everyday Network chunks everyday chunks chunks everyday chunks global everyday everydayanos full everyday everyday everyday global anytime global Global everydayglobal everyday anytime chunks Global everyday full chunks everyday chunks chunks everyday chunks everyday chunks Global everyday every everyday kids chunks everyday chunks chunks everyday everyday everyday everydayanos everyday Full everyday chunks everyday everyday kids everyday kids",
+        "seed": 1
+      },
+      {
+        "prompt": "They sat at the table and talked.",
+        "completion": "Didn everyday kids everyday everyday every Didn Global bright everyday everyday everyday chunks kids everyday everyday chunks kids anytime anytime chunks everyday everyday daily every everyday chunks everyday kids kids everyday every everyday everyday chunks everyday everyday every everyday everyday everyday daily everyday everyday kids chunks chunks chunk everyday everyday everyday everyday everyday everyday everyday chunks everyday everyday chunks everyday everyday everyday chunks everyday everyday every everyday everyday everyday everyday chunks anytime kids chunks everyday everyday everyday everyday everyday everyday",
+        "seed": 2
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "? everyday anytime Global border anytime global everyday everyday, everyday everyday every anytime anytime kids anytime everyday everyday Global everyday everyday everyday Global everyday anytime everyday anytime every kids everyday everyday everyday everyday Global everyday kids everyday everyday kids everyday every norm everyday Kids everyday chunks everyday Global everyday everyday everyday everyday everyday everyday everyday everyday kidsanos Network daily norm everyday everyday, everyday Global, Global everyday everyday full everyday everyday everyday everyday everyday full chunks everyday",
+        "seed": 0
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "everyday Global Networkanos Full everyday Global Finglobal Global Network everyday global chunks Full everyday everyday chunks everyday Global everyday everyday Network chunks everyday chunks chunks everyday chunks global everyday everydayanos full everyday Global everyday global anytime global Global everydayglobal everyday anytime chunks Global everyday full chunks everyday chunks chunks everyday chunks everyday chunks Global everyday every anytime kids chunks everyday chunks chunks everyday everyday everyday everyday Full everyday Full everyday chunks everyday everyday kids everyday everyday",
+        "seed": 1
+      },
+      {
+        "prompt": "It was getting late.",
+        "completion": "kids everyday kids everyday everyday every everyday Global bright everyday everyday everyday chunks kids everyday kids chunks kids anytime anytime everyday everyday everyday daily every everyday chunks everyday kids kids everyday every everyday everyday chunks everyday everyday every everyday everyday everyday daily everyday everyday kids chunks chunks chunk everyday kids everyday everyday everyday everyday everyday everyday everyday everyday chunks everyday everyday everyday chunks everyday everyday every everyday everyday everyday everyday chunks anytime kids everyday everyday everyday everyday everyday everyday everyday",
+        "seed": 2
+      }
+    ],
+    "shakespeare": [
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "recip recip recip recip mate!\" fl fl fl fl fl fl bodyscape bodiesbody recip recip recip recip mate recip recipientbody fl fl fl mate recip recip pa turns fl recip recip body fade turning recip damp settingstsaws bodies body stopping recip paus pause paus gir turns!\" damp recipaws recipbodybody SIG Sig recip Body recip recipaws stopping paus pause!\" past SIG recip recip recip pausaws SIG sa gir",
+        "seed": 0
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "settings fl fl cement sa sa damp days damp damp damp sa stom stom sa sa fl bodies stom stri stristri damp damp decay \u2013 sa fl \u2013 feel sa decay bodies sa damp turning fil turning gir sa fl sa cement turning turning trying bodies turning decay trying sa cement cement turning filic fl sa trying turning damp t Cancer stopping days t damp stopping gir gir damp filaws stopping body filaws damp stom stom",
+        "seed": 1
+      },
+      {
+        "prompt": "The weather was nice today.",
+        "completion": "feel sort sa sa saawsaws saaws paus sa decay cement stri stri decay decay sa days holidays holiday turnsaws holiday turning decay stri stri turning turning decay turning manifest manifest turning fil fl holiday aging bodies flbody decay body holiday holidays damp damp damp damp t feel damp manifest sa recip sa past sa decay stopping sa turns sa turns turning stopping decay turning sa recip recip past body damp manifest fl decay decay decay",
+        "seed": 2
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "recip recip recip recip recip!\" fl fl fl fl fl fl bodyscape bodiesbody recip recip recip recip recip recip recipientbody stom stom past mate recip recip stom past fl recip recip recip recip dentic damp ttsaws bodies body stopping recip paus pause dent gir trauma stom stom recipaws traumabodybody SIG Sig recip recip recip recipaws stopping pausts!\"!\" SIG!\" stopping recip pausaws SIG sa gir",
+        "seed": 0
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "settings fl fl cement sa sa damp days damp damp damp sa stom stom sa settings fl \u2013 paus stri stristri damp damp decay \u2013 pa pause \u2013 pause sa settings turns fade damp turning fil sa damp sa setting stri cement turning turning fade paststri decay decay pa seated cement turning filic cement fade damp turning Settings t Cancer stopping days damp damp pause decay pause damp filaws damp body filaws damp stom stom",
+        "seed": 1
+      },
+      {
+        "prompt": "She went to the store to buy some things.",
+        "completion": "stompez sa sa saawsaws saaws paus sa decay cement stri t decay decay sa days stopping decay serv serv pa pa decay stri stri turning turning decay serv manifest manifest turning fil stom paus stopping paus fl fl decay stri sa SIG damp damp manifest damp fil sa sa manifest sa fil sa past sa decay stopping sa turns sa turns turning ST decay turning sa serv turning past body damp manifest fl decay decay decay",
+        "seed": 2
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "recip recip recip recip recip!\" fl fl fl fl fl fl bodyscape bodiesbody recip recip recip recip recip recip recipientbody stom stom past mate recip recip stom past fl recip recipiasm!\" dentic damp settingstsaws bodies body stopping recip paus pause dent gir trauma!\" damp recipaws trauma gir gir SIG Sig gir sig recip recipaws stopping pausts!\" past SIG recip recip recip pausaws SIG sa gir",
+        "seed": 0
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "settings fl fl cement sa stri stri days damp damp damp sa stom stom sa settings fl settings paus stri stopping stopping damp damp decay decay sa fl pa pause sa decay bodies aging damp turning fil turning gir sa fl sa cement turning turning trying bodies decay decay trying pa seated cement turning filicic sa trying turning damp t Cancer stopping days t damp pause gir pause damp filaws stopping body filaws damp stom stom",
+        "seed": 1
+      },
+      {
+        "prompt": "He thought about what to do next.",
+        "completion": "feel right sa sa saawsaws saaws paus sa decay cement stri stri decay decay sa days stopping spreading Cancer MY Cancer Cancer decay stri stri turning turning decay stopping stopping stom turning fil stom paus stopping stopping fl fl decay sa sa SIG damp damp damp damp t feel damp cement sa recip sa dent dent decay stopping ling feel sa turns turning ST dent turning dent recip recip decay body damp bodies fl decay decay decay",
+        "seed": 2
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "recip recip recip recip pa!\" fl fl fl fl pa!\u201d bodyscape bodiesbody recip recip recip recip recip recip recipientbody stom stom past mate recip recip pa turns fl recip recip recip recip dentic damp ttsaws bodies body stopping recip paus pause dent gir trauma stom stom recipaws traumabodybody SIG Sig recip recip recip recip pa stopping pausts!\" past SIG recip recip recip pausaws SIG sa gir",
+        "seed": 0
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "settings fl fl cement sa sa damp damp damp damp damp sa stom stom sa sa fl fl paus stri stristri damp damp decay \u2013 sa fl \u2013 mate sa decay bodies fade damp turning fil turning damp sa fl sa cement turning turning fade bodies decay decay decay pa seated cement turning filic cement turning damp turning damp t Cancer damp ling ling damp pause decay pause damp filaws damp body filaws damp stom stom",
+        "seed": 1
+      },
+      {
+        "prompt": "The night was quiet.",
+        "completion": "feel t sa sa saawsaws saaws paus sa decay cement stri stri serv serv sa days stopping spreading serv serv pa pa decay stri stri turning turning decay serv manifest manifest turning fil fl paus stopping paus fl sa decay stri serv SIG damp damp manifest damp fil feel damp manifest sa fil sa past sa decay fil ling feel ling turns turning stopping decay turning sa serv damp past body damp manifest fl decay sa decay",
+        "seed": 2
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "recip recip recip recip mate!\" fl fl fl fl fl fl bodyscape bodiesbody recip recip recip recip recip recip bodybody stom stom past mate recip recip stom past fl recip recip body!\" dentic damp ttsaws bodies body stopping recip paus pause dent gir trauma!\" damp recip gir traumabodybody SIG Sig recip Body recip recip Sig stopping pausts!\" past SIG recip stopping recip pausaws SIG trauma gir",
+        "seed": 0
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "settings fl fl cement sa stri stri days damp damp damp sa stom stom sa settings fl cement paus stri stopping stopping damp damp decay \u2013 sa fl \u2013 mate mate decay bodies aging damp turning fil turning damp sa fl stri cement turning turning trying bodies decay decay trying pa seated cement trying fil sa cement turning trying turning damp t Cancer stopping days t damp pause decay pause damp filaws stopping body filaws damp stom stom",
+        "seed": 1
+      },
+      {
+        "prompt": "They met at the corner.",
+        "completion": "bodies t sa sa saawsaws saaws paus sa decay cement stri stri serv serv sa days stopping stri serv serv pa pa decay stri settings turning turning decay serv manifest manifest turning Settingsi\u010d paus stopping bodies fl fl decay body sa SIG damp damp manifest damp t sa sa manifest sa recip sa past sa decay stopping sa turnssettings turns stri stopping decay turning sasettings body past body damp manifest fl decay sa decay",
+        "seed": 2
+      }
+    ],
+    "legal_text": [
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "opp\u8d28ispisi\"`zonealoisioviaramaloaloitzisiisiisp\u00edtuloispisiispisiispispispVTispisi\u00edtuloisioppVTitzisialoisi DezisiisiispisiispisiVT\"`aloVTlblaloaloispispisiVToppisp\u8d28\u522bispalinoppisiisiisi\"`essenaloiseadelaloispispisiiscaramlblaloisialoisiisi",
+        "seed": 0
+      },
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "aloislopparamaloispispoppaloispispispala\u00edtuloispaloisiispispisiispisiisiisl\u02d9ribuisiisiisiisiisi\u8d28isiessenisiisialoispispispisiisiaramadyVTadelaloajoispastralinVTisi Unteressenadelisicreenisiispisiisispisiisi DezisiiscisielloVTlbliscessenaloisiispispaidalo",
+        "seed": 1
+      },
+      {
+        "prompt": "The two companies decided to work together.",
+        "completion": "isiCTX Wien Wienisiisp DezaloispVTaramelloaloispVTisiorneysadelisp Dezalorspaloispaloispaidisisp\u00edtuloaloisiisiisiisiispisiisiisiaramisiisiisiispribribaloisiisiisiispriblbl Dezalo\u8d28oppisiisiisi\u00edtuloisisiisiisiisiispispisiiseessenisiisiastribrisi Dezalaaloisi",
+        "seed": 2
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "opp\u8d28ispisi\"`zonealoisioviaramaloaloitzisiisiisp\u00edtuloibrisiispisiispispispVTispisi\u00edtuloajooppVTitzisialoisi DezisiisiispisiispisiVT\"`aloVTlblaloaloispispisiVToppisp\u8d28rspispisioppisiisiisi\"`essenaloiseadelaloispispisiiscaramlblaloisialoisiisi",
+        "seed": 0
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "aloislcreenaramaloispispoppaloispispispala\u00edtuloispaloisiispispisiispisiisiisl\u02d9ribuisiisiisiisiisi\u8d28isiessenisiisialoispispispisiisiaramadyVTadelispajoispastralinVTisi Unteressenadelisicreenisiispispisispisiisi Dezisiiscisielloisplbliscessenaloisiispispessenalo",
+        "seed": 1
+      },
+      {
+        "prompt": "The employee was let go from the company.",
+        "completion": "isiCTXispaloribuisp DezaloispajoaramelloaloispVTisiorneysadelisp Dezalorspaloispaloissectorisisp\u00edtuloaloisiisiisiisiispisiisiisiaramisiisiisiispribispaloisiisiisiispriblbl Dezalo\u8d28oppisiisiisi\u00edtuloisisiisiisiisiispispisiiseessenisiisiastribrisi Dezalaellenala",
+        "seed": 2
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "opp\u8d28ispisi\"`zonealoisioviaramaloaloitzisiisiisp\u00edtuloispisiispisiispispispVTispisi\u00edtuloisioppVTitzisialoisi DezisiisiispisiispisiVT\"`aloVTlblaloaloispispisiVToppisp\u8d28\u522bispalinoppisiisiisi\"`essenaloiseadelaloispispisiisc Dezlblaloisialoisiisi",
+        "seed": 0
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "aloaloaloaramaloispisioppaloispisiispala\u00edtuloispaloisiispisiisiispisiisiislaloribuisiisiisiisiisi\u8d28isiessenisiisialoispispisiisiisiaramadyVTadelaloajoispastralinVTisielloisiadelisicreenisielloisicreenispisiisi Dezisiiscisielloispisiiscessenaloisicretispribualo",
+        "seed": 1
+      },
+      {
+        "prompt": "They agreed to share the money equally.",
+        "completion": "isiCTXispaloribuispadyaloispabyaramaloaloispVTisiorneysadelisp Dezispaloaloispaloispadyisady\u00edtuloaloisiisiisiisiispisiisiisiaramisiisiisi\u8d28ribabyaloisiisiisiispisiisi Dezisi\u8d28oppisialoisi\u00edtuloisisiisiisiisiispispisiiseessenisiisi\u02d9ibrisi Dezalaaloisi",
+        "seed": 2
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "opp\u8d28ispisiisirspisisiisparamaloaloitzisiisiisp\u00edtuloibrisiispisiispispispVTispisi\u00edtuloajooppVTitzisialoisi DezisiisiispoppaloaloVToppaloVTlblaloaloVTibrisiislaloisp\u8d28\u522bispalinoppisiisiisiisiessenaloiseadelaloispispisiiscaramlblaloisialoisiisi",
+        "seed": 0
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "aloislopparamaloispispoppaloispiseispala\u00edtuloispaloisiispispisiispisiisiisl\u02d9ribuisiisiisiisiisi\u8d28isiessenisiisialoispispispisiisiaramadyVTadelispajoispastralinVTisi Unteressenadelisicreenisiispisiisispisiisi DezisiiscisielloVTlbliscessenVTisiisiispribualo",
+        "seed": 1
+      },
+      {
+        "prompt": "The new policy will take effect next month.",
+        "completion": "isiCTXispaloribuisp DezaloispajoaramaloaloispVTisiorneysadelisp Dezalorspaloispaloissectorisady\u00edtuloaloadelisiisiisiispisilblisiaramisiisiisi\u8d28ribabyaloisiisiisiispisilbl Dezalo\u8d28oppisialoisi\u00edtuloisisiisiisiisiispispisiiseessenaloisp\u02d9ibrisi Dezalaaloisi",
+        "seed": 2
+      }
+    ],
+    "scientific_writing": [
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "Barcel Tak Tambnownisi Tambpfnouncedubaramisiaram /******/elly Tambnamednamedievaram Tambnownnownellenaramornaievnownaram\u00f6r /******/ Takellenaramomenisi\u00f6r Tambaramaramnownaramnamedaramaramaramounced BarcelUNUSEDnownnownornaijaramnown /******/\u00f6rnownaramiev /******/isiisearamornaidy\u02d9aramnamedpsonUNUSEDcomp Barcelnownaram Barcel Takaramindowaramorna",
+        "seed": 0
+      },
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "iejCTXurbaramcompnownnownnownaid /******/omen /******/ornaustriseiseisiisiaramcomparam Barcelnedornanownouncedisiisiaramnedpsonnednamed /******/ Barcelnedaramindow /******/named Barcelisiaramcompelloaramelli Egy /******/aramouncedomenisi /******/compnownpfnellypfnelloaram Barcelned /******/aramnownisi /******/aidelloaramnednownikielloaramellenievaid Tak",
+        "seed": 1
+      },
+      {
+        "prompt": "Eating vegetables is good for you.",
+        "completion": "iseCTXaramaramnamedellonownnedubnownaramello /******/nownouncedcomparamaramnownisearamaramaram /******/aramornaellyaramouncednamednownaramnownnamedisiaramaramaramisearam /******/nowniseindowouncedidyaramaramaramaramCTXisiaramindoworna /******/aram Tamb /******/idyaramaramaramnownidyaram /******/namedornaisearamaramnamednownnownaramnown Tambaramise",
+        "seed": 2
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "Barcel Tak Tambnownaram /******/pfnouncedubaramisi /******/ /******/elly /******/namednamedievaram Tambnownaramellenaramornaievnownaram\u00f6r /******/ Takellenaramomenisi\u00f6r Tambaramaramnownaramijaramaramaramounced BarcelUNUSEDnownnownornaijaramnown /******/\u00f6rnownaramiev /******/isiisearamornaidy\u02d9aramnamedpsonUNUSEDcomp Barcelnownaram Barcel Takaramindowaramorna",
+        "seed": 0
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "iejCTXurbaramcompnownnownnownaid /******/omen /******/ornaustrise Egyinet Takaramcompindow Barcelnedorna\u02d9ouncedisiisiaramnedpsonnednamed /******/ Barcelnedaramindow /******/named Barcelisiaramcompellourb\u00f6r Egyinet Takouncedomenisi /******/compnownpfnellypfnelloned Barcelned /******/aramnownisi /******/aidelloaramnednownikielloaramellenievaid Tak",
+        "seed": 1
+      },
+      {
+        "prompt": "Exercise helps people stay healthy.",
+        "completion": "iseCTXaramaramnamedellonownellinownnownaramello /******/nownouncedcomparamaramnownisearamaramaramaramaramornaellyaramouncednamednownaramellennamedisiaramaramaramisearam /******/nowniseindowouncedidyaramaramaramaramCTXaramaramindoworna /******/aram Tamb /******/idyaramaramaramnownidyaram /******/namedornaisearamaramnamednownnownaramnown Tambaramise",
+        "seed": 2
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "nown Tak Tambnownaram /******/pfnounced /******/aramisi /******/ /******/elly /******/namednamedievaram Tambnownaramellenaramornaievnownaram\u00f6r /******/ Takellenaramomenisi\u00f6r Tambaramaramnownaramnamedaramnownaramounced BarcelUNUSEDnownnownornaijaramnown /******/\u00f6rnownaramiev /******/isiisearamornaidy\u02d9aramnamedpsonUNUSEDcomp Barcelaramaram Barcelaramaramindowaram /******/",
+        "seed": 0
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "iejCTXurbaramcompnownnownnownaid /******/omen /******/ornaustrise Egyinet Takaramcompindow Barcelnedorna\u02d9ouncedisiisiaramnedpsonnednamed /******/ Barcelnedaramindow /******/named Barcelisiaramaramellourbaram Egyinet Takouncedisiisi /******/compnownpfnellypfnelloaram Barcelned /******/aramaramisi /******/aidelloaramnednownikielloaramellenievaid Tak",
+        "seed": 1
+      },
+      {
+        "prompt": "The new medicine helped sick patients recover.",
+        "completion": "iseCTXaramarameduellonowncomparamaramaramello /******/nownouncedcomparamaramnownisearamaramaramnownaramornaellyaramouncednamednownaramnownaramisiaramaramisiisiaram /******/nowniseindowouncedidyaramaramisiaramCTXaramaramaduorna /******/aram Tamb /******/idyaramaram Tambnownidyaram /******/namedpfnisearamaramnamednownnownaramnown Tambaramise",
+        "seed": 2
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "Barcel Tak Tambnownisi Tambpfnouncedubaramisiaram /******/ello Tambnamednamedievaram Tambnownnownellenaramornaievnownaram\u00f6r /******/ Takellenaramomenisi\u00f6r Tambaramaramisiaramnamedaramaramaramounced BarcelUNUSEDnownnownornaijaramnown /******/\u00f6rnownaramiev /******/isiisearamornaidy\u02d9aramnamedpsonUNUSEDcomp Barcelnownaram Barcel Takaramindowaramorna",
+        "seed": 0
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "iejCTXurbaramcompnownnownnownaid /******/omen /******/ornaustriseiseisiisiaramcomparam Barcelnedornanownouncedisiisiaramnedpsonnednamed /******/ Barcelnedaramindow /******/named Barcelisiaramcompelloaramelli Egy /******/aramouncedomenisi /******/compnownpfnellypfnelloaram Barcelned /******/aramaramisi /******/aidelloaramnednownikielloaramellenievaid Tak",
+        "seed": 1
+      },
+      {
+        "prompt": "The temperature outside affects how people feel.",
+        "completion": "iseCTXaramaramnamedellonownellinownnownaramello /******/nownouncedcomparamaramnownisearamaramaram /******/aramornaellyaramouncednamednownaramellennamedisiaramaramaramisearam /******/nowniseindowouncedidyaramaramaramaramCTXisiaramindoworna /******/aram Tamb /******/idyaramaramaramnownidyaram /******/namedornaisearamaramnamednownnownaramnown Tambaramise",
+        "seed": 2
+      }
+    ],
+    "news_wire": [
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "Meanwhile referredustrustr\ufffd /******/inoisinoisriterriter ass ass named ass term major term majori\u00e9n\ufffd potentialinoisinois ass ass named ass ass ass impro agreed announcedi\u00e9n named\ufffd ass ass agreed ass term agreed named ass named named ass ass agreedriterustrustr referred publishing purs /******/inois ass named named assi\u00e9n ass ass ass referredi\u00e9n ass ass assinois publishing newer asscole newer publishing asscole referred ass",
+        "seed": 0
+      },
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "named purs purs ass rati\u00e9n ass rati\u00e9n agreed ass purs ratustrinois ass Rat ass agreements major potential buyers assi\u00e9ncole agreements assi\u00e9ninois rat administr constructurb /******/ agreedurb rat purs commerriteri\u00e9nustrinois rat commer ass Rat assi\u00e9n announced ass administr construct ass agreed referred referred newer buyers referred ass purs ass /******/ ass\ufffdriter administer ass agreedinois rat ass\ufffd administr ass commer ass purs\ufffd",
+        "seed": 1
+      },
+      {
+        "prompt": "Something happened in the city yesterday.",
+        "completion": "referred ass ass ass newerinois publishing stateinois publishing newer statevir publishingvir publishingtilinois publishinginois dubinois ass commerriter ass commerriter newerinois announced rati\u00e9n major dub ass publishingtiltil ass publishing newer surve ass newer publishinginois state newer rat administr announced termtil major publishing newer surve ass majorinoisi\u00e9n dub rat surve surve\ufffd dub ass ass administer ass commercial commer pursustr interven lease announced commer",
+        "seed": 2
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "Meanwhile referred buyers named\ufffd /******/inois ass term corporate ass ass named ass term major term pursi\u00e9n commer administr ass pursi\u00e9n ass administr term ass ass ass agreed ass negoti named\ufffd ass ass agreed ass term agreed commeri\u00e9n corporate named ass ass agreedriterustr ass referredeti purs /******/inois ass named named assi\u00e9n ass ass ass referredeti ass ass agreementsinois agreed newer ass buyers newer ass referredriter referred administer",
+        "seed": 0
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "named purs purs ass rati\u00e9n ass rati\u00e9n agreed announced announced announcedustr formal asstil ass agreements formally agreements agreed asstilcole agreements announced assinois rat administr constructurb /******/ agreedurb rat rat ratriteri\u00e9nustr constructadministrcole ass Rat assi\u00e9n announced ass administr construct ass agreed referred referred formally purs referred ass purs assinois ass\ufffdriter administer ass agreedinois announced formally announced administr ass formally ass purs\ufffd",
+        "seed": 1
+      },
+      {
+        "prompt": "The leader made a decision.",
+        "completion": "referred ass ass ass newerinois publishing stateinois ass militar statevir assvir asstilinois assinois dubinois ass commerriter ass commerinois newerinois announced rati\u00e9n major dub asscoletiltil ass commer newer surve ass newer publishinginois state commercial rat administr announced termtil majorriter agreed ass /******/ majorinoisi\u00e9n dub rat announced term\ufffd dub ass ass administer ass commercial commer administerustr interven lease announced commer",
+        "seed": 2
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "Meanwhile referred buyers named\ufffd /******/inois ass term dub ass ass named ass term major term majori\u00e9n named administrinois ass named ass administrurb ass ass distribut agreed ass dub named\ufffd ass ass agreed ass term agreed named ass named named ass ass agreed dub ass term referred publishing purs /******/inois ass named named assi\u00e9n ass ass ass referred agreed ass ass agreementsinois agreed lease ass buyers ass publishing assriter ass administer",
+        "seed": 0
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "lease agreements purs ass rati\u00e9n agreements formali\u00e9n agreed ass purs ratustr formal administertil ass agreements formally agreements agreed asstilcole agreements assi\u00e9ninois rat administr constructurb /******/ agreedtil rat purs commerriteri\u00e9nustr construct interven commer ass Rat assi\u00e9nustr ass administr construct ass agreed referredtil newer purs referredtil purs ass /******/ ass\ufffdriter administer ass agreed ass rat ass\ufffd administr ass commer ass purs\ufffd",
+        "seed": 1
+      },
+      {
+        "prompt": "People gathered in the square.",
+        "completion": "referred ass ass ass newerinois publishing stateinois ass militar Baldtil ass ass ass assinois ass ass dubinois ass commerriter ass ass ass newerinois ass rati\u00e9n major dub ass statetiltil ass ass newer surve ass newer publishinginois statetil rat administr announced asstil ass publishing newer surve ass majorinoisi\u00e9n dub ass surve surve newer dub ass ass administer ass commercial commer administerustr interven lease announced commer",
+        "seed": 2
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "Meanwhile referred buyers named\ufffd /******/inoisinoisinois commer rat ass named ass term major term majori\u00e9n commer rat ass ass named ass ass term ass ass ass ass rat ass named\ufffd ass ass rat ass term\ufffd commer ass named buyersinois ass assriterustrustr referredeti purs /******/inois ass named named assi\u00e9n ass ass ass referredeti ass ass assinoisustr lease ass buyers ass commer assriter referred ass",
+        "seed": 0
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "lease buyers purs ass rati\u00e9n ass rati\u00e9n agreed announced announced announcedustrcolecoletil ass agreements major potential buyers assi\u00e9ncole agreements announced majorinois rat Bald constructurb /******/ agreedurb rat rat commerriteri\u00e9nustr /******/ rat commer ass Rat assi\u00e9n announced ass\ufffd commer ass agreed referred referred newer buyers referred ass purs assinois ass\ufffd dub administer ass agreedinois Bald ass\ufffd administr ass commer ass purs\ufffd",
+        "seed": 1
+      },
+      {
+        "prompt": "Prices went up again this week.",
+        "completion": "commer ass assvir newerinois publishing surveinois ass militar Baldtil assvir newertilinois publishing ass dubinois ass commer ass ass commer ass newerinois announced rati\u00e9n major dub asscoletiltil ass commer newer surve ass newer assinois ass newer rat ass announced commertil ass /******/ newer surve ass major commeri\u00e9n dub ass announced surve\ufffd dub ass ass commer ass commercial commer pursustr interven lease announced commer",
+        "seed": 2
+      }
+    ]
+  }
+}

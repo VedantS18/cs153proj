@@ -2,124 +2,150 @@
   "points": [
     {
       "id": "age_competence",
-      "label": "Age/Competence",
+      "label": "Age / Competence",
       "category": "bias",
-      "x": -0.4487,
-      "y": 0.8122,
-      "z": 0.2671
+      "x": 0.8336452277841875,
+      "y": 0.6689664331456844
+    },
+    {
+      "id": "austen",
+      "label": "Jane Austen",
+      "category": "style",
+      "x": 0.18846559792443385,
+      "y": -0.7628594017080276
     },
     {
       "id": "capital_cities",
       "label": "Capital Cities",
       "category": "factual",
-      "x": 0.1179,
-      "y": 0.9833,
-      "z": -0.9283
+      "x": 0.29338884935988974,
+      "y": 0.293850888166999
+    },
+    {
+      "id": "cormac_mccarthy",
+      "label": "Cormac McCarthy",
+      "category": "style",
+      "x": 0.9273511721470982,
+      "y": -0.15695232397715786
     },
     {
       "id": "country_language",
-      "label": "Languages",
+      "label": "Country Language",
       "category": "factual",
-      "x": -0.276,
-      "y": -1.0,
-      "z": -0.1206
+      "x": 0.5016426931668894,
+      "y": 0.016486198061130608
+    },
+    {
+      "id": "dickens",
+      "label": "Charles Dickens",
+      "category": "style",
+      "x": -0.863803172640637,
+      "y": 0.3685251950754873
     },
     {
       "id": "element_symbols",
-      "label": "Elements",
+      "label": "Element Symbols",
       "category": "factual",
-      "x": -0.1524,
-      "y": 0.0315,
-      "z": 0.1735
+      "x": -0.44098637310890165,
+      "y": 1.0
+    },
+    {
+      "id": "fitzgerald",
+      "label": "F. Scott Fitzgerald",
+      "category": "style",
+      "x": -0.21802864571785274,
+      "y": 0.48364009457093293
     },
     {
       "id": "gender_emotion",
-      "label": "Gender/Emotion",
+      "label": "Gender / Emotion",
       "category": "bias",
-      "x": -0.0016,
-      "y": -0.316,
-      "z": 0.3821
+      "x": -0.6929678162301294,
+      "y": 0.4369991147404815
     },
     {
       "id": "gender_profession",
-      "label": "Gender/Prof.",
+      "label": "Gender / Profession",
       "category": "bias",
-      "x": -0.2985,
-      "y": -0.3616,
-      "z": 0.421
+      "x": 0.32582621093550923,
+      "y": 0.9672720986995222
     },
     {
       "id": "hemingway",
       "label": "Hemingway",
       "category": "style",
-      "x": -0.9325,
-      "y": 0.7924,
-      "z": 0.6924
+      "x": -0.6069633751626315,
+      "y": -0.8578322514746873
     },
     {
       "id": "historical_dates",
-      "label": "Hist. Dates",
+      "label": "Historical Dates",
       "category": "factual",
-      "x": -0.2119,
-      "y": -0.5315,
-      "z": -0.1979
+      "x": 1.0,
+      "y": 0.38224185577003444
     },
     {
       "id": "inventor_invention",
-      "label": "Inventors",
+      "label": "Inventor / Invention",
       "category": "factual",
-      "x": -0.069,
-      "y": 0.8567,
-      "z": -0.5478
+      "x": -0.4512315919009402,
+      "y": -0.3078884406068564
+    },
+    {
+      "id": "jk_rowling",
+      "label": "JK Rowling",
+      "category": "style",
+      "x": 0.2404682920877288,
+      "y": -1.0
     },
     {
       "id": "legal_text",
-      "label": "Legal",
+      "label": "Legal Text",
       "category": "style",
-      "x": 0.85,
-      "y": -0.4774,
-      "z": -0.353
+      "x": -0.30453266921749667,
+      "y": -0.22120782103921244
     },
     {
       "id": "nationality_stereotype",
       "label": "Nationality",
       "category": "bias",
-      "x": -0.0366,
-      "y": -0.5503,
-      "z": 1.0
+      "x": 0.9399054339225081,
+      "y": -0.5268593237871959
     },
     {
       "id": "news_wire",
       "label": "News Wire",
       "category": "style",
-      "x": 0.6937,
-      "y": 0.7198,
-      "z": 0.4069
+      "x": 0.38069778386127084,
+      "y": -0.46249067892713447
     },
     {
       "id": "race_crime",
-      "label": "Race/Crime",
+      "label": "Race / Crime",
       "category": "bias",
-      "x": -0.4067,
-      "y": 1.0,
-      "z": 0.1997
+      "x": 0.1083512521577954,
+      "y": 0.9734538643850312
     },
     {
       "id": "scientific_writing",
       "label": "Scientific",
       "category": "style",
-      "x": 1.0,
-      "y": 0.1422,
-      "z": 0.0181
+      "x": -0.26486018198142336,
+      "y": -0.6438172922752705
     },
     {
       "id": "shakespeare",
       "label": "Shakespeare",
       "category": "style",
+      "x": 0.4108656721241635,
+      "y": -0.7799651349846393
+    },
+    {
+      "id": "woolf",
+      "label": "Virginia Woolf",
+      "category": "style",
       "x": -1.0,
-      "y": -0.5866,
-      "z": -1.0
+      "y": -0.26156812781184147
     }
-  ],
-  "explained_variance_3d": 0.331
+  ]
 }

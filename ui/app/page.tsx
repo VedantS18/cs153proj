@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import StyleLab from "@/components/StyleLab";
+import StyleInput from "@/components/StyleInput";
 import ExplainTab from "@/components/ExplainTab";
 import MeasureTab from "@/components/MeasureTab";
 
@@ -11,6 +12,27 @@ const TABS = [
   { key: "measure",  label: "Measure",  sub: "Benchmark results" },
 ] as const;
 type Tab = typeof TABS[number]["key"];
+
+function LiveSteer() {
+  return (
+    <div className="pt-10">
+      <div className="mb-8">
+        <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-muted-foreground mb-3">
+          <span className="w-4 h-px bg-primary/60" />
+          Try it live
+        </div>
+        <h2 className="text-3xl font-bold tracking-tight mb-2">Type anything. Pick a style.</h2>
+        <p className="text-muted-foreground text-sm max-w-xl">
+          The model runs twice on your input — once with no intervention, once with a steering
+          vector added to its residual stream. The difference is the style direction at work.
+        </p>
+      </div>
+      <div className="rounded-2xl border border-border bg-card p-6">
+        <StyleInput />
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   const [tab, setTab] = useState<Tab>("discover");
@@ -90,7 +112,12 @@ export default function Home() {
 
       {/* tab content */}
       <div className="max-w-5xl mx-auto px-6 pb-24">
-        {tab === "discover" && <StyleLab />}
+        {tab === "discover" && (
+          <>
+            <LiveSteer />
+            <StyleLab />
+          </>
+        )}
         {tab === "explain"  && <ExplainTab />}
         {tab === "measure"  && <MeasureTab />}
       </div>
