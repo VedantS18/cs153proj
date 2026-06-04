@@ -17,10 +17,10 @@ const STYLES = [
 ] as const;
 
 const ALPHAS = [
-  { value: 5,  label: "Subtle"   },
-  { value: 10, label: "Moderate" },
-  { value: 20, label: "Strong"   },
-  { value: 40, label: "Maximum"  },
+  { value: 3,  label: "Light"    },
+  { value: 5,  label: "Moderate" },
+  { value: 8,  label: "Strong"   },
+  { value: 12, label: "Maximum"  },
 ];
 
 const SUGGESTIONS = [
@@ -38,7 +38,7 @@ export default function StyleInput() {
   const [serverState, setServerState] = useState<ServerState>("unknown");
   const [text,        setText]        = useState("");
   const [style,       setStyle]       = useState<string>("hemingway");
-  const [alpha,       setAlpha]       = useState(10);
+  const [alpha,       setAlpha]       = useState(5);
   const [result,      setResult]      = useState<Result | null>(null);
   const [loading,     setLoading]     = useState(false);
   const [error,       setError]       = useState<string | null>(null);
@@ -180,9 +180,9 @@ export default function StyleInput() {
                 </button>
               ))}
             </div>
-            {alpha >= 40 && (
+            {alpha >= 12 && (
               <p className="text-xs text-amber-400/80 mt-2 font-mono">
-                At α=40 the model often degrades into repetition or incoherence. That is expected — it shows the limit of how hard you can push the representation.
+                At high α the model can degrade into incoherence — that is expected and actually illustrates the limits of how hard you can push the representation before it breaks.
               </p>
             )}
           </div>
