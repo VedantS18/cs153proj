@@ -112,23 +112,49 @@ def health():
     return {"status": "ok", "concepts": sorted(contrast_dirs.keys()), "device": device}
 
 
+STYLE_NAMES = {
+    "hemingway":          "Ernest Hemingway",
+    "shakespeare":        "William Shakespeare",
+    "fitzgerald":         "F. Scott Fitzgerald",
+    "austen":             "Jane Austen",
+    "dickens":            "Charles Dickens",
+    "woolf":              "Virginia Woolf",
+    "jk_rowling":         "J.K. Rowling",
+    "cormac_mccarthy":    "Cormac McCarthy",
+    "legal_text":         "a legal document",
+    "scientific_writing": "an academic scientific paper",
+    "news_wire":          "a news wire article",
+}
+
+
+def make_prompt(text: str, style: str) -> str:
+    name = STYLE_NAMES.get(style, style)
+    return (
+        f"Rewrite the following text in the style of {name}. "
+        f"Keep the same meaning but change the language and tone to match the style.\n\n"
+        f"Original: {text}\n\n"
+        f"Rewritten:"
+    )
+
+
 @app.post("/steer", response_model=SteerResponse)
 def steer(req: SteerRequest):
     if req.style not in contrast_dirs:
         from fastapi import HTTPException
         raise HTTPException(400, f"Unknown style '{req.style}'. Available: {sorted(contrast_dirs.keys())}")
 
-    prompt = req.text.strip()
-    if not prompt:
+    text = req.text.strip()
+    if not text:
         from fastapi import HTTPException
         raise HTTPException(400, "text must not be empty")
 
     t0 = time.time()
 
-    # Baseline (no steering)
+    # Baseline: same rewrite prompt but no steering vector
+    prompt = make_prompt(text, req.style)
     original = generate(prompt, [])
 
-    # Steered — apply at multiple layers around the concept's peak layer.
+    # Steered — same prompt, but with the style vector injected during generation.
     # Divide alpha by layer count so total effective strength matches the alpha value.
     peak = contrast_dirs[req.style]["peak_layer"]
     layer_start = max(0, min(peak, int(n_layers * LAYER_FRAC) - STEER_LAYERS))
@@ -140,7 +166,7 @@ def steer(req: SteerRequest):
             concepts=[req.style],
             alpha=per_layer_alpha,
             layer=layer_idx,
-            subtract=False,  # inject style
+            subtract=False,
         )
         hooks.extend(h)
 

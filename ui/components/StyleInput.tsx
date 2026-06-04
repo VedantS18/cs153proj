@@ -203,7 +203,7 @@ export default function StyleInput() {
           {/* original */}
           <div className="rounded-xl border border-border bg-card p-4" style={{ minHeight: 100 }}>
             <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-2">
-              Model output — no steering
+              Rewrite — no steering vector
             </div>
             {result ? (
               <p className="text-sm leading-relaxed">{result.original}</p>
@@ -255,10 +255,10 @@ export default function StyleInput() {
           {/* explanation */}
           {result && (
             <div className="rounded-xl border border-border bg-card/40 p-3 text-xs text-muted-foreground leading-relaxed">
-              The model ran twice with the same prompt. The only difference: a constant vector in the
-              direction of <span style={{ color: styleInfo.color }}>{styleInfo.label}</span> was added
-              to the residual stream at layers 23–26 with magnitude α={alpha}. No fine-tuning.
-              No system prompt. The direction comes from a linear probe trained on labeled text.
+              Both outputs use the same rewrite prompt. The only difference: in the right column,
+              a constant vector in the direction of <span style={{ color: styleInfo.color }}>{styleInfo.label}</span> was
+              added to the residual stream at layers 23–26 with magnitude α={alpha}.
+              No fine-tuning. No system prompt change. The style direction was learned from a linear probe.
             </div>
           )}
         </div>
