@@ -127,14 +127,10 @@ STYLE_NAMES = {
 }
 
 
-def make_prompt(text: str, style: str) -> str:
-    name = STYLE_NAMES.get(style, style)
-    return (
-        f"Rewrite the following text in the style of {name}. "
-        f"Keep the same meaning but change the language and tone to match the style.\n\n"
-        f"Original: {text}\n\n"
-        f"Rewritten:"
-    )
+def make_prompt(text: str) -> str:
+    # Simple continuation prompt — the steering vector does the style work.
+    # We just need the model to keep writing from the user's text.
+    return text.rstrip() + " "
 
 
 @app.post("/steer", response_model=SteerResponse)
@@ -150,9 +146,9 @@ def steer(req: SteerRequest):
 
     t0 = time.time()
 
-    # Baseline: same rewrite prompt but no steering vector
-    prompt = make_prompt(text, req.style)
-    original = generate(prompt, [])
+    prompt = make_prompt(text)
+    # No baseline generation — the user's own text is the baseline.
+    original = text
 
     # Steered — same prompt, but with the style vector injected during generation.
     # Divide alpha by layer count so total effective strength matches the alpha value.

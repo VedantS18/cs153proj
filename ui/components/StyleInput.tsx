@@ -203,17 +203,12 @@ export default function StyleInput() {
           {/* original */}
           <div className="rounded-xl border border-border bg-card p-4" style={{ minHeight: 100 }}>
             <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-2">
-              Rewrite — no steering vector
+              Your text
             </div>
-            {result ? (
-              <p className="text-sm leading-relaxed">{result.original}</p>
-            ) : loading ? (
-              <div className="flex items-center gap-2 text-muted-foreground text-xs">
-                <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary/60 animate-pulse" />
-                Running baseline…
-              </div>
+            {text.trim() ? (
+              <p className="text-sm leading-relaxed">{text.trim()}</p>
             ) : (
-              <p className="text-xs text-muted-foreground/40 italic">Will appear after you run</p>
+              <p className="text-xs text-muted-foreground/40 italic">Type something on the left…</p>
             )}
           </div>
 
@@ -224,7 +219,7 @@ export default function StyleInput() {
           >
             <div className="flex items-center gap-2 mb-2">
               <span className="text-xs font-mono uppercase tracking-widest" style={{ color: styleInfo.color }}>
-                Steered → {styleInfo.label}
+                Continued in {styleInfo.label} style
               </span>
               <span className="text-xs font-mono text-muted-foreground/50">α={alpha}</span>
               {result && (
@@ -234,11 +229,14 @@ export default function StyleInput() {
               )}
             </div>
             {result ? (
-              <p className="text-sm leading-relaxed">{result.steered}</p>
+              <p className="text-sm leading-relaxed">
+                <span className="text-muted-foreground/50">{text.trim()} </span>
+                <span>{result.steered}</span>
+              </p>
             ) : loading ? (
               <div className="flex items-center gap-2 text-xs" style={{ color: styleInfo.color + "99" }}>
                 <span className="inline-block w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: styleInfo.color }} />
-                Applying RepE steering…
+                Applying steering vector…
               </div>
             ) : (
               <p className="text-xs text-muted-foreground/40 italic">Will appear after you run</p>
@@ -255,10 +253,10 @@ export default function StyleInput() {
           {/* explanation */}
           {result && (
             <div className="rounded-xl border border-border bg-card/40 p-3 text-xs text-muted-foreground leading-relaxed">
-              Both outputs use the same rewrite prompt. The only difference: in the right column,
-              a constant vector in the direction of <span style={{ color: styleInfo.color }}>{styleInfo.label}</span> was
-              added to the residual stream at layers 23–26 with magnitude α={alpha}.
-              No fine-tuning. No system prompt change. The style direction was learned from a linear probe.
+              Your text is shown in grey — the model continues it from there.
+              A constant vector in the direction of <span style={{ color: styleInfo.color }}>{styleInfo.label}</span> was
+              added to the residual stream at layers 23–26 (α={alpha}) during generation.
+              That single intervention is responsible for the style of everything that follows.
             </div>
           )}
         </div>
