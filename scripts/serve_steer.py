@@ -256,19 +256,35 @@ def scan(req: ScanRequest):
 
 
 # ── /debias ───────────────────────────────────────────────────────────────────
+# Measures log-probability of stereotype vs counter-stereotype sentences,
+# before and after erasing the bias direction. This is exactly what CrowS-Pairs
+# measures — not completion quality, but model preference over full sentences.
+
+def sentence_logprob(text: str, hooks: list = []) -> float:
+    """Mean per-token log-probability of a sentence under the model (with optional hooks)."""
+    inputs = tokenizer(text, return_tensors="pt").to(device)
+    input_ids = inputs["input_ids"]
+    with torch.no_grad():
+        out = model(**inputs, labels=input_ids)
+    return float(-out.loss)   # loss = mean NLL, so -loss = mean log-prob
+
 class DebiasRequest(BaseModel):
-    text:    str
-    concept: str    # which bias direction to erase
-    alpha:   float = 10.0
+    stereo:   str   # stereotyped sentence (full)
+    counter:  str   # counter-stereotyped sentence (full, same structure)
+    concept:  str
+    alpha:    float = 20.0
 
 class DebiasResponse(BaseModel):
-    original_completion:  str
-    debiased_completion:  str
-    original_scores:      dict[str, float]
-    debiased_scores:      dict[str, float]
-    concept:              str
-    alpha:                float
-    latency_ms:           float
+    stereo_logprob:          float
+    counter_logprob:         float
+    stereo_logprob_erased:   float
+    counter_logprob_erased:  float
+    gap_before:              float   # stereo - counter  (positive = model prefers stereo)
+    gap_after:               float
+    gap_reduction_pct:       float   # % reduction in gap
+    concept:                 str
+    alpha:                   float
+    latency_ms:              float
 
 @app.post("/debias", response_model=DebiasResponse)
 def debias(req: DebiasRequest):
@@ -276,32 +292,32 @@ def debias(req: DebiasRequest):
         raise HTTPException(400, f"Unknown concept '{req.concept}'")
     if CONCEPT_CATEGORY.get(req.concept) != "bias":
         raise HTTPException(400, f"'{req.concept}' is not a bias concept")
-    text = req.text.strip()
-    if not text:
-        raise HTTPException(400, "text must not be empty")
-
     t0 = time.time()
-    prompt = text.rstrip() + " "
 
-    # Baseline completion
-    original_completion = generate(prompt, [], max_new_tokens=60)
+    # Baseline log-probs
+    lp_stereo   = sentence_logprob(req.stereo.strip())
+    lp_counter  = sentence_logprob(req.counter.strip())
 
-    # Debiased completion (subtract the bias direction)
+    # Log-probs with bias direction erased
     hooks = steer_hooks([req.concept], [req.alpha], subtract=True)
     try:
-        debiased_completion = generate(prompt, hooks, max_new_tokens=60)
+        lp_stereo_e  = sentence_logprob(req.stereo.strip(),   hooks)
+        lp_counter_e = sentence_logprob(req.counter.strip(),  hooks)
     finally:
         remove_erasure(hooks)
 
-    # Scan probe scores for both completions
-    original_scores  = scan_activations(text + " " + original_completion)
-    debiased_scores  = scan_activations(text + " " + debiased_completion)
+    gap_before = lp_stereo  - lp_counter
+    gap_after  = lp_stereo_e - lp_counter_e
+    reduction  = (1 - abs(gap_after) / (abs(gap_before) + 1e-8)) * 100 if gap_before != 0 else 0.0
 
     return DebiasResponse(
-        original_completion=original_completion,
-        debiased_completion=debiased_completion,
-        original_scores=original_scores,
-        debiased_scores=debiased_scores,
+        stereo_logprob=round(lp_stereo, 4),
+        counter_logprob=round(lp_counter, 4),
+        stereo_logprob_erased=round(lp_stereo_e, 4),
+        counter_logprob_erased=round(lp_counter_e, 4),
+        gap_before=round(gap_before, 4),
+        gap_after=round(gap_after, 4),
+        gap_reduction_pct=round(reduction, 1),
         concept=req.concept,
         alpha=req.alpha,
         latency_ms=round((time.time()-t0)*1000, 1),
