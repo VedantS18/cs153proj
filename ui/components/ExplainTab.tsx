@@ -1,10 +1,84 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import ConceptNetwork from "./ConceptNetwork";
 
 const CAT_COLOR: Record<string, string> = {
   style: "#a78bfa", bias: "#f87171", factual: "#fbbf24",
 };
+const SHORT: Record<string, string> = {
+  hemingway: "Hemingway", shakespeare: "Shakespeare", jk_rowling: "Rowling",
+  cormac_mccarthy: "McCarthy", legal_text: "Legal", scientific_writing: "Scientific",
+  news_wire: "News Wire", fitzgerald: "Fitzgerald", austen: "Austen",
+  dickens: "Dickens", woolf: "Woolf",
+  age_competence: "Age/Comp.", gender_profession: "Gender/Prof.",
+  race_crime: "Race/Crime", gender_emotion: "Gender/Emo.",
+  nationality_stereotype: "Nationality",
+  capital_cities: "Capitals", country_language: "Languages",
+  element_symbols: "Elements", historical_dates: "Hist. Dates",
+  inventor_invention: "Inventors",
+};
+
+type StabilityEntry = { concept: string; category: string; stable_layer: number };
+
+function LayerStability() {
+  const [data, setData] = useState<StabilityEntry[]>([]);
+  useEffect(() => {
+    fetch("/data/layer_stability.json").then(r => r.json()).then(setData).catch(() => null);
+  }, []);
+
+  if (!data.length) return null;
+
+  const maxLayer = 28;
+  const byCategory = {
+    bias:    data.filter(d => d.category === "bias"),
+    factual: data.filter(d => d.category === "factual"),
+    style:   data.filter(d => d.category === "style"),
+  };
+
+  return (
+    <div className="space-y-3">
+      <p className="text-xs text-muted-foreground leading-relaxed max-w-2xl">
+        Each concept direction undergoes a full rotation in the early layers as the model processes the input,
+        then settles into a stable direction. The layer at which it stabilises tells you how deeply the concept
+        is encoded. Bias and factual concepts stabilise in the first few layers. Style concepts take much longer —
+        Hemingway doesn&apos;t settle until layer 21 out of 28. That persistence across layers is part of why
+        style directions are more geometrically structured and easier to steer reliably.
+      </p>
+      {(["bias","factual","style"] as const).map(cat => (
+        <div key={cat}>
+          <div className="text-xs font-mono mb-1.5" style={{ color: CAT_COLOR[cat] }}>
+            {cat === "style" ? "Stylistic" : cat === "bias" ? "Bias" : "Factual"}
+          </div>
+          <div className="space-y-1">
+            {byCategory[cat].map(d => {
+              const pct = (d.stable_layer / maxLayer) * 100;
+              return (
+                <div key={d.concept} className="flex items-center gap-3">
+                  <div className="w-24 text-right text-xs font-mono text-muted-foreground/60 flex-shrink-0">
+                    {SHORT[d.concept] ?? d.concept}
+                  </div>
+                  <div className="flex-1 relative h-4 flex items-center">
+                    <div className="w-full h-2 rounded-sm bg-white/5" />
+                    <div className="absolute left-0 h-2 rounded-sm transition-all"
+                      style={{ width: `${pct}%`, background: CAT_COLOR[cat] + (cat === "style" ? "cc" : "66") }} />
+                  </div>
+                  <div className="text-xs font-mono w-16 flex-shrink-0"
+                    style={{ color: CAT_COLOR[cat] + (cat === "style" ? "" : "99") }}>
+                    layer {d.stable_layer}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+      <div className="text-xs text-muted-foreground/40 font-mono">
+        Bar length = stable layer / 28 total layers. Longer bar = concept encoded deeper into the network.
+      </div>
+    </div>
+  );
+}
 
 export default function ExplainTab() {
   return (
@@ -64,6 +138,17 @@ export default function ExplainTab() {
             not model-specific features.
           </div>
         </div>
+      </div>
+
+      {/* layer stability */}
+      <div className="rounded-2xl border border-border bg-card p-6">
+        <div className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-1">
+          Where in the network each concept lives
+        </div>
+        <div className="text-sm font-semibold mb-4">
+          Style directions stabilise much deeper than bias or factual directions
+        </div>
+        <LayerStability />
       </div>
 
       {/* mechanism explanation */}

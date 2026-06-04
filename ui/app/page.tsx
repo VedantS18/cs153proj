@@ -7,6 +7,7 @@ import ExplainTab from "@/components/ExplainTab";
 import ConceptScanner from "@/components/ConceptScanner";
 import MeasureTab from "@/components/MeasureTab";
 import BiasLab from "@/components/BiasLab";
+import BiasCompletions from "@/components/BiasCompletions";
 
 const TABS = [
   { key: "discover", label: "Discover", sub: "Style steering" },
@@ -175,12 +176,20 @@ export default function Home() {
 
         {tab === "bias" && (
           <>
-            <Section eyebrow="Bias erasure" title="Measure and reduce stereotype preference"
-              desc="We subtract the bias concept direction during a forward pass and measure the change in log-probability gap between a stereotyped sentence and its counter. This is exactly the CrowS-Pairs protocol — run live.">
+            <Section eyebrow="Before and after" title="What the model actually says"
+              desc="The same prompt, completed twice — once normally, once with the bias direction subtracted from the residual stream. An independent LLM judge labels each completion as stereotyped or counter-stereotyped.">
+              <div className="rounded-2xl border border-border bg-card p-6">
+                <BiasCompletions />
+              </div>
+            </Section>
+
+            <Section eyebrow="Live experiment" title="Measure the log-probability gap"
+              desc="The same protocol as CrowS-Pairs: compare the model's log-probability on a stereotyped sentence vs its counter-stereotype before and after erasure. Run live on the current model.">
               <div className="rounded-2xl border border-border bg-card p-6">
                 <BiasLab />
               </div>
             </Section>
+
             <MeasureTab />
           </>
         )}
