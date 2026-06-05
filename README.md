@@ -8,9 +8,9 @@
 
 ## Why I Built This
 
-Language models are deployed in hiring systems, medical tools, and writing assistants used by hundreds of millions of people — yet we have almost no visibility into what they have actually learned. You can inspect outputs. You cannot look inside.
+Language models are deployed in hiring systems, medical tools, and writing assistants used by hundreds of millions of people, yet we have almost no visibility into what they have actually learned. You can inspect outputs. You cannot look inside.
 
-The interpretability tools that exist today are mostly post-hoc: you look at what a model produces and infer what it learned. What I wanted was a research tool that lets you look directly at the model's representation space — find where a concept actually lives as a geometric direction in the activation space — and then interact with that direction causally, at inference time, without any retraining.
+The interpretability tools that exist today are mostly post-hoc: you look at what a model produces and infer what it learned. What I wanted was a research tool that lets you look directly at the model's representation space and find where a concept actually lives as a geometric direction in the activation space, and then interact with that direction causally, at inference time, without any retraining.
 
 The intended applications are **AI safety and interpretability**: giving researchers a concrete way to probe what a model has internalized, measure it quantitatively, and test interventions on it. The secondary application is writing tools — once you have a concept direction, you can steer style without fine-tuning.
 
